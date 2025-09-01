@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>TEST 11</title>
+<style>
+  body { 
+    font-family: Arial, sans-serif; 
+    margin: 20px; 
+    line-height: 1.6;
+    background-color: #f4f4f4;
+  }
+  h1 { 
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  .quiz-container {
+    max-width: 900px;
+    margin: auto;
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  .question { 
+    margin-bottom: 30px; 
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+  }
+  .question h2 { 
+    margin-bottom: 15px; 
+    font-size: 1.1em;
+    color: #444;
+  }
+  .options-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .option {
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #f9f9f9;
+    transition: background-color 0.2s, border-color 0.2s;
+  }
+  .option:hover {
+    background-color: #eef;
+    border-color: #aaa;
+  }
+  .correct { 
+    background-color: #d4edda; 
+    border-color: #c3e6cb;
+    color: #155724;
+    font-weight: bold;
+    pointer-events: none; 
+  }
+  .incorrect { 
+    background-color: #f8d7da; 
+    border-color: #f5c6cb;
+    color: #721c24;
+    font-weight: bold;
+    pointer-events: none; 
+  }
+  /* Стили для всплывающего окна */
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  .popup-content {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  .popup-content h3 {
+    margin-top: 0;
+  }
+  .popup-content p {
+    margin-bottom: 20px;
+  }
+  .popup-content button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+  }
+</style>
+</head>
+<body>
+
+<div class="quiz-container">
+  <h1>Electrical Quiz</h1>
+  <div id="quiz"></div>
+</div>
+
+<script>
+const quizData = [
+  { q: "1. If a test lamp lights when placed in series with a capacitor and DC power source, this is positive indication that a capacitor is", options: ["A. fully charged", "B. open", "C. shorted", "D. fully discharged"], answer: 2 },
+  { q: "2. Current is moved through a conductor by", options: ["A. EMF", "B. ohms", "C. conductance", "D. power"], answer: 0 },
+  { q: "3. Power is ______ voltage times current, in a pure resistive circuit.", options: ["A. double the", "B. AC", "C. always", "D. never"], answer: 2 },
+  { q: "4. Wound-rotor and squirrel-cage motors are two types of ______ motors.", options: ["A. universal", "B. induction", "C. synchronous", "D. single-phase"], answer: 1 },
+  { q: "5. Primary winding of single phase transformer has 90 turns, secondary - 18 turns of wire. What would be the current in the secondary winding if voltage and wattage of primary winding are, respectively, 180 volts / 315 watts?", options: ["A. 5.5 A", "B. 8.75 A", "C. 17.5 A", "D. 27.75 A"], answer: 1 },
+  { q: "6. Double side wrenches:", options: ["A. are more convenient in tight spots", "B. are not permitted in electrical trade", "C. have longer lever", "D. are stronger than single side wrenches"], answer: 1 },
+  { q: "7. What will be effective capacitance value in case of 4 capacitors each of rating 4 μF where connected in the following order: two in series and remaining two - in parallel?", options: ["A. 2.4 μF", "B. 1.6 μF", "C. 4.2 μF", "D. 1.8 μF"], answer: 1 },
+  { q: "8. If all lamps equal and good, lamp 5 will", options: ["A. be brighter", "B. be darker", "C. not lit", "D. lit as all lamps"], answer: 2, image: 'https://i.imgur.com/n1kDyQ1.png' },
+  { q: "9. Portable fire extinguishers for electrical fires are usually identified by a label with the following symbol:", options: ["A. “A” in a triangle", "B. “B” in a square", "C. “C” in a circle", "D. “D” in a five-pointed star"], answer: 2 },
+  { q: "10. When tapping a hole, metal on which lubricant must NOT be used is a(an):", options: ["A. Aluminum", "B. Cast iron", "C. Malleable steel", "D. Mild steel"], answer: 0 },
+  { q: "11. Common combination of gases used for regular welding is:", options: ["A. Carbon dioxide and acetylene", "B. Oxygen and hydrogen", "C. Nitrogen and hydrogen", "D. Oxygen and acetylene"], answer: 3 },
+  { q: "12. When two fuses have the same current rating but different size, it means that:", options: ["A. bigger fuse is used on AC and smaller on DC", "B. smaller fuse has higher resistance material", "C. bigger fuse has higher power rating", "D. bigger fuse has higher voltage rating"], answer: 3 },
+  { q: "13. If a series-parallel circuit one of the resistors in parallel branch become open, which of the circuit parameters will decrease?", options: ["A. Voltage", "B. Resistance", "C. Current", "D. Induction"], answer: 2 },
+  { q: "14. When 10 bulbs connected in parallel and two of them burned out, which of the following will increase?", options: ["A. Voltage", "B. Resistance", "C. Current", "D. Power"], answer: 1 },
+  { q: "15. What percent is 14 of 24?", options: ["A. 62.25%", "B. 58.33%", "C. 41.66%", "D. 33.67%"], answer: 1 },
+  { q: "16. Cores for water heater-coils are, generally, made of:", options: ["A. Porcelain", "B. Fiber", "C. Carbon", "D. Lead"], answer: 0 },
+  { q: "17. Center contact in screw lamp socket is made of:", options: ["A. Copper", "B. Carbon", "C. Lead", "D. Bronze"], answer: 3 },
+  { q: "18. A clamp-on ammeter has a coil that is clamped around the conductor and detects the rising and collapsing of ______ being produced due to the flow of AC current through the conductor.", options: ["A. Static electricity", "B. AC voltage", "C. frequency", "D. magnetic field"], answer: 3 },
+  { q: "19. When a capacitor is charged:", options: ["A. both plates are negatively charged", "B. both plates are positively charged", "C. the dielectric has a positive charge", "D. one plate positively charged and other is negatively charged"], answer: 3 },
+  { q: "20. The total resistance of the circuit is ____ ohms", options: ["A. 36.884", "B. 40", "C. 48", "D. 48.88"], answer: 1, image: 'https://i.imgur.com/dtTzNHI.png' },
+  { q: "21. The ammeter reading is 5 amperes. The voltmeter reading is ____ volts.", options: ["A. 184.42", "B. 200.00", "C. 240.00", "D. 244.40"], answer: 1 },
+  { q: "22. If the wire opens between points A and B, ammeter reading would be ____amperes.", options: ["A. 4.17", "B. 48", "C. 6.64", "D. 8.35"], answer: 1 },
+  { q: "23. Ability to carry the maximum load is limited in power transformers by a (an):", options: ["A. insulation resistance", "B. oil’s dielectric strength", "C. temperature rise", "D. voltage ratio"], answer: 2 },
+  { q: "24. A gallon of water weighs approximately:", options: ["A. 6.25 lbs", "B. 7.5 lbs", "C. 8.33 lbs", "D. 10.27 lbs"], answer: 2 },
+  { q: "25. To check if a diode is in working condition maintainer should use:", options: ["A. voltmeter", "B. ohmmeter", "C. ammeter", "D. D’mprobe"], answer: 1 },
+  { q: "26. To start a motor from 7 locations we would need ____ 3-way switches.", options: ["A. 3", "B. 2", "C. 7", "D. 5"], answer: 1 },
+  { q: "27. What is the color of an oxygen tank?", options: ["A. Green", "B. Orange", "C. Black", "D. Red"], answer: 0 },
+  { q: "28. If there is a current flowing through a resistive material, there always will be _______ the resistive object.", options: ["A. change in frequency across", "B. potential difference across", "C. decrease of resistance of", "D. increase of inductance of"], answer: 1 },
+  { q: "29. Two identical 120-volts incandescent lamps, #1 and #2, controlled by DPDT switch, are connected as shown on the left. If a switch is closed in the down position:", options: ["A. both lamps would light", "B. lamp #1 would light, lamp #2 would be dark", "C. both lamps would be dim", "D. lamp #2 would light, lamp #1 would be dark"], answer: 2, image: 'https://i.imgur.com/OXjKRmt.png' },
+  { q: "30. The switch is closed in the up position:", options: ["A. both lamps would light", "B. lamp #1 would light, lamp #2 would be dark", "C. both lamps would be dim", "D. lamp #2 would light, lamp #1 would be dark"], answer: 1 },
+  { q: "31. The switch is of a ______ type.", options: ["A. three-way", "B. SPDT", "C. DPST", "D. DPDT"], answer: 3, image: 'https://i.imgur.com/vXXvx5W.png' },
+  { q: "32. When the switch is closed in its \"UP\" position:", options: ["A. the fuse will blow", "B. lamps 1 and 3 will light", "C. lamps 1 and 4 will light", "D. lamps 2 and 3 will light"], answer: 2 },
+  { q: "33. When the switch is closed in its \"DOWN\" position:", options: ["A. lamps 1 and 4 will light, lamps 2 and 3 will be dim", "B. all the lamps will light", "C. lamps 1 and 4 will be dim", "D. lamps 1,2 and 3 will light"], answer: 1 },
+  { q: "34. When the switch is put in its \"NEUTRAL\" position:", options: ["A. all the lamps will light normally", "B. lamp 1 will light normally, lamps 2, 3, and 4 - dim", "C. lamps 2, 3, and 4 - dark", "D. lamps 2, 3, and 4 will light normally, lamp 1 - dim"], answer: 1 },
+  { q: "35. A circuit breaker should be provided at every point where:", options: ["A. the load current increases", "B. wire is entering the premises", "C. change is made in the size of wire", "D. the load current decreases"], answer: 1 },
+  { q: "36. Every cell is 1.5 volts. Total voltage is ____ volts.", options: ["A. 6", "B. 3", "C. 4.5", "D. 1.5"], answer: 1, image: 'https://i.imgur.com/VHiVKpq.png' },
+  { q: "37. Electrical rigid conduit is said to be 2.5 inches. This is the size of", options: ["A. circumference", "B. inside diameter", "C. connecting coupling", "D. outside diameter"], answer: 3 },
+  { q: "38. To measure sheet metal thickness, maintainer should use which of the following tools?", options: ["A. Wire gage", "B. Mum knob", "C. Steel ruler", "D. Metal gage"], answer: 3 },
+  { q: "39. Current in the circuit including capacitance and inductance can be calculated by dividing voltage by", options: ["A. ratio of resistance and inductance", "B. ratio of inductance and resistance", "C. impedance", "D. reactance"], answer: 2 },
+  { q: "40. 30° Centigrade can be most nearly represented as ______ º Fahrenheit.", options: ["A. 83", "B. 87", "C. 89", "D. 91"], answer: 2 },
+  { q: "41. In an AC circuit with a fixed resistor and capacitor in series current is 10 amperes. If another capacitor of the same size connected in parallel to existing capacitor, current in the circuit will:", options: ["A. increase", "B. decrease", "C. remain the same", "D. changing according to the capacitors size"], answer: 0 },
+  { q: "42. If steel weighs 480 lbs/cu. ft, the weight, in lbs, of an 18” x 18” x 2” steel base is:", options: ["A. 180", "B. 216", "C. 427", "D. 648"], answer: 0 },
+  { q: "43. If a pipe is connected to a 4” pipe through a reducer, if 100 cubic feet of water is flowing through 6” pipe per minute, the flow, in cubic feet per minute, through the 4” pipe would be:", options: ["A. 44.4", "B. 66.6", "C. 100", "D. 150"], answer: 2 },
+  { q: "44. Numbers or numbering on the heads of the bolts indicate:", options: ["A. a minimum strength", "B. the size of the head", "C. the size of the bolt", "D. maximum strength"], answer: 0 },
+  { q: "45. If two light bulbs P and Q are identical in all respect, except that P’s filament is thicker than Q’s. If the same potential difference is applied to each, then:", options: ["A. P will be brighter because it has the greater resistance", "B. Q will be brighter because it has the greater resistance", "C. P will be brighter because it has the lower resistance", "D. Q will be brighter because it has the lower resistance"], answer: 2 },
+  { q: "46. The following terms, except __________, represent the maximum instantaneous value of varying voltage or current.", options: ["A. Peak", "B. RMS", "C. Max", "D. Amplitude"], answer: 1 },
+  { q: "47. Moving a metal wire across the magnetic field of a permanent magnet will:", options: ["A. increase magnetic strength of a magnet", "B. create a current between magnetic poles", "C. decrease magnetic strength of a magnet", "D. create current in the wire"], answer: 3 },
+  { q: "48. The effects of an electrical shock on the body depends upon all of the following EXCEPT:", options: ["A. current", "B. path", "C. duration", "D. body weight"], answer: 3 },
+  { q: "49. Four cells each of 2m E.M.F are joined together - two in parallel and two in series, to form a battery. The equivalent e.m.f. of the battery would be:", options: ["A 2E", "B 2.5E", "С 3E", "D 4E"], answer: 2 },
+  { q: "50. If a fuse blows when a “START” button is pressed, what should you look for first?", options: ["A. Shorted motor circuit", "B. Broken coil", "C. Bad wire connection", "D. Open neutral"], answer: 0 }
+];
+
+let correctCount = 0;
+let incorrectCount = 0;
+let answeredQuestions = new Set();
+
+const quizContainer = document.getElementById('quiz');
+
+function showFinalScorePopup() {
+    const total = correctCount + incorrectCount;
+    const accuracy = total > 0 ? ((correctCount / total) * 100).toFixed(1) : 0;
+    const resultText = `Результат: Правильных ответов: ${correctCount} | Неправильных ответов: ${incorrectCount} | Точность: ${accuracy}%`;
+    showPopup(resultText);
+}
+
+function showPopup(text) {
+    const popup = document.createElement('div');
+    popup.className = 'popup-overlay';
+    
+    const popupContent = document.createElement('div');
+    popupContent.className = 'popup-content';
+    
+    const textElement = document.createElement('p');
+    textElement.textContent = text;
+    popupContent.appendChild(textElement);
+    
+    const closeBtn = document.createElement('button');
+    closeBtn.textContent = 'OK';
+    closeBtn.onclick = () => popup.remove();
+    popupContent.appendChild(closeBtn);
+    
+    popup.appendChild(popupContent);
+    document.body.appendChild(popup);
+}
+
+quizData.forEach((item, idx) => {
+  const questionDiv = document.createElement('div');
+  questionDiv.className = 'question';
+  const questionTitle = document.createElement('h2');
+  questionTitle.textContent = item.q;
+  questionDiv.appendChild(questionTitle);
+  
+  if (item.image) {
+    const questionImage = document.createElement('img');
+    questionImage.src = item.image;
+    questionImage.style.maxWidth = '100%';
+    questionImage.style.height = 'auto';
+    questionImage.style.display = 'block';
+    questionImage.style.margin = '10px auto 20px auto';
+    questionDiv.appendChild(questionImage);
+  }
+
+  const optionsGrid = document.createElement('div');
+  optionsGrid.className = 'options-grid';
+  questionDiv.appendChild(optionsGrid);
+
+  item.options.forEach((opt, i) => {
+    const optionBtn = document.createElement('div');
+    optionBtn.className = 'option';
+    optionBtn.textContent = opt;
+    optionBtn.onclick = () => {
+      if (!answeredQuestions.has(idx)) {
+        answeredQuestions.add(idx);
+        
+        if (i === item.answer) {
+          optionBtn.classList.add('correct');
+          correctCount++;
+        } else {
+          optionBtn.classList.add('incorrect');
+          incorrectCount++;
+          const allOptions = optionsGrid.querySelectorAll('.option');
+          allOptions[item.answer].classList.add('correct');
+        }
+        
+        if (answeredQuestions.size === quizData.length) {
+            showFinalScorePopup();
+        }
+      }
+    };
+    optionsGrid.appendChild(optionBtn);
+  });
+
+  quizContainer.appendChild(questionDiv);
+});
+</script>
+
+</body>
+</html>
