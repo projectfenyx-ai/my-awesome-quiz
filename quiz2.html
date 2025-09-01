@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Test 8</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+  }
+  h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  .quiz-container {
+    max-width: 900px;
+    margin: auto;
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  .question {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+  }
+  .question h2 {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    color: #444;
+  }
+  .options-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .option {
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #f9f9f9;
+    transition: background-color 0.2s, border-color 0.2s;
+  }
+  .option:hover {
+    background-color: #eef;
+    border-color: #aaa;
+  }
+  .correct {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+    font-weight: bold;
+    pointer-events: none;
+  }
+  .incorrect {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+    font-weight: bold;
+    pointer-events: none;
+  }
+  /* Popup styles */
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  .popup-content {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  .popup-content h3 {
+    margin-top: 0;
+  }
+  .popup-content p {
+    margin-bottom: 20px;
+  }
+  .popup-content button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+  }
+</style>
+</head>
+<body>
+
+<div class="quiz-container">
+  <h1>Test 8</h1>
+  <div id="quiz"></div>
+</div>
+
+<script>
+const quizData = [
+  { q: "1. If ammeter #2 reads 1.75 amperes, ammeter #1 will read:", options: ["A. 2.5 amperes", "B. 5.25 amperes", "C. 7.25 amperes", "D. 12.75 amperes"], answer: 1, image: 'https://i.imgur.com/1jw9v4b.png' },
+  { q: "2. When three 24-ohm resistors carry 1.75 amperes each, the total power consumed would be, most nearly,", options: ["A. 750 watts", "B. 1,000 watts", "C. 1,050 watts", "D. 1,550 watts"], answer: 2 },
+  { q: "3. By analyzing the circuit, we could say that voltage drop:", options: ["A. across 24 ohms resistors will always be higher than on 30-ohms resistor", "B. across 30 ohms resistor be lower when switch \"S\" is closed, than when switch \"S\" is open", "C. across 24 ohms resistors will be higher when switch \"S\" is closed than when switch \"S\" is open", "D. across 24 ohms resistors will always be lower than on 30-ohms resistor"], answer: 3 },
+  { q: "4. If the line voltage is 120 volts, then the fuse will blow if:", options: ["A. the 30-ohm resistor is shorted", "B. the 30-ohm resistor develops an open circuit and switch \"S\" is closed.", "C. the 30-ohm resistor is shorted, and two coils are open circuited", "D. switch \"S\" is closed and the 30 ohm resistor is shorted"], answer: 3 },
+  { q: "5. When sw. \"S\" is closed, the equivalent resistance of the whole circuit (points A to B) is:", options: ["A. 20 ohms", "B. 30 ohms", "C. 38 ohms", "D. 54 ohms"], answer: 1 },
+  { q: "6. If the total power consumed by the above circuit is 360 watts, then circuit voltage is, most nearly,", options: ["A. 40 volts", "B. 70 volts", "C. 95 volts", "D. 120 volts"], answer: 3 },
+  { q: "7. The combination of resistance, capacitance, and inductance of an A.C. circuit is known as:", options: ["A. resistance", "B. reactance", "C. reluctance", "D. impedance"], answer: 3 },
+  { q: "8. You got an order from your superior to paint frame of the large motor. In order to work safely with this type of paint you've been refer to:", options: ["A. \"Rule and Regulation\" book", "B. paint's sticker", "C. MSDS", "D. manufacturer webpage"], answer: 2 },
+  { q: "9. If 24 threads per inch turnbuckle is turned 18 revolutions, it becomes longer (shorter) by inches.", options: ["A. 0.75", "B. 1", "C. 1.5", "D. 2"], answer: 0 },
+  { q: "10. By spreading legs of a compass 5 inches apart, we can encircle the surface of, most nearly, sq. inches.", options: ["A. 90", "B. 80", "C. 70", "D. 60"], answer: 1 },
+  { q: "11. Which PPE (personal protective equipment) maintainer should put on first when start working with power tool?", options: ["A. gloves", "B. safety shoes", "C. apron", "D. goggles"], answer: 3 },
+  { q: "12. The most important objective of a safety training program should be to motivate the worker to:", options: ["A. avoid tripping hazards", "B. use hand tool properly", "C. read safety posters", "D. be attentive and alert"], answer: 3 },
+  { q: "13. When drilling a hole in a broken machine stud in order to remove the stud with an extractor, it is the best to drill the hole:", options: ["A. in the center", "B. off-center", "C. with a smallest drill bit", "D. with a taper"], answer: 0 },
+  { q: "14. Proper tool that could makes perfect 1/2-inch diameter hole in wooden stud is a(an):", options: ["A. keyhole saw", "B. auger", "C. reamer", "D. countersink"], answer: 1 },
+  { q: "15. DC voltage of 120 volts is feeding series circuit consisting of 2-ohm, 6-ohm and 8-ohm regular resistors, and a variable resistor. For line ammeter to indicate 1.5 amp, the variable resistor must be fixed at:", options: ["A. 58 ohms", "B. 64 ohms", "C. 86 ohms", "D. 92 ohms."], answer: 1 },
+  { q: "16. If, according to conditions of the previous question, 8-ohm resistor gets connected to another 8-ohm resistor in parallel, total power consumed by the circuit would:", options: ["A. increase", "B. decrease", "C. remain the same", "D. none of the above"], answer: 0 },
+  { q: "17. Purpose of a regular diode in electrical devices is similar to purpose of a ______ in mechanical machinery.", options: ["A. pulley", "B. gear", "C. sprocket", "D. check valve"], answer: 3 },
+  { q: "18. When using a meter to measure the total current in the circuit:", options: ["A. connect the meter in series between two open ends", "B. open the circuit at one point connect the meter to one end", "C. connect the meter across the load or battery.", "D. connect the meter across the first load from the positive side."], answer: 0 },
+  { q: "19. There are 7.5 gallons of water in 1 cubic foot of volume. Thus, cylindrical tank with a diameter of 10 feet and height of 15 feet, can hold, most nearly, gallons.", options: ["A. 4,500", "B. 6,800", "C. 7,400", "D. 8,800"], answer: 3 },
+  { q: "20. If edges on a hex bolt became elongated, the best tool to use to unscrew it is:", options: ["A. 6-points box wrench", "B. 12-points box wrench", "C. T-wrench", "D. torque wrench"], answer: 0 },
+  { q: "21. Large currents in DC circuits are practically always measured with a(an):", options: ["A. ammeter and multiplier", "B. millivoltmeter and multiplier", "C. ammeter and current transformer", "D. millivoltmeter and shunt"], answer: 3 },
+  { q: "22. To conduct trouble shooting of a simple electrical circuit, maintainer used", options: ["A. ammeter", "B. ammeter and voltmeter", "C. voltmeter and ohmmeter", "D. ammeter and wattmeter"], answer: 2 },
+  { q: "23. Transformer output is rated in", options: ["A. Henrys", "B. Ohms", "C. KVA", "D. KW"], answer: 2 },
+  { q: "24. The biggest health hazard can be created when working on equipment containing:", options: ["A. cast iron", "B. tin", "C. lead", "D. zinc"], answer: 2 },
+  { q: "25. Metal enclosure for conductor is called", options: ["A. duct", "B. conduit", "C. housing", "D. connector"], answer: 1 },
+  { q: "26. Of the following, the tool which should not be used for turning conduit is a ______ wrench.", options: ["A. chain", "B. Stillson", "C. monkey", "D. belt"], answer: 2 },
+  { q: "27. Main advantage of gold-plated contacts over silver-plated contacts is that:", options: ["A. gold is better conductor", "B. silver can be scratched off", "C. silver must have a thicker layer", "D. gold resists oxidation"], answer: 3 },
+  { q: "28. Three induction coils of 20, 30 and 60 Henry are connected in parallel. Total induction would be equal to ______ Henry.", options: ["A. 1", "B. 10", "C. 40", "D. 110"], answer: 1 },
+  { q: "29. One gallon of paint covers one floor of 4x4 square feet, how much paint needs to cover 10 floors of 15x16 square feet?", options: ["A. 100", "B. 150", "C. 250", "D. 300"], answer: 1 },
+  { q: "30. To cut rigid conduit you should use:", options: ["A. a cold chisel", "B. a 3-wheel pipe cutter", "C. a hacksaw and ream the ends", "D. order to cut to a size"], answer: 2 },
+  { q: "31. The grade of the bolt having 4 tics on the face of the head is:", options: ["A. 4", "B. 5", "C. 6", "D. 8"], answer: 2 },
+  { q: "32. A pulley system has 3 sections of ropes that lift the load. The mechanical advantage of the system is:", options: ["A. 1", "B. 2", "C. 3", "D. 6"], answer: 3 },
+  { q: "33. If the length and diameter of a conductor is tripled, the resistance will increase approximately by:", options: ["Α. 66-2/3%", "Β. 33-1/3%", "C. -66-2/3%", "D.-33-1/3%"], answer: 2 },
+  { q: "34. A DVOM (digital volt-ohmmeter) is being used to measure current flow. The meter indicates 12 mA. Technician A says this is 0.012 amps. Technician B says this is 0.12 amps. Who is right?", options: ["A. None of them", "B. Technician A", "C. Technician B", "D. Both of them"], answer: 1 },
+  { q: "35. A supplier quotes a list price of $180.00 less 20% and less 15% for set of tools. The actual cost of those tools is, most nearly,", options: ["A. $146", "B. $132", "C. $123", "D. $112"], answer: 2 },
+  { q: "36. In electrical trade, abbreviations LL, LR, LB related to:", options: ["A. circuit breakers", "B. fittings", "C. cables", "D. switches"], answer: 1 },
+  { q: "37. To minimize arcing when the relay contacts open, ______ often connected across them.", options: ["A. spring", "B. resistor", "C. reactor", "D. condenser"], answer: 3 },
+  { q: "38. Voltage of the rectifier charging a storage battery should be ______ battery voltage.", options: ["A. higher than", "B. lower than", "C. equal to", "D. half of the"], answer: 0 },
+  { q: "39. What percent of 8/9 is 2/3?", options: ["A. 33%", "B. 66%", "C. 75%", "D. 80%"], answer: 2 },
+  { q: "40. Hysteresis, eddy currents, and ampere turns are terms used when referring to", options: ["A. motors", "B. lightning arresters", "C. generators", "D. transformers"], answer: 3 },
+  { q: "41. The rotating part of a DC motor is:", options: ["A. stator", "B. rotor", "C. armature", "D. field"], answer: 2 },
+  { q: "42. If size of the wire increased, what parameters of the circuit will not change?", options: ["A. resistance", "B. current", "C. power", "D. voltage"], answer: 3 },
+  { q: "43. Conductors of # ______ and larger size shall be stranded when installed in conduit.", options: ["A. 4", "B. 8", "C. 6", "D. 10"], answer: 1 },
+  { q: "44. Effort applied on a torque wrench is measured in:", options: ["A. Lbs/Inches", "B. Inches/Lbs", "C. Ft/Lbs", "D. Lbs/Ft"], answer: 2 },
+  { q: "45. Symbol on the left represents:", options: ["A. punch", "B. drill bit", "C. star drill", "D. reamer"], answer: 2, image: 'https://i.imgur.com/3lQFRRk.png' },
+  { q: "46. An AC motor does not have one of the following:", options: ["A. rotor", "B. stator", "C. commutator", "D. bearing"], answer: 2 },
+  { q: "47. Three equal resistors are connected in series across a 120 V supply. The voltage across R1 is 0 V. The voltage across R2 and R3 is 60 V each. The circuit fault is:", options: ["A. R1 is shorted", "B. R2 is grounded", "C. R3 is opened", "D. neither A, B, nor C"], answer: 0 },
+  { q: "48. Three equal resistors are connected in series across a 120 V supply. The voltage reading across R1 and R2 is 0 V. The voltage reading across R3 is 120 V. The circuit fault is:", options: ["A. R1 is shorted", "B. R2 is grounded", "C. R3 is open", "D. neither A, B, nor C"], answer: 2 },
+  { q: "49. When a hacksaw blade is turned at the right angle to its holding frame, it is done primarily to:", options: ["A. increase accuracy of cutting", "B. reduce the strain on the frame", "C. cut more rapidly", "D. make cuts which are deeper than the frame"], answer: 3 },
+  { q: "50. Two electrodes, submerged in solution of sulfuric acid and water, form:", options: ["A. battery", "B. thermocouple", "C. potential difference", "D. electric cell"], answer: 3 }
+];
+
+let correctCount = 0;
+let incorrectCount = 0;
+let answeredQuestions = new Set();
+
+const quizContainer = document.getElementById('quiz');
+
+function showFinalScorePopup() {
+    const total = correctCount + incorrectCount;
+    const accuracy = total > 0 ? ((correctCount / total) * 100).toFixed(1) : 0;
+    const resultText = `Results: Correct answers: ${correctCount} | Incorrect answers: ${incorrectCount} | Accuracy: ${accuracy}%`;
+    showPopup(resultText);
+}
+
+function showPopup(text) {
+    const popup = document.createElement('div');
+    popup.className = 'popup-overlay';
+    
+    const popupContent = document.createElement('div');
+    popupContent.className = 'popup-content';
+    
+    const textElement = document.createElement('p');
+    textElement.textContent = text;
+    popupContent.appendChild(textElement);
+    
+    const closeBtn = document.createElement('button');
+    closeBtn.textContent = 'OK';
+    closeBtn.onclick = () => popup.remove();
+    popupContent.appendChild(closeBtn);
+    
+    popup.appendChild(popupContent);
+    document.body.appendChild(popup);
+}
+
+quizData.forEach((item, idx) => {
+  const questionDiv = document.createElement('div');
+  questionDiv.className = 'question';
+  const questionTitle = document.createElement('h2');
+  questionTitle.textContent = item.q;
+  questionDiv.appendChild(questionTitle);
+  
+  if (item.image) {
+    const questionImage = document.createElement('img');
+    questionImage.src = item.image;
+    questionImage.style.maxWidth = '100%';
+    questionImage.style.height = 'auto';
+    questionImage.style.display = 'block';
+    questionImage.style.margin = '10px auto 20px auto';
+    questionDiv.appendChild(questionImage);
+  }
+
+  const optionsGrid = document.createElement('div');
+  optionsGrid.className = 'options-grid';
+  questionDiv.appendChild(optionsGrid);
+
+  item.options.forEach((opt, i) => {
+    const optionBtn = document.createElement('div');
+    optionBtn.className = 'option';
+    optionBtn.textContent = opt;
+    optionBtn.onclick = () => {
+      if (!answeredQuestions.has(idx)) {
+        answeredQuestions.add(idx);
+        
+        if (i === item.answer) {
+          optionBtn.classList.add('correct');
+          correctCount++;
+          // Добавлено всплывающее окно для вопроса №8 при правильном ответе (idx 7)
+          if (idx === 7) { 
+              showPopup('MSDS — Material Safety Data Sheet');
+          }
+        } else {
+          optionBtn.classList.add('incorrect');
+          incorrectCount++;
+          const allOptions = optionsGrid.querySelectorAll('.option');
+          allOptions[item.answer].classList.add('correct');
+        }
+        
+        if (answeredQuestions.size === quizData.length) {
+            showFinalScorePopup();
+        }
+      }
+    };
+    optionsGrid.appendChild(optionBtn);
+  });
+
+  quizContainer.appendChild(questionDiv);
+});
+</script>
+
+</body>
+</html>
