@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EXAMINATION SECTION TEST 1</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 10px;
+    line-height: 1.5;
+    background-color: #f0f8ff;
+  }
+  h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+  }
+  .quiz-container {
+    max-width: 900px;
+    margin: auto;
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  .question {
+    margin-bottom: 25px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+  }
+  .question h2 {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    color: #444;
+  }
+  .options-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .option {
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #ffffff;
+    transition: background-color 0.2s, border-color 0.2s;
+  }
+  .option:hover {
+    background-color: #f0f0f0;
+    border-color: #aaa;
+  }
+  .correct {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+    font-weight: bold;
+    pointer-events: none;
+  }
+  .incorrect {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+    font-weight: bold;
+    pointer-events: none;
+  }
+  /* Popup styles */
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  .popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 80%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  .popup-content h3 {
+    margin-top: 0;
+  }
+  .popup-content p {
+    margin-bottom: 15px;
+    font-size: 1em;
+  }
+  .popup-content button {
+    padding: 8px 16px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+  }
+
+  /* Mobile-specific styles */
+  @media (max-width: 768px) {
+    .quiz-container {
+      margin: 10px;
+      padding: 10px;
+    }
+    .question h2 {
+      font-size: 1em;
+    }
+    .option {
+      font-size: 0.9em;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="quiz-container">
+  <h1>EXAMINATION SECTION<br>TEST 1</h1>
+  <div id="quiz"></div>
+</div>
+
+<script>
+const quizData = [
+  { q: "1. Asbestos is used as a wire covering mainly for protection against:", options: ["A. humidity", "B. vibration", "C. corrosion", "D. heat"], answer: 3 },
+  { q: "2. A wattmeter is used for making a direct measurement of:", options: ["A. current", "B. voltage", "C. power", "D. resistance"], answer: 2 },
+  { q: "3. The number of connection points to a two-pole, double-throw knife switch is:", options: ["A. 2", "B. 4", "C. 6", "D. 8"], answer: 2 },
+  { q: "4. Wires are pulled through conduit with the aid of:", options: ["A. a hickey", "B. an extension bit", "C. a snake", "D. a nipple"], answer: 2 },
+  { q: "5. To smooth out the ripples in rectified a.c., the device commonly used is a:", options: ["A. filter", "B. relay", "C. spark gap", "D. booster"], answer: 0 },
+  { q: "6. A tachometer is used for measuring:", options: ["A. r.p.m.", "B. torque", "C. power factor", "D. specific gravity"], answer: 0 },
+  { q: "7. Rubber insulation deteriorates most rapidly when in contact with:", options: ["A. water", "B. oil", "C. lead", "D. aluminum"], answer: 1 },
+  { q: "8. The microfarad is a unit of measurement used for:", options: ["A. ohmic resistance", "B. power loss", "C. leakage current", "D. capacity"], answer: 3 },
+  { q: "9. A \"megger\" is an electrical instrument used to measure:", options: ["A. current", "B. resistance", "C. voltage", "D. wattage"], answer: 1 },
+  { q: "10. When a run of conduit would require many right angle bends, it is necessary to install pull boxes because:", options: ["A. conduit cannot be bent", "B. otherwise injury to the wires may result during installation", "C. conduit comes in fixed lengths", "D. the conduit requires support"], answer: 1 },
+  { q: "11. The metal frames of some electrical units are grounded mainly to:", options: ["A. eliminate short-circuits", "B. save insulating material", "C. protect against shock", "D. prevent overloading"], answer: 2 },
+  { q: "12. A motor which can be operated only from an a.c. power source is:", options: ["A. a shunt motor", "B. a series motor", "C. a compound motor", "D. an induction motor"], answer: 3 },
+  { q: "13. Of the following, the poorest conductor of electricity is:", options: ["A. mercury", "B. sulphuric acid", "C. distilled water", "D. salt water"], answer: 2 },
+  { q: "14. The insulation provided between commutator bars on a d.c. motor is generally:", options: ["A. mica", "B. mica", "C. porcelain", "D. transite"], answer: 0 },
+  { q: "15. Nichrome wire should be most suitable for use in:", options: ["A. a transformer", "B. a motor", "C. an incandescent lamp", "D. a heating element"], answer: 3 },
+  { q: "16. Electrical outlet boxes do not have to be drilled for the entrance of conduit into the boxes if they are provided with:", options: ["A. bushings", "B. knockouts", "C. hickeys", "D. couplings"], answer: 1 },
+  { q: "17. The minimum number of field windings in a compound motor is:", options: ["A. 1", "B. 2", "C. 3", "D. 4"], answer: 1 },
+  { q: "18. The motor most likely to reach a dangerous speed if operated at normal voltage and no load is a:", options: ["A. shunt motor", "B. series motor", "C. compound motor", "D. synchronous motor"], answer: 1 },
+  { q: "19. If three 6-volt batteries are connected in parallel, the resultant voltage will be:", options: ["A. 18 volts", "B. 9 volts", "C. 6 volts", "D. 2 volts"], answer: 2 },
+  { q: "20. If an incandescent lamp is operated at a voltage below its rated voltage then it:", options: ["A. will operate more efficiently", "B. will have a longer life", "C. will take more power", "D. is more likely to fail by arcing"], answer: 1 },
+  { q: "21. Four resistors, having respective current ratings of 1, 2, 3 and 4 amperes, are connected in series. If the resistors are not to be overloaded, the maximum current permissible in this circuit is:", options: ["A. 1 ampere", "B. 2 amperes", "C. 3 amperes", "D. 4 amperes"], answer: 0 },
+  { q: "22. Conduit is reamed mainly to", options: ["A. protect the wires against sharp edges", "B. make threading easier", "C. increase its electrical conductivity", "D. improve its appearance"], answer: 0 },
+  { q: "23. Two 25-watt, 120-volt lamps are connected in parallel to a 120-volt source. The two lamps will take a total of", options: ["A. 12.5 watts", "B. 25 watts", "C. 50 watts", "D. 100 watts"], answer: 2 },
+  { q: "24. An advantage of the mercury arc rectifiers when compared to rotary converters is that the mercury arc rectifiers", options: ["A. are relatively quiet", "B. eliminate the use of transformers", "C. operate at lower voltage", "D. operate for shorter periods"], answer: 0 },
+  { q: "25. A bushing is usually provided on the end of a conduit running into a panel box. An important function of the bushing is to", options: ["A. insulate the conduit from the panel box", "B. support the panel box", "C. separate one conduit from another", "D. prevent injury to the wires"], answer: 3 },
+  { q: "26. An alternator is", options: ["A. an AC generator", "B. a ground detector device", "C. a choke coil", "D. a frequency meter"], answer: 0 },
+  { q: "27. The best immediate first-aid treatment for a scraped knee is to", options: ["A. apply plain vaseline", "B. use a knee splint", "C. apply heat", "D. wash it with soap and water"], answer: 3 },
+  { q: "28. The transfer switch will automatically connect the signal mains to emergency power when the normal power supply voltage is", options: ["A. 120 volts", "B. 115 volts", "C. 95 volts", "D. 85 volts"], answer: 3 },
+  { q: "29. The FIRST step in resetting the transfer switch to the normal side is to", options: ["A. open the potential relay", "B. push the reset button", "C. operate the special button", "D. close the potential relay"], answer: 1 },
+  { q: "30. The special push button is provided for", options: ["A. checking the operation of the transfer switch", "B. disconnecting the emergency supply", "C. automatically closing the potential relay", "D. resetting the control spring"], answer: 0 },
+  { q: "31. The reset button is used to", options: ["A. swing the transfer switch to the normal side", "B. swing the transfer switch to the emergency side", "C. energize the potential relay", "D. de-energize the potential relay"], answer: 0 },
+  { q: "32. The signal mains receive their power through the", options: ["A. potential relay", "B. transfer switch", "C. reset button", "D. special push button"], answer: 1 },
+  { q: "33. When the emergency power is feeding the signal mains, then the", options: ["A. transfer switch is automatically energized", "B. potential relay automatically goes to the closed position", "C. transfer switch is in the de-energized position", "D. special push button must be pressed to restore the normal power supply"], answer: 2 },
+  { q: "34. The transfer switch is held in the emergency supply position by", options: ["A. a retaining circuit", "B. a special push button", "C. gravity and a control spring", "D. a reset button"], answer: 2 },
+  { q: "35. To reduce the pitting of relay contacts which make and break frequently, the unit generally connected across them is", options: ["A. a transistor", "B. a spark gap", "C. a condenser", "D. a switch"], answer: 2 },
+  { q: "36. As compared to a solid conductor, a stranded conductor of the same diameter", options: ["A. has greater flexibility", "B. requires less insulation", "C. has greater resistance to corrosion", "D. does not require soldered connections"], answer: 0 },
+  { q: "37. The electrolyte in a lead storage battery is", options: ["A. sodium bicarbonate", "B. sulphuric acid", "C. muriatic acid", "D. ammonia"], answer: 1 },
+  { q: "38. Twisted pair wire is desirable for telephone circuits mainly because it", options: ["A. is less likely to pick up electrical interference", "B. can be run in long stretches without any support", "C. can carry heavy currents", "D. can withstand high voltage"], answer: 0 },
+  { q: "39. In the subway, heavy copper bonds are connected across the joints of the track rails. With the bonds installed, a voltage drop measurement is taken across the track rail joint. This test would be used mainly to determine the bond", options: ["A. temperature", "B. electrical resistance", "C. breakdown voltage", "D. leakage current"], answer: 1 },
+  { q: "40. In a polarized electric cord plug, the contact blades of the plug are", options: ["A. magnetized", "B. of a different color", "C. parallel to each other", "D. perpendicular to each other"], answer: 2 },
+  { q: "41. A capacity rating expressed in ampere-hours is commonly used for", options: ["A. insulators", "B. storage batteries", "C. switches", "D. inductances"], answer: 1 },
+  { q: "42. The number of ordinary flashlight cells which must be connected together to obtain 6 volts is", options: ["A. 1", "B. 2", "C. 3", "D. 4"], answer: 1 },
+  { q: "43. A bank of five 120-volt lamps connected in series is used for test purposes in the subway. This test bank would be best utilized in checking a circuit having", options: ["A. 120 volts d.c.", "B. 120 volts a.c.", "C. 24 volts", "D. 600 volts"], answer: 3 },
+  { q: "44. A step-up transformer is used to step up", options: ["A. voltage", "B. current", "C. power", "D. frequency"], answer: 0 },
+  { q: "45. A photoelectric cell is a device for changing", options: ["A. light into electricity", "B. electricity into light", "C. electricity into heat", "D. sound into electricity"], answer: 0 },
+  { q: "46. Decreasing the length of a wire conductor will", options: ["A. increase the current carrying capacity", "B. increase the current carrying capacity", "C. decrease the resistance", "D. increase the resistance"], answer: 2 },
+  { q: "47. The proper tool to use in making a hole through a transite panel is", options: ["A. a star drill", "B. a countersink", "C. a twist drill", "D. an auger"], answer: 0 },
+  { q: "48. Copper is a preferred metal in the construction of large knife switches because it is", options: ["A. soft", "B. flexible", "C. a good conductor", "D. light in weight"], answer: 2 },
+  { q: "49. The process of removing the insulation from a wire is called", options: ["A. sweating", "B. skinning", "C. tinning", "D. braiding"], answer: 1 },
+  { q: "50. The electric lamp which is used for providing heat is", options: ["A. a sodium vapor lamp", "B. a mercury vapor lamp", "C. a neon lamp", "D. an infra-red lamp"], answer: 3 }
+];
+
+let correctCount = 0;
+let incorrectCount = 0;
+let answeredQuestions = new Set();
+
+const quizContainer = document.getElementById('quiz');
+
+function showFinalScorePopup() {
+    const total = correctCount + incorrectCount;
+    const accuracy = total > 0 ? ((correctCount / total) * 100).toFixed(1) : 0;
+    const resultText = `Результаты: Правильных ответов: ${correctCount} | Неправильных ответов: ${incorrectCount} | Точность: ${accuracy}%`;
+    showPopup(resultText);
+}
+
+function showPopup(text) {
+    const popup = document.createElement('div');
+    popup.className = 'popup-overlay';
+    
+    const popupContent = document.createElement('div');
+    popupContent.className = 'popup-content';
+    
+    const textElement = document.createElement('p');
+    textElement.textContent = text;
+    popupContent.appendChild(textElement);
+    
+    const closeBtn = document.createElement('button');
+    closeBtn.textContent = 'OK';
+    closeBtn.onclick = () => popup.remove();
+    popupContent.appendChild(closeBtn);
+    
+    popup.appendChild(popupContent);
+    document.body.appendChild(popup);
+}
+
+quizData.forEach((item, idx) => {
+  const questionDiv = document.createElement('div');
+  questionDiv.className = 'question';
+  const questionTitle = document.createElement('h2');
+  questionTitle.textContent = item.q;
+  questionDiv.appendChild(questionTitle);
+  
+  if (item.image) {
+    const questionImage = document.createElement('img');
+    questionImage.src = item.image;
+    questionImage.style.maxWidth = '100%';
+    questionImage.style.height = 'auto';
+    questionImage.style.display = 'block';
+    questionImage.style.margin = '10px auto 20px auto';
+    questionDiv.appendChild(questionImage);
+  }
+
+  const optionsGrid = document.createElement('div');
+  optionsGrid.className = 'options-grid';
+  questionDiv.appendChild(optionsGrid);
+
+  item.options.forEach((opt, i) => {
+    const optionBtn = document.createElement('div');
+    optionBtn.className = 'option';
+    optionBtn.textContent = opt;
+    optionBtn.onclick = () => {
+      if (!answeredQuestions.has(idx)) {
+        answeredQuestions.add(idx);
+        
+        if (i === item.answer) {
+          optionBtn.classList.add('correct');
+          correctCount++;
+        } else {
+          optionBtn.classList.add('incorrect');
+          incorrectCount++;
+          const allOptions = optionsGrid.querySelectorAll('.option');
+          allOptions[item.answer].classList.add('correct');
+        }
+        
+        if (answeredQuestions.size === quizData.length) {
+            showFinalScorePopup();
+        }
+      }
+    };
+    optionsGrid.appendChild(optionBtn);
+  });
+
+  quizContainer.appendChild(questionDiv);
+});
+</script>
+
+</body>
+</html>
