@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 10px;
+    line-height: 1.5;
+    background-color: #f0f8ff;
+    color: #333;
+  }
+  h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+  }
+  .quiz-container {
+    max-width: 900px;
+    margin: auto;
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  .question {
+    margin-bottom: 25px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+  }
+  .question h2 {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    color: #444;
+  }
+  .options-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .option {
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #ffffff;
+    transition: background-color 0.2s, border-color 0.2s;
+  }
+  .option:hover {
+    background-color: #f0f0f0;
+    border-color: #aaa;
+  }
+  .correct {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155524;
+    font-weight: bold;
+    pointer-events: none;
+  }
+  .incorrect {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+    font-weight: bold;
+    pointer-events: none;
+  }
+  /* Popup styles */
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  .popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 80%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+  }
+  .popup-content h3 {
+    margin-top: 0;
+  }
+  .popup-content p {
+    margin-bottom: 15px;
+    font-size: 1em;
+  }
+  .popup-content .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  .popup-content button {
+    padding: 8px 16px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+  }
+
+  /* Mobile-specific styles */
+  @media (max-width: 768px) {
+    body {
+      font-size: 1em;
+    }
+    .quiz-container {
+      margin: 10px;
+      padding: 10px;
+    }
+    h1 {
+      font-size: 1.5em;
+    }
+    .question h2 {
+      font-size: 1em;
+    }
+    .option {
+      font-size: 0.9em;
+      padding: 8px 10px;
+    }
+    .popup-content {
+      padding: 15px;
+    }
+    .popup-content button {
+      font-size: 0.8em;
+      padding: 8px 12px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="quiz-container">
+  <h1>Difficult questions</h1>
+  <div id="quiz"></div>
+</div>
+
+<script>
+const quizData = [
+    {
+        q: "35. To reduce the pitting of relay contacts which make and break frequently, the unit generally connected across them is",
+        options: ["A. a transistor", "B. a spark gap", "C. a condenser", "D. a switch"],
+        answer: 2,
+        explanation: {
+            en: "Correct answer: C. a condenser. Explanation: Pitting of relay contacts is caused by high voltage that occurs when an inductive circuit (like a relay coil) is broken. This voltage tries to maintain the current, creating an electrical arc between the contacts as they separate. A condenser (capacitor) connected in parallel with the contacts acts as a buffer. It absorbs the energy from the voltage spike, reducing it and preventing arcing and contact damage.",
+            ru: "Правильный ответ: C. a condenser. Объяснение: Искрение (pitting) контактов реле происходит из-за высокого напряжения, которое возникает при размыкании цепи с индуктивной нагрузкой (например, катушка реле). Это напряжение пытается поддерживать ток, вызывая электрическую дугу между размыкающимися контактами. Конденсатор, подключенный параллельно контактам, действует как буфер. Он поглощает энергию скачка напряжения, тем самым снижая его и предотвращая образование дуги и повреждение контактов."
+        }
+    },
+    {
+        q: "33. When the emergency power is feeding the signal mains, then the",
+        options: ["A. transfer switch is automatically energized", "B. potential relay automatically goes to the closed position", "C. transfer switch is in the de-energized position", "D. special push button must be pressed to restore the normal power supply"],
+        answer: 2,
+        explanation: {
+            en: "Correct answer: C. transfer switch is in the de-energized position. Explanation: When a system switches to emergency power, it's because the main power has failed. The transfer switch, which is normally held in the \"normal\" position by electrical energy from the main source, loses that energy and mechanically switches to the \"emergency\" position. It's in a de-energized state as its operation doesn't require constant current.",
+            ru: "Правильный ответ: C. transfer switch is in the de-energized position. Объяснение: Когда система переключается на аварийное питание, это происходит потому, что основное питание пропало. Переключатель (transfer switch), который обычно удерживается в «нормальном» положении с помощью электромагнитной энергии от основного источника, теряет энергию и механически переключается в «аварийное» положение. Таким образом, он находится в обесточенном (de-energized) состоянии, так как его работа не требует постоянного тока."
+        }
+    },
+    {
+        q: "32. The signal mains receive their power through the",
+        options: ["A. potential relay", "B. transfer switch", "C. reset button", "D. special push button"],
+        answer: 1,
+        explanation: {
+            en: "Correct answer: B. transfer switch. Explanation: A transfer switch is a device that automatically or manually redirects power to a signal line from either the main source or a backup source. This ensures the signal will continue to function even if the main power is cut off, making it a key component.",
+            ru: "Правильный ответ: B. transfer switch. Объяснение: Переключатель (transfer switch) — это устройство, которое автоматически или вручную перенаправляет питание на сигнальную линию либо от основного источника, либо от резервного. Это гарантирует, что сигнал будет работать даже в случае отключения основного электроснабжения, что делает его ключевым компонентом."
+        }
+    },
+    {
+        q: "30. The special push button is provided for",
+        options: ["A. checking the operation of the transfer switch", "B. disconnecting the emergency supply", "C. automatically closing the potential relay", "D. resetting the control spring"],
+        answer: 0,
+        explanation: {
+            en: "Correct answer: A. checking the operation of the transfer switch. Explanation: A special push button is used to test the transfer switch's operation. Pressing this button simulates a main power failure, allowing you to confirm that the system correctly switches to the backup power and then returns to normal operation when the main power is “restored.\"",
+            ru: "Правильный ответ: A. checking the operation of the transfer switch. Объяснение: Специальная кнопка (special push button) используется для проверки работоспособности переключателя. При нажатии этой кнопки имитируется отключение основного питания, что позволяет убедиться, что система успешно переключится на резервный источник, а затем вернется к нормальной работе, когда основное питание будет \"восстановлено\"."
+        }
+    },
+    {
+        q: "29. The FIRST step in resetting the transfer switch to the normal side is to",
+        options: ["A. open the potential relay", "B. push the reset button", "C. operate the special button", "D. close the potential relay"],
+        answer: 3,
+        explanation: {
+            en: "Correct answer: D. close the potential relay. Explanation: Before the transfer switch can revert to its normal position, you must first confirm that main power has been restored. This is done by closing the potential relay. The relay activates when the main voltage reaches a functional level, signaling to the transfer switch that it can return to its original state.",
+            ru: "Правильный ответ: D. close the potential relay. Объяснение: Перед тем, как переключатель вернётся в нормальное положение, необходимо убедиться, что основное питание восстановлено. Это делается путем замыкания (closing) потенциального реле (potential relay). Оно активируется, когда основное напряжение достигает рабочего уровня, и сигнализирует переключателю, что он может вернуться в исходное состояние."
+        }
+    },
+    {
+        q: "18. The motor most likely to reach a dangerous speed if operated at normal voltage and no load is a:",
+        options: ["A. shunt motor", "B. series motor", "C. compound motor", "D. synchronous motor"],
+        answer: 1,
+        explanation: {
+            en: "Correct answer: B. series motor. Explanation: A series motor has its field winding connected in series with the armature winding. When it operates with no load, the armature current (and the field current) is very low. This results in a significantly weakened magnetic field. Since the motor's speed is inversely proportional to the magnetic field strength, its speed can increase uncontrollably to dangerously high levels.",
+            ru: "Правильный ответ: B. series motor. Объяснение: Двигатель последовательного возбуждения (series motor) имеет обмотку возбуждения, подключенную последовательно с обмоткой якоря. При работе без нагрузки, его ток якоря (и ток возбуждения) очень мал. Это приводит к значительному снижению магнитного поля (слабый магнит). Поскольку скорость двигателя обратно пропорциональна силе магнитного поля, его скорость может неконтролируемо возрастать до опасно высоких значений."
+        }
+    }
+];
+
+let correctCount = 0;
+let incorrectCount = 0;
+let answeredQuestions = new Set();
+const quizContainer = document.getElementById('quiz');
+
+function showFinalScorePopup() {
+    const total = correctCount + incorrectCount;
+    const accuracy = total > 0 ? ((correctCount / total) * 100).toFixed(1) : 0;
+    const resultText = `Результаты: Правильных ответов: ${correctCount} | Неправильных ответов: ${incorrectCount} | Точность: ${accuracy}%`;
+    showPopup(resultText);
+}
+
+function showExplanationPopup(explanationData) {
+    const popup = document.createElement('div');
+    popup.className = 'popup-overlay';
+    const popupContent = document.createElement('div');
+    popupContent.className = 'popup-content';
+    
+    const textElement = document.createElement('p');
+    textElement.textContent = explanationData.en;
+    popupContent.appendChild(textElement);
+    
+    const buttonsDiv = document.createElement('div');
+    buttonsDiv.className = 'buttons';
+    
+    const okBtn = document.createElement('button');
+    okBtn.textContent = 'OK';
+    okBtn.onclick = () => popup.remove();
+    buttonsDiv.appendChild(okBtn);
+    
+    const translateBtn = document.createElement('button');
+    translateBtn.textContent = 'Перевести на русский';
+    translateBtn.onclick = () => {
+        textElement.textContent = explanationData.ru;
+        translateBtn.style.display = 'none';
+    };
+    buttonsDiv.appendChild(translateBtn);
+
+    popupContent.appendChild(buttonsDiv);
+    popup.appendChild(popupContent);
+    document.body.appendChild(popup);
+}
+
+function showPopup(text) {
+    const popup = document.createElement('div');
+    popup.className = 'popup-overlay';
+    const popupContent = document.createElement('div');
+    popupContent.className = 'popup-content';
+    const textElement = document.createElement('p');
+    textElement.textContent = text;
+    popupContent.appendChild(textElement);
+    const closeBtn = document.createElement('button');
+    closeBtn.textContent = 'OK';
+    closeBtn.onclick = () => popup.remove();
+    popupContent.appendChild(closeBtn);
+    popup.appendChild(popupContent);
+    document.body.appendChild(popup);
+}
+
+quizData.forEach((item, idx) => {
+    const questionDiv = document.createElement('div');
+    questionDiv.className = 'question';
+    const questionTitle = document.createElement('h2');
+    questionTitle.textContent = item.q;
+    questionDiv.appendChild(questionTitle);
+
+    const optionsGrid = document.createElement('div');
+    optionsGrid.className = 'options-grid';
+    questionDiv.appendChild(optionsGrid);
+
+    item.options.forEach((opt, i) => {
+        const optionBtn = document.createElement('div');
+        optionBtn.className = 'option';
+        optionBtn.textContent = opt;
+        optionBtn.onclick = () => {
+            if (!answeredQuestions.has(idx)) {
+                answeredQuestions.add(idx);
+                if (i === item.answer) {
+                    optionBtn.classList.add('correct');
+                    correctCount++;
+                } else {
+                    optionBtn.classList.add('incorrect');
+                    incorrectCount++;
+                    const allOptions = optionsGrid.querySelectorAll('.option');
+                    allOptions[item.answer].classList.add('correct');
+                    if (item.explanation) {
+                        showExplanationPopup(item.explanation);
+                    }
+                }
+                if (answeredQuestions.size === quizData.length) {
+                    showFinalScorePopup();
+                }
+            }
+        };
+        optionsGrid.appendChild(optionBtn);
+    });
+    quizContainer.appendChild(questionDiv);
+});
+</script>
+
+</body>
+</html>
