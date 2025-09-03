@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EXAMINATION SECTION TEST 2</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 10px;
+    line-height: 1.5;
+    background-color: #f0f8ff;
+  }
+  h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+  }
+  .quiz-container {
+    max-width: 900px;
+    margin: auto;
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  .question {
+    margin-bottom: 25px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+  }
+  .question h2 {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    color: #444;
+  }
+  .options-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .option {
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #ffffff;
+    transition: background-color 0.2s, border-color 0.2s;
+  }
+  .option:hover {
+    background-color: #f0f0f0;
+    border-color: #aaa;
+  }
+  .correct {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155524;
+    font-weight: bold;
+    pointer-events: none;
+  }
+  .incorrect {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+    font-weight: bold;
+    pointer-events: none;
+  }
+  /* Popup styles */
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  .popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 80%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  .popup-content h3 {
+    margin-top: 0;
+  }
+  .popup-content p {
+    margin-bottom: 15px;
+    font-size: 1em;
+  }
+  .popup-content button {
+    padding: 8px 16px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+  }
+
+  /* Mobile-specific styles */
+  @media (max-width: 768px) {
+    .quiz-container {
+      margin: 10px;
+      padding: 10px;
+    }
+    .question h2 {
+      font-size: 1em;
+    }
+    .option {
+      font-size: 0.9em;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="quiz-container">
+  <h1>EXAMINATION SECTION<br>TEST 2</h1>
+  <div id="quiz"></div>
+</div>
+
+<script>
+const quizData = [
+    {
+        q: "1. Starting with all switches open, then to light the lamp it is necessary to close switch",
+        options: ["A. No. 1", "B. No. 2", "C. No. 3", "D. No. 4"],
+        answer: 0,
+        image: "https://i.imgur.com/pwGHZgy.png"
+    },
+    {
+        q: "2. Closing one of the four switches will prevent the lamp from being lighted. This switch is",
+        options: ["A. No. 1", "B. No. 2", "C. No. 3", "D. No. 4"],
+        answer: 3
+    },
+    {
+        q: "3. The two switches which must be in the closed position to obtain a reading on the voltmeter are",
+        options: ["A. No. 1 and No. 4", "B. No. 2 and No. 3", "C. No. 3 and No. 4", "D. No. 1 and No. 2"],
+        answer: 3
+    },
+    {
+        q: "4. To obtain a reading on the ammeter it is necessary to have",
+        options: ["A. switch No. 2 open", "B. switch No. 4 closed", "C. switch No. 3 closed and switch No. 1 open", "D. switch No. 3 open and switch No. 1 closed"],
+        answer: 1
+    },
+    {
+        q: "5. When current is flowing through the 10-ohm resistors the voltmeter reading will be",
+        options: ["A. 100 volts", "B. 60 volts", "C. 40 volts", "D. 24 volts"],
+        answer: 3
+    },
+    {
+        q: "6. In this circuit the ammeter should have a scale range of at least zero to",
+        options: ["A. 1 ampere", "B. 2 amperes", "C. 3 amperes", "D. 4 amperes"],
+        answer: 3
+    },
+    {
+        q: "7. With the switches set for this circuit to take maximum current from the line, then the current through the fuse will be approximately",
+        options: ["A. 1 ampere", "B. 2 amperes", "C. 4 amperes", "D. 10 amperes"],
+        answer: 3
+    },
+    {
+        q: "8. The abbreviations I.D. and O.D. used in describing conduit directly refer to its",
+        options: ["A. diameter", "B. length", "C. conductivity", "D. weight"],
+        answer: 0
+    },
+    {
+        q: "9. To cut off a piece of #0000 insulated copper cable it is best to use",
+        options: ["A. a hacksaw", "B. side-cutting pliers", "C. an electrician's knife", "D. light nippers"],
+        answer: 0
+    },
+    {
+        q: "10. Conduit is galvanized in order to",
+        options: ["A. improve electrical conductivity", "B. protect it from corrosion", "C. obtain a smooth surface", "D. insulate it"],
+        answer: 1
+    },
+    {
+        q: "11. The best material for an electrical contact finger subjected to constant bending is",
+        options: ["A. brass", "B. aluminum", "C. tin", "D. phosphor bronze"],
+        answer: 3
+    },
+    {
+        q: "12. One disadvantage of porcelain as an insulator is that it is",
+        options: ["A. only good for low voltage", "B. not satisfactory on a-c circuits", "C. a brittle material", "D. easily compressed"],
+        answer: 2
+    },
+    {
+        q: "13. To vary the speed of a d-c motor-generator set, it would be necessary to",
+        options: ["A. use a rheostat in the generator field", "B. use a voltage regulator on the generator output", "C. use a rheostat in the motor field", "D. shift the brushes on the generator"],
+        answer: 2
+    },
+    {
+        q: "14. The ordinary telephone transmitter contains granules of",
+        options: ["A. sulphur", "B. carbon", "C. borax", "D. lucite"],
+        answer: 1
+    },
+    {
+        q: "15. A stubby screwdriver is especially designed for turning screws",
+        options: ["A. having a damaged screw slot", "B. which are jammed tight", "C. with stripped threads", "D. inaccessible to a longer screw driver"],
+        answer: 3
+    },
+    {
+        q: "16. It is important to make certain a ladle does not contain water before using it to scoop up molten solder since the water may",
+        options: ["A. cause serious personal injury", "B. prevent the solder from sticking", "C. cool the solder", "D. dilute the solder"],
+        answer: 0
+    },
+    {
+        q: "17. Steel helmets give workers the most protection from",
+        options: ["A. eye injuries", "B. falling objects", "C. fire", "D. electric shock"],
+        answer: 1
+    },
+    {
+        q: "18. A slight coating of rust on small tools is best removed by",
+        options: ["A. applying a heavy coat of vaseline", "B. rubbing with kerosene and fine steel wool", "C. scraping with a sharp knife", "D. rubbing with a dry cloth"],
+        answer: 1
+    },
+    {
+        q: "19. In the case of an auto-transformer, it is INCORRECT to say that",
+        options: ["A. the primary is insulated from the secondary", "B. a magnetic core is used", "C. a.c. is required", "D. it can be used for power purposes"],
+        answer: 0
+    },
+    {
+        q: "20. The number 6-32 for a machine screw specifies the diameter and the",
+        options: ["A. length", "B. the number of threads per inch", "C. type of head", "D. hardness"],
+        answer: 1
+    },
+    {
+        q: "21. It is undesirable to allow a soldering iron to over-heat since this would cause",
+        options: ["A. softening of the copper tip", "B. hardening of the copper tip", "C. the soldering fumes to become poisonous", "D. damage to the tinned surface of the tip"],
+        answer: 3
+    },
+    {
+        q: "22. To measure the small gap between relay contacts, it would be best to use a",
+        options: ["A. vernier caliper", "B. depth gage", "C. feeler gage", "D. micrometer"],
+        answer: 2
+    },
+    {
+        q: "23. Acid is not a desirable flux to use in soldering small connections mainly because it",
+        options: ["A. is corrosive", "B. is expensive", "C. requires skill in handling", "D. requires a very hot iron"],
+        answer: 0
+    },
+    {
+        q: "24. It is good practice to use standard electrician's pliers to",
+        options: ["A. tighten nuts", "B. remove insulation from a wire", "C. cut BX sheath", "D. shorten a wood screw"],
+        answer: 1
+    },
+    {
+        q: "25. Three resistors having respective resistances of 12 ohms, 6 ohms, and 1 ohm are connected in parallel. The combined resistance will be",
+        options: ["A. 18 ohms", "B. 6 ohms", "C. 4 ohms", "D. less than 1 ohm"],
+        answer: 3
+    },
+    {
+        q: "26. The star drill is a multiple-pointed chisel used for drilling",
+        options: ["A. brass", "B. stone and concrete", "C. wood", "D. aluminum"],
+        answer: 1
+    },
+    {
+        q: "27. A screwdriver in good condition should have a blade whose bottom edge is",
+        options: ["A. rounded", "B. knife-sharp", "C. Chisel-shaped", "D. flat"],
+        answer: 3
+    },
+    {
+        q: "28. From the standpoint of management, the most desirable characteristic in a newly appointed helper would be",
+        options: ["A. the lack of outside personal interests", "B. the ability to keep to himself and away from the other employees", "C. the ability to satisfactorily perform his assigned duties", "D. eagerness to ask questions about all phases of the work"],
+        answer: 2
+    },
+    {
+        q: "29. To provide transit employees with quick assistance in the case of minor injuries it would be most logical to",
+        options: ["A. instruct the employees in first-aid techniques", "B. provide each employee with a first-aid kit", "C. have one centrally located medical office for the transit system", "D. equip all employees with walkie-talkie devices"],
+        answer: 0
+    },
+    {
+        q: "30. One result of corrosion of an electrical connection is that",
+        options: ["A. its resistance increases", "B. its resistance decreases", "C. its temperature drops", "D. the current in the circuit increases"],
+        answer: 0
+    },
+    {
+        q: "31. Subway cars are equipped with storage batteries. These batteries are LEAST likely to be used to supply power to the car",
+        options: ["A. traction motors", "B. emergency lights", "C. public address system", "D. motorman-conductor communication system"],
+        answer: 0
+    },
+    {
+        q: "32. The size of a screwdriver is defined by the",
+        options: ["A. length of the handle", "B. thickness of the blade", "C. length of the blade", "D. diameter of the handle"],
+        answer: 2
+    },
+    {
+        q: "33. A newly appointed helper would be expected to do his work in the manner prescribed by his foreman because",
+        options: ["A. it insures discipline", "B. good results are more certain with less supervision", "C. no other method would work", "D. it permits speed-up"],
+        answer: 1
+    },
+    {
+        q: "34. When a soldered splice is covered with both rubber and friction tape, the main function of the friction tape is to",
+        options: ["A. provide extra electrical insulation", "B. protect the rubber tape", "C. make the splice water-tight", "D. increase the mechanical strength of the splice"],
+        answer: 1
+    },
+    {
+        q: "35. Powdered graphite is a good",
+        options: ["A. lubricant", "B. abrasive", "C. adhesive", "D. insulator"],
+        answer: 0
+    },
+    {
+        q: "36. A zero adjusting screw will be found on most",
+        options: ["A. overload relays", "B. lightning arrestors", "C. voltmeters", "D. switches"],
+        answer: 2
+    },
+    {
+        q: "37. Lock nuts are frequently used in making electrical connections on terminal boards. The purpose of the lock-nuts is to",
+        options: ["A. keep the connections from loosening through vibration", "B. prevent unauthorized personnel from tampering with the connections", "C. eliminate the use of flat washers", "D. increase the contact area at the connection point"],
+        answer: 0
+    },
+    {
+        q: "38. The abbreviation D.P.D.T. used in electrical work describes a type of",
+        options: ["A. switch", "B. motor", "C. fuse", "D. generator"],
+        answer: 0
+    },
+    {
+        q: "39. A wire has a resistance of 2 ohms per 1000 feet. A piece of this wire 1500 feet long will have a resistance of",
+        options: ["A. 1 ohm", "B. 1.5 ohms", "C. 2.5 ohms", "D. 3 ohms"],
+        answer: 3
+    },
+    {
+        q: "40. The dielectric strength of the oil used in an oil filled transformer is a direct measure of the oil's",
+        options: ["A. viscosity", "B. weight", "C. breakdown voltage", "D. current carrying capacity"],
+        answer: 2
+    },
+    {
+        q: "41. The power fed to a mercury arc rectifier would probably come from",
+        options: ["A. a rotary converter", "B. a d.c. generator", "C. an a.c. source", "D. a battery"],
+        answer: 2
+    },
+    {
+        q: "42. The ordinary plug fuse has",
+        options: ["A. knife blade contacts", "B. screw base contacts", "C. ferrule contacts", "D. jack contacts"],
+        answer: 1
+    },
+    {
+        q: "43. When using a hacksaw, it is good practice to",
+        options: ["A. tighten the blade in the frame by using pliers on the wing nut", "B. use heavy pressure on both the forward and return strokes", "C. slow the speed of cutting when the piece is almost cut through", "D. use very short, very rapid strokes"],
+        answer: 2
+    },
+    {
+        q: "44. A new helper is told by an experienced helper that he is not doing a particular job properly. The best reason for the new helper to give this advice due consideration is that the other helper",
+        options: ["A. has the authority to enforce his advice", "B. has more experience on the job", "C. will be resentful if his advice is not taken", "D. will not help the new man again if his advice is not taken"],
+        answer: 1
+    },
+    {
+        q: "45. The main purpose of the oil in an oil circuit breaker is to",
+        options: ["A. quench the arc", "B. lubricate the moving parts", "C. prevent corrosion", "D. absorb moisture"],
+        answer: 0
+    },
+    {
+        q: "46. A piece of electrical equipment which does NOT require a magnetic field for its operation is",
+        options: ["A. a motor", "B. a generator", "C. a transformer", "D. an electrostatic voltmeter"],
+        answer: 3
+    },
+    {
+        q: "47. The rating term '20-watts, 500-ohm' would generally be applied to a",
+        options: ["A. resistor", "B. condenser", "C. switch", "D. circuit breaker"],
+        answer: 0
+    },
+    {
+        q: "48. The core of an electro-magnet is usually made of",
+        options: ["A. lead", "B. iron", "C. brass", "D. bakelite"],
+        answer: 1
+    },
+    {
+        q: "49. The A.W.G. size is used in specifying",
+        options: ["A. wires", "B. condensers", "C. switches", "D. fuses"],
+        answer: 0
+    },
+    {
+        q: "50. The metal which is preferred for use in relay contacts is",
+        options: ["A. brass", "B. tin", "C. silver", "D. aluminum"],
+        answer: 2
+    }
+];
+
+let correctCount = 0;
+let incorrectCount = 0;
+let answeredQuestions = new Set();
+
+const quizContainer = document.getElementById('quiz');
+
+function showFinalScorePopup() {
+    const total = correctCount + incorrectCount;
+    const accuracy = total > 0 ? ((correctCount / total) * 100).toFixed(1) : 0;
+    const resultText = `Результаты: Правильных ответов: ${correctCount} | Неправильных ответов: ${incorrectCount} | Точность: ${accuracy}%`;
+    showPopup(resultText);
+}
+
+function showPopup(text) {
+    const popup = document.createElement('div');
+    popup.className = 'popup-overlay';
+    
+    const popupContent = document.createElement('div');
+    popupContent.className = 'popup-content';
+    
+    const textElement = document.createElement('p');
+    textElement.textContent = text;
+    popupContent.appendChild(textElement);
+    
+    const closeBtn = document.createElement('button');
+    closeBtn.textContent = 'OK';
+    closeBtn.onclick = () => popup.remove();
+    popupContent.appendChild(closeBtn);
+    
+    popup.appendChild(popupContent);
+    document.body.appendChild(popup);
+}
+
+quizData.forEach((item, idx) => {
+    const questionDiv = document.createElement('div');
+    questionDiv.className = 'question';
+    const questionTitle = document.createElement('h2');
+    questionTitle.textContent = item.q;
+    questionDiv.appendChild(questionTitle);
+    
+    // Добавление изображения, если оно есть в данных вопроса
+    if (item.image) {
+        const questionImage = document.createElement('img');
+        questionImage.src = item.image;
+        questionImage.style.maxWidth = '100%';
+        questionImage.style.height = 'auto';
+        questionImage.style.display = 'block';
+        questionImage.style.margin = '10px auto 20px auto';
+        questionDiv.appendChild(questionImage);
+    }
+
+    const optionsGrid = document.createElement('div');
+    optionsGrid.className = 'options-grid';
+    questionDiv.appendChild(optionsGrid);
+
+    item.options.forEach((opt, i) => {
+        const optionBtn = document.createElement('div');
+        optionBtn.className = 'option';
+        optionBtn.textContent = opt;
+        optionBtn.onclick = () => {
+            if (!answeredQuestions.has(idx)) {
+                answeredQuestions.add(idx);
+                
+                if (i === item.answer) {
+                    optionBtn.classList.add('correct');
+                    correctCount++;
+                } else {
+                    optionBtn.classList.add('incorrect');
+                    incorrectCount++;
+                    const allOptions = optionsGrid.querySelectorAll('.option');
+                    allOptions[item.answer].classList.add('correct');
+                }
+                
+                if (answeredQuestions.size === quizData.length) {
+                    showFinalScorePopup();
+                }
+            }
+        };
+        optionsGrid.appendChild(optionBtn);
+    });
+
+    quizContainer.appendChild(questionDiv);
+});
+</script>
+
+</body>
+</html>
