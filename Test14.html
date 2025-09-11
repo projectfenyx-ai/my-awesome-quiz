@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXAMINATION SECTION TEST 14</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 10px;
+            line-height: 1.6;
+            background-color: #f0f8ff;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .quiz-container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .question {
+            margin-bottom: 25px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 15px;
+        }
+        .question h3 {
+            margin-bottom: 10px;
+            font-size: 1.1em;
+            color: #444;
+        }
+        .options-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .option {
+            padding: 10px 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            cursor: pointer;
+            background-color: #ffffff;
+            transition: background-color 0.2s, border-color 0.2s;
+        }
+        .option:hover {
+            background-color: #f0f0f0;
+            border-color: #aaa;
+        }
+        .correct {
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+            color: #155524;
+            font-weight: bold;
+            pointer-events: none;
+        }
+        .incorrect {
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+            color: #721c24;
+            font-weight: bold;
+            pointer-events: none;
+        }
+        /* Popup styles */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .popup-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 80%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        .popup-content h3 {
+            margin-top: 0;
+        }
+        .popup-content p {
+            margin-bottom: 15px;
+            font-size: 1em;
+        }
+        .popup-content button {
+            padding: 8px 16px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+        /* Mobile-specific styles */
+        @media (max-width: 768px) {
+            .quiz-container {
+                margin: 10px;
+                padding: 10px;
+            }
+            .question h3 {
+                font-size: 1em;
+            }
+            .option {
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h2>EXAMINATION SECTION TEST 14</h2>
+        <div id="quiz"></div>
+    </div>
+
+    <script>
+        const quizData = [
+            {
+                q: "1. It is the least likely to use the rheostat in the connection to:",
+                options: ["A. motors", "B. transformers", "C. generators", "D. batteries"],
+                answer: 1
+            },
+            {
+                q: "2. How much force must be exerted in order to start lifting the weight?",
+                options: ["A. 127.47", "B. 147.27", "C. 152.39", "D. 176.56"],
+                answer: 1
+            },
+            {
+                q: "3. Capacitor in a motor circuit is used to",
+                options: ["A. decrease inductive reaction", "B. increase starting torque", "C. increase output", "D. facilitate running"],
+                answer: 1
+            },
+            {
+                q: "4. The part of a overhead crane that lifts and lowers loads is called the:",
+                options: ["A. bridge", "B. trolley", "C. rail", "D. hoist"],
+                answer: 3
+            },
+            {
+                q: "5. A dynamo is",
+                options: ["A. used to convert electrical energy into mechanical energy", "B. used to convert mechanical energy into electrical energy", "C. a solid-state transformer", "D. an electromagnet"],
+                answer: 1
+            },
+            {
+                q: "6. If DC motor run sporadically, the first part to check is:",
+                options: ["A. power wires", "B. ground wire", "C. brushes", "D. fuse"],
+                answer: 2
+            },
+            {
+                q: "7. The maximum amount that a part may exceed its specified size and still be acceptable is called:",
+                options: ["A. clearance", "B. fit", "C. tolerance", "D. specification"],
+                answer: 2
+            },
+            {
+                q: "8. It is not a good practice to cut copper thin-wall tube with ordinary three-wheel cutter, because",
+                options: ["A. it requires too much time", "B. end of the tube can not be reamed", "C. tube may collapse", "D. too much tube will be wasted"],
+                answer: 2
+            },
+            {
+                q: "9. Reciprocating air compressor doesn't have one of the following.",
+                options: ["A. Intake valve", "B. Piston", "C. Impeller", "D. Discharge valve"],
+                answer: 2
+            },
+            {
+                q: "10. The shims should be used:",
+                options: ["A. in place of washers", "B. as a locking device", "C. to replace a missing fastener", "D. for proper alignment"],
+                answer: 3
+            },
+            {
+                q: "11. Which one of the following machines used to bend sheet metal?",
+                options: ["A. planer", "B. brake", "C. miller", "D. router"],
+                answer: 1
+            },
+            {
+                q: "12. Why are the key ways is placed on a shaft?",
+                options: ["A. To make it easier to clean", "B. To prevent a pulley or gear from turning on a shaft", "C. For lubrication", "D. To prevent shaft from turning in wrong direction"],
+                answer: 1
+            },
+            {
+                q: "13. The heat that is generated or developed in an electric iron attributes to",
+                options: ["A. power factor", "B. reactive", "C. true", "D. apparent"],
+                answer: 2
+            },
+            {
+                q: "14. Which one of the following is not simple mechanical machine?",
+                options: ["A. Screw", "B. Spring", "C. Lever", "D. Wedge"],
+                answer: 1
+            },
+            {
+                q: "15. When the temperature drops from 37°F to -8°F, the number of degrees the temperature on the Centigrade scale will fall during the same period is:",
+                options: ["A. 7-2/9", "B. 25", "C. 49", "D. 57"],
+                answer: 1
+            },
+            {
+                q: "16. Of the following, the best tool for turning conduits is a:",
+                options: ["A. chain wrench", "B. crescent wrench", "C. monkey wrench", "D. spanner wrench"],
+                answer: 0
+            },
+            {
+                q: "17. In order to increase efficiency of the power transformer, a(an) __________ is provided.",
+                options: ["A. appropriate distance between windings", "B. laminating core", "C. insulation between the windings", "D. cooling oil"],
+                answer: 1
+            },
+            {
+                q: "18. If storage battery is overcharged it will cause:",
+                options: ["A. excessive gassing", "B. water boiling", "C. breaking of terminal", "D. sulphating of plates"],
+                answer: 0
+            },
+            {
+                q: "19. A coupling is:",
+                options: ["A. fitting with internal threads", "B. fitting with external threads", "C. fitting between two conduits of different sizes", "D. fitting between three conduits of different sizes"],
+                answer: 0
+            },
+            {
+                q: "20. Intercooler in compression system is used to",
+                options: ["A. remove lubricating oil", "B. remove moisture", "C. cool off an air", "D. condense moisture"],
+                answer: 1
+            },
+            {
+                q: "21. The fractional equivalent of .0625 is:",
+                options: ["A. 1/16", "B. 1/15", "C. 1/14", "D. 1/13"],
+                answer: 0
+            },
+            {
+                q: "22. Covers for street manholes are usually round shaped. Reason for this is that cover",
+                options: ["A. take less space on the street", "B. easy to replace", "C. cannot fall down", "D. fit for different sizes of manholes"],
+                answer: 2
+            },
+            {
+                q: "23. One mechanical horsepower is equal:",
+                options: ["A. 33,000 lbs x Ft/min.", "B. 746 Lbs x min. / Ft", "C. 1,890,000 Ft x Lbs / hour.", "D. 550 sec x Lbs / Ft."],
+                answer: 0
+            },
+            {
+                q: "24. Ohmmeter, connected across a lighting bulb, could:",
+                options: ["A. check correct resistance", "B. check incorrect resistance", "C. be damaged", "D. not work"],
+                answer: 2
+            },
+            {
+                q: "25. What is the purpose of the evaporator unit in a cooling system?",
+                options: ["A. Regulate the refrigerant flow.", "B. Absorb heat from the building air.", "C. Release heat to the building exterior.", "D. Absorb heat from the refrigerant."],
+                answer: 3
+            },
+            {
+                q: "26. The total surface area of a 5-inch solid cube is:",
+                options: ["A. 100 sq. inches", "B. 125 sq. inches", "C. 150 sq. inches", "D. 200 sq. inches"],
+                answer: 2
+            },
+            {
+                q: "27. In order to reduce an ammeter __________, shunt is installed.",
+                options: ["A. resistance", "B. current", "C. voltage", "D. power"],
+                answer: 1
+            },
+            {
+                q: "28. In a secondary cell, chemical action is",
+                options: ["A. creates corrosion of the cells", "B. combustible", "C. only on negative frames", "D. reversible"],
+                answer: 3
+            },
+            {
+                q: "29. One cubic yard has:",
+                options: ["A. 46656 cubic inches", "B. 46565 cubic inches", "C. 46665 cubic inches", "D. 64 cubic feet"],
+                answer: 0
+            },
+            {
+                q: "30. When pulling a cartridge fuse from the clips, you should, if possible:",
+                options: ["A. ground the circuit", "B. de-energize the circuit", "C. ground a resistor", "D. use insulated pliers"],
+                answer: 1
+            },
+            {
+                q: "31. What steel tool has a cutting edge and should be used in dressing, cutting or shaping?",
+                options: ["A. Ladle", "B. Chisel", "C. File card", "D. Reamer"],
+                answer: 1
+            },
+            {
+                q: "32. To conduct trouble shooting in the series circuit by using voltmeter, we must:",
+                options: ["A. cut the power off and connect in parallel to every device in the circuit.", "B. cut the power off and check point to point starting from any power terminal until open point is found.", "C. leave the power on, attach one lead to power terminal and check point to point starting from opposite power terminal.", "D. leave the power on and connect in series to every device in the circuit until shorted point is found."],
+                answer: 1
+            },
+            {
+                q: "33. Regular solder primary consists of",
+                options: ["A. lead and zinc", "B. zinc and tin", "C. tin and mica", "D. lead and tin"],
+                answer: 3
+            },
+            {
+                q: "34. To measure a voltage of about 80 volts, you use a voltmeter having several different ranges. To obtain maximum accuracy, you should choose the range of:",
+                options: ["A. 400 volts", "B. 200 volts", "C. 150 volts", "D. 100 volts"],
+                answer: 3
+            },
+            {
+                q: "35. It takes three maintainers eight days to do a certain job. How many maintainers needed to do same job in 6 days?",
+                options: ["A. 5", "B. 4", "C. 8", "D. 6"],
+                answer: 1
+            },
+            {
+                q: "36. Toggle switch in lighting circuit is used to:",
+                options: ["A. quick closing and slow opening", "B. quick closing and quick opening", "C. slow closing and quick opening", "D. slow closing and slow opening"],
+                answer: 1
+            },
+            {
+                q: "37. The one of the following which is not a safe practice when lifting heavy objects is to:",
+                options: ["A. keep the back as nearly upright as possible", "B. keep lifting until you get help if the object is too heavy.", "C. spread the feet slightly apart while lifting", "D. use the arm and legs muscles"],
+                answer: 2
+            },
+            {
+                q: "38. Which of the following is better to use for cleaning a tip of a soldering iron?",
+                options: ["A. A file", "B. A clean rag", "C. A moist sponge", "D. A sand papers"],
+                answer: 2
+            },
+            {
+                q: "39. If speed of gear D equal 60 rpm, then gears A, B, C and E would be rotating, respectively, at the speed of _____ rpm.",
+                options: ["A. 20, 10, 20, 10", "B. 20, 20, 10, 10", "C. 10, 20, 20, 10", "D. 20, 20, 10, 10"],
+                answer: 2
+            },
+            {
+                q: "40. The instrument used for measuring an AC cycles is:",
+                options: ["A. cycle meter", "B. frequency meter", "C. megger", "D. hydrometer"],
+                answer: 1
+            },
+            {
+                q: "41. Which of the following devices is needed in an emergency light installation?",
+                options: ["A. Automatic transfer switch.", "B. Two-pole breaker.", "C. Three-way switch.", "D. Overload protection."],
+                answer: 0
+            },
+            {
+                q: "42. To prevent the rubber gloves to be damaged while working on high voltage equipment, electrician should:",
+                options: ["A. carry extra pair of rubber gloves", "B. reinforce fingers with rubber tape", "C. work without gloves", "D. wear leather gloves on a top of rubber gloves"],
+                answer: 3
+            },
+            {
+                q: "43. Tubing with outside diameter 1-1/4 of an inch and a wall thickness of 1/16 of an inch has an inside diameter which is __________ of an inch.",
+                options: ["A. 1-1/2", "B. 1-1/8", "C. 1-5/8", "D. 15/16"],
+                answer: 1
+            },
+            {
+                q: "44. Wire that has twice the diameter of another wire of the same metal has __________ of another wire.",
+                options: ["A. twice the cross sectional area", "B. quarter of resistance", "C. four time the resistance", "D. double insulation"],
+                answer: 1
+            },
+            {
+                q: "45. During trouble shooting on a series circuit, technician conducted continuity test on a half of the circuit. In case of positive result, he should expect the reading on V / Ohm meter display to be:",
+                options: ["A. 0", "B. 1", "C. infinite ohms", "D. zero amps"],
+                answer: 2
+            },
+            {
+                q: "46. If a 130V rated lamp is connected to voltage of 112.76 V supply, which of the following will be increased?",
+                options: ["A. Lumens total output", "B. Lumens per watt efficiency", "C. Waste heat", "D. Lamp lifespan"],
+                answer: 3
+            },
+            {
+                q: "47. What type of socket should always be used with a pneumatic gun?",
+                options: ["A. Insulated", "B. Impact", "C. Chrome", "D. Thin-walled"],
+                answer: 1
+            },
+            {
+                q: "48. In order to reverse rotation of a moving 3-phase motor, what PB must be depressed first?",
+                options: ["A. REVERSE", "B. STOP", "C. START", "D. REMOTE CONTROL"],
+                answer: 2
+            },
+            {
+                q: "49. When wiring an electric panel, the most preferable is a(an) __________ wire.",
+                options: ["A. aluminium", "B. solid", "C. copper", "D. stranded"],
+                answer: 1
+            },
+            {
+                q: "50. Normally closed momentary switch is number",
+                options: ["A. 1", "B. 2", "C. 3", "D. 4"],
+                answer: 0
+            }
+        ];
+
+        let correctCount = 0;
+        let incorrectCount = 0;
+        let answeredQuestions = new Set();
+        const quizContainer = document.getElementById('quiz');
+
+        function showFinalScorePopup() {
+            const total = quizData.length;
+            const accuracy = total > 0 ? ((correctCount / total) * 100).toFixed(1) : 0;
+            const resultText = `Результаты: Правильных ответов: ${correctCount} | Неправильных ответов: ${incorrectCount} | Точность: ${accuracy}%`;
+            showPopup(resultText);
+        }
+
+        function showPopup(text) {
+            const popup = document.createElement('div');
+            popup.className = 'popup-overlay';
+            const popupContent = document.createElement('div');
+            popupContent.className = 'popup-content';
+            const textElement = document.createElement('p');
+            textElement.textContent = text;
+            popupContent.appendChild(textElement);
+            const closeBtn = document.createElement('button');
+            closeBtn.textContent = 'OK';
+            closeBtn.onclick = () => popup.remove();
+            popupContent.appendChild(closeBtn);
+            popup.appendChild(popupContent);
+            document.body.appendChild(popup);
+        }
+
+        quizData.forEach((item, idx) => {
+            const questionDiv = document.createElement('div');
+            questionDiv.className = 'question';
+            const questionTitle = document.createElement('h3');
+            questionTitle.textContent = item.q;
+            questionDiv.appendChild(questionTitle);
+            const optionsGrid = document.createElement('div');
+            optionsGrid.className = 'options-grid';
+            questionDiv.appendChild(optionsGrid);
+
+            item.options.forEach((opt, i) => {
+                const optionBtn = document.createElement('div');
+                optionBtn.className = 'option';
+                optionBtn.textContent = opt;
+                optionBtn.onclick = () => {
+                    if (!answeredQuestions.has(idx)) {
+                        answeredQuestions.add(idx);
+                        
+                        if (i === item.answer) {
+                            optionBtn.classList.add('correct');
+                            correctCount++;
+                        } else {
+                            optionBtn.classList.add('incorrect');
+                            const allOptions = optionsGrid.querySelectorAll('.option');
+                            allOptions[item.answer].classList.add('correct');
+                            incorrectCount++;
+                        }
+                        
+                        if (answeredQuestions.size === quizData.length) {
+                            showFinalScorePopup();
+                        }
+                    }
+                };
+                optionsGrid.appendChild(optionBtn);
+            });
+            quizContainer.appendChild(questionDiv);
+        });
+    </script>
+</body>
+</html>
