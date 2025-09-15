@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EXAMINATION SECTION TEST 1</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 10px;
+    line-height: 1.5;
+    background-color: #f0f8ff;
+  }
+  h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+  }
+  .quiz-container {
+    max-width: 900px;
+    margin: auto;
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  .question {
+    margin-bottom: 25px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+  }
+  .question h2 {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    color: #444;
+  }
+  .options-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .option {
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #ffffff;
+    transition: background-color 0.2s, border-color 0.2s;
+  }
+  .option:hover {
+    background-color: #f0f0f0;
+    border-color: #aaa;
+  }
+  .correct {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+    font-weight: bold;
+    pointer-events: none;
+  }
+  .incorrect {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+    font-weight: bold;
+    pointer-events: none;
+  }
+  /* Popup styles */
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  .popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 80%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  .popup-content h3 {
+    margin-top: 0;
+  }
+  .popup-content p {
+    margin-bottom: 15px;
+    font-size: 1em;
+  }
+  .popup-content button {
+    padding: 8px 16px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+  }
+
+  /* Mobile-specific styles */
+  @media (max-width: 768px) {
+    .quiz-container {
+      margin: 10px;
+      padding: 10px;
+    }
+    .question h2 {
+      font-size: 1em;
+    }
+    .option {
+      font-size: 0.9em;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="quiz-container">
+  <h1>EXAMINATION SECTION<br>TEST 1</h1>
+  <div id="quiz"></div>
+</div>
+
+<script>
+const quizData = [
+  { q: "1. What does the acronym “NC” stand for when referring to a single trow pushbutton switch?", options: ["A. “Not Common” special switch", "B. “Normally Closed” when not pushed", "C. “Not Current” when pushed", "D. “National Electrical Code” rated"], answer: 1 },
+  { q: "2. What is the best way to test fuse?", options: ["A. With power at one end", "B. Always in the circuit with no power", "C. Removed from circuit", "D. In the circuit under load"], answer: 2 },
+  { q: "3. To protect as much of the circuit as possible, where should a fuse be placed in a circuit?", options: ["A. Fuse should be connected in parallel to the load", "B. As close as possible to the power input point or power source", "C. As close to the source of load", "D. Anywhere along the circuit"], answer: 1 },
+  { q: "4. The starting torque of a three-phase induction motor typically will be:", options: ["A. Between 250% and 750% of the full load torque", "B. Low but climbs steadily over time", "C. Less than 50% of the full load torque", "D. Equal to the shaft horsepower"], answer: 0 },
+  { q: "5. What should a technician test for if a 100-amp fuse (in a 208V, 3 phase circuit) keeps blowing?", options: ["A. Excessive voltage when the control is first activated", "B. An open circuit to ground", "C. Excessive amperage when the circuit is under load", "D. Excessive amperage and voltage when circuit is open to load side"], answer: 2 },
+  { q: "6. A multimeter provides its own voltage when testing a device for:", options: ["A. Current", "B. Resistance", "C. Power", "D. Voltage"], answer: 1 },
+  { q: "7. What type of pump motor uses the following color codes: brown, purple, yellow and grey?", options: ["A. Submersible 1-phase pump motor", "B. Submersible 3-phase pump motor", "C. Centrifugal 1-phase pump motor", "D. Centrifugal 3-phase pump motor"], answer: 1 },
+  { q: "8. The diagram below of a three-phase motor winding and connections is best known as a:", options: ["A. Delta", "B. 3-phase induction", "C. 3 point", "D. Triangle circuit field"], answer: 0 },
+  { q: "9. The device depicted below is best described as a:", options: ["A. Step- down transformer", "B. DC-AC converter", "C. AC-DC inverter", "D. Step-up transformer"], answer: 99, image: "link_to_image_for_Q9.jpg" },
+  { q: "10. A “Multi Axis Accelerometer” will measure vibration on which common rotational and/or linear axes?", options: ["A. Alpha, Beta, Gamma", "B. X,Y,Z", "C. Clockwise, Counterclockwise", "D. Forward, Reverse"], answer: 1 },
+  { q: "11. If submersible pump’s rotation reversed, the pump capacity will:", options: ["A. Be reduced and motor amps will decrease", "B. Be reduced and the motor amps will increase", "C. Remain uncharged and motor amps will increase", "D. Remain uncharged and motor amps will decrease"], answer: 1 },
+  { q: "12. Which of the nuts represent a castellated nut?", options: ["A.", "B.", "C.", "D."], answer: 99, image: "link_to_image_for_Q12.jpg" },
+  { q: "13. A No. 12 AWG wire in an electrical circuit needs to be replaced, but there is no more No. 12 AWG wire available. Which of the following is the best substitute?", options: ["A. No. 6 AWG wire", "B. No. 14 AWG wire", "C. No. 8 AWG wire", "D. No. 16 AWG wire"], answer: 2 },
+  { q: "14. The measuring unit of capacitance is the:", options: ["A. Volt", "B. Watt", "C. Farad", "D. Ampere"], answer: 2 },
+  { q: "15. Which of the following electrical devices is an interface that controls one electrical circuit by opening and closing contacts in another circuit?", options: ["A. Solenoid", "B. Inverter", "C. Rectifier", "D. Relay"], answer: 3 },
+  { q: "16. While soldering electrical connections on a control panel in the shop, you accidentally touch your soldering iron and burns yourself. You should first:", options: ["A. Run cool water over area of the burn", "B. Pour iodine over the area of the burn", "C. Apply ointment to the area of the burn", "D. Dab a dry, clean gauze pad on the area of the burn"], answer: 0 },
+  { q: "17. The safety procedure that uses a mechanical device and notification block power to the equipment being worked on is called:", options: ["A. Blockout/Tagout", "B. Lockout/Tagout", "C. Powerblock/Tagout", "D. Powerlock/Tagout"], answer: 1 },
+  { q: "18. You are about to use a new chemical solvent in a confined area and the product label on the bottle is partially faded. You need detailed information on the toxicity of the chemical and what personal protective equipment is recommended. You should refer to the:", options: ["A. Product packing slip", "B. Shipping label on a bottle", "C. Procurement contract", "D. Material safety date sheet (MSDS)"], answer: 3 },
+  { q: "19. Which of the following is used to cut internal threads into pre-drilled holes?", options: ["A. Tap", "B. File", "C. Die", "D. Reamer"], answer: 0 },
+  { q: "20. Which of the following wrench sizes closest in size to 9/16’’", options: ["A. 7/16’’", "B. 1/2’’", "C. 11/16’’", "D. 7/8’’"], answer: 1 },
+  { q: "21. In an electrical circuit with only a battery and a lamp, the supply voltage from the battery is 9- volts and lamp is drawing 0.75 amperes. The resistance is:", options: ["A. 1.83 ohms", "B. 6.75 ohms", "C. 9.75 ohms", "D. 12 ohms"], answer: 3 },
+  { q: "22. What type of fastener is pictured below (self-threading screw image)", options: ["A. Pan Head bolt", "B. Carriage bolt", "C. Self-threading screw", "D. Machine screw"], answer: 2 },
+  { q: "23. What is the current used in a circuit that consumes 350w with a source voltage of 50VDC,", options: ["A. 0.143 A", "B. 0.5 A", "C. 5 A", "D. 7 A"], answer: 3 },
+  { q: "24. What does the electrical symbol shown below represent? (Zig-zag resistor)", options: ["A. Resistor", "B. Ground", "C. Fuse", "D. Circuit Breaker"], answer: 0 },
+  { q: "25. Ventilation will consume electrical power. Select the kW rating closest to the actual value if 20,000 CFM of air is moved against 6’’ of water gauge static pressure", options: ["A. 29.1 kW", "B. 58.2 kW", "C. 87.3 kW", "D. 116.4 kW"], answer: 0 },
+  { q: "26. What should be checked first for wear when troubleshooting DC motors?", options: ["A. Commutator", "B. Field Coils", "C. Brushes", "D. Armature"], answer: 2 },
+  { q: "27. To reverse the rotation of 3-phase motor, you should:", options: ["A. Swap motor leads 180 degrees", "B. Change field resistance", "C. Interchange any two leads", "D. Reverse motor speed"], answer: 2 },
+  { q: "28. Which contaminant causes oil to have milky appearance?", options: ["A. Air", "B. Dirt", "C. Water", "D. Sand"], answer: 2 },
+  { q: "29. Four 1.5 volt dry cell are connected in parallel. What is the total voltage of circuit?", options: ["A. 1.5 volts", "B. 3 volts", "C. 4.5 volts", "D. 6 volts"], answer: 0 },
+  { q: "30. When lifting a heavy box, you should always:", options: ["A. Bend your knees and lift with your legs", "B. Keep your knees straight and lift slowly", "C. Lift with your stronger arm", "D. Kneel on one knee and place the box on it before rising"], answer: 0 },
+  { q: "31. A worn or damaged ball and roller bearing are easily detected by all of the following, except for:", options: ["A. Noise", "B. Low temperature", "C. A burning odor", "D. Reduced motor"], answer: 1 },
+  { q: "32. What type of valve allows fluid to flow in one direction", options: ["A. Check valve", "B. Relief valve", "C. Drain valve", "D. Adjuster valve"], answer: 0 },
+  { q: "33. What is the running amperage measured at point “B”, once the switch is closed? (Parallel resistors R1=100ohms, R2=50ohms, on 240v with 5a/600v fuse)", options: ["A. 7.2A +/- .007 Amps", "B. 600volts", "C. 0 Amps", "D. 6.0 Amps"], answer: 0 },
+  { q: "34. What should be used in a wet environment to prevent electrocution due to current leakage?", options: ["A. Fusible link", "B. Surge protector", "C. Circuit breaker", "D. Ground fault circuit interrupter"], answer: 3 },
+  { q: "35. A DC voltage source that converts chemical energy to electrical energy is called a:", options: ["A. Converter", "B. Battery", "C. Rectifier", "D. Transformer"], answer: 1 },
+  { q: "36. In pneumatic systems, what type of valve protects the system and the tank from too much air pressure?", options: ["A. Relief valve", "B. Check valve", "C. Drain valve", "D. Adjuster valve"], answer: 0 },
+  { q: "37. In a fluid system, the component that converts fluid power into mechanical power is the:", options: ["A. Pump", "B. Actuator", "C. Standpipe", "D. Valve"], answer: 1 },
+  { q: "38. To prevent leaking between a coating part and stationary part of mechanical device, what should be used between them?", options: ["A. Seal", "B. RTV sealant", "C. Gasket", "D. Wax ring"], answer: 0 },
+  { q: "39. What is the part shown below?", options: ["A. Bearing", "B. Pump impeller", "C. Flange", "D. Locking coupling"], answer: 99, image: "link_to_image_for_Q39.jpg" },
+  { q: "40. What type of screw is pictured below", options: ["A. Tapered", "B. Drive-screw", "C. Pullover", "D. Security type"], answer: 99, image: "link_to_image_for_Q40.jpg" },
+  { q: "41. The instrument that measures the rate of current flow in an electrical circuit is an:", options: ["A. Ohmmeter", "B. Hydrometer", "C. Ammeter", "D. Voltmeter"], answer: 2 },
+  { q: "42. What is the phase-to-neutral voltage in a 4-wire, here-phase circuit, if the phase-to-phase voltage is 480 Volts?", options: ["A. 120 Volts", "B. 208 Volts", "C. 277 Volts", "D. 480 Volts"], answer: 2 },
+  { q: "43. The Law that is used to calculate current, ohms, voltage, and power, when one of these variables is unknown, is called:", options: ["A. Electric Power Law", "B. Faraday’s Law", "C. Ohm’s Law", "D. Rectifier Power Laws"], answer: 2 },
+  { q: "44. Which of the following happens to an electrical circuit, with four resistors connected in parallel, if one of the resistors opens?", options: ["A. The circuit’s total current increase", "B. The circuit’s total resistance increase", "C. The voltage across each of the three remaining resistors increase", "D. The amount of power consumed in the circuit remains the same"], answer: 1 },
+  { q: "45. The device shown is known as a _____type of relay", options: ["A. Double pole, Double Throw", "B. Four conducting poles", "C. Single pole, Double Throw", "D. Double Pole, Single Throw"], answer: 99, image: "link_to_image_for_Q45.jpg" },
+  { q: "46. An ABC fire extinguisher puts out a fire by what means?", options: ["A. Rapid cooling", "B. Rapid consumption of burn material", "C. Over oxidizing", "D. Suffocation"], answer: 3 },
+  { q: "47. The total resistance of an open fuse is", options: ["A. Zero", "B. Dependent on the voltage rating", "C. Dependent on the amperage rating", "D. Infinite"], answer: 3 },
+  { q: "48. Which statement is true about a rotary vane pump?", options: ["A. It is considered a low-pressure pump", "B. It can operate dry without damage", "C. It is a positive displacement pump", "D. It can withstand cavitation"], answer: 2 },
+  { q: "49. A 10-24 machine screw differs from a 12-24 machine screw in:", options: ["A. Threads per inch", "B. Diameter", "C. Length", "D. Shape of head"], answer: 1 },
+  { q: "50. If a branch fuse in an existing lighting circuit is replaced by another of the same rating and the replacement fuse blows out, you should:", options: ["A. Use higher rated fuse", "B. Place a copper slug in plase of a fuse", "C. Check the circuit for a fault of overload condition", "D. Install a renewable fuse type"], answer: 2 },
+  { q: "51. When an electrical connection loosens:", options: ["A. Its resistance decrease", "B. Its resistance increase", "C. Its temperature drops", "D. The current in the circuit increase"], answer: 1 },
+  { q: "52. To ensure a multimeter and its leads are working properly before testing, you should insert the leads together in the:", options: ["A. Ohms setting", "B. Amperage setting", "C. Voltage setting", "D. Diode setting"], answer: 0 },
+  { q: "53. In a 60-Hz AC power line, the voltage polarity and current direction go through 60 cycles of charge each:", options: ["A. Half-second", "B. Microsecond", "C. Millisecond", "D. Second"], answer: 3 },
+  { q: "54. The symbol shown below is most commonly known as a:", options: ["A. Thermal Element", "B. Jumper/Splice Connector", "C. Line Starter Contact Point", "D. Disconnect"], answer: 99, image: "link_to_image_for_Q54.jpg" },
+  { q: "55. A clamp-on inductive pickup used in conjunction with a multimeter is used to measure what from a conductor?", options: ["A. Voltage present in the conductor", "B. Inductance of the circuit through the conductor", "C. Internal inductive resistance of the conductor", "D. Amperage flow through the conductor while in the circuit."], answer: 3 }
+];
+
+let correctCount = 0;
+let incorrectCount = 0;
+let answeredQuestions = new Set();
+const quizContainer = document.getElementById('quiz');
+
+// Функция для отображения всплывающего окна с результатами
+function showFinalScorePopup() {
+  const total = correctCount + incorrectCount;
+  const accuracy = total > 0 ? ((correctCount / total) * 100).toFixed(1) : 0;
+  const resultText = `Результаты: Правильных ответов: ${correctCount} | Неправильных ответов: ${incorrectCount} | Точность: ${accuracy}%`;
+  showPopup(resultText);
+}
+
+// Функция для создания и отображения всплывающего окна
+function showPopup(text) {
+  const popup = document.createElement('div');
+  popup.className = 'popup-overlay';
+  
+  const popupContent = document.createElement('div');
+  popupContent.className = 'popup-content';
+  
+  const textElement = document.createElement('p');
+  textElement.textContent = text;
+  popupContent.appendChild(textElement);
+  
+  const closeBtn = document.createElement('button');
+  closeBtn.textContent = 'OK';
+  closeBtn.onclick = () => popup.remove();
+  popupContent.appendChild(closeBtn);
+  
+  popup.appendChild(popupContent);
+  document.body.appendChild(popup);
+}
+
+// Отображение вопросов и обработка ответов
+quizData.forEach((item, idx) => {
+  const questionDiv = document.createElement('div');
+  questionDiv.className = 'question';
+  const questionTitle = document.createElement('h2');
+  questionTitle.textContent = item.q;
+  questionDiv.appendChild(questionTitle);
+  
+  if (item.image) {
+    const questionImage = document.createElement('img');
+    questionImage.src = item.image;
+    questionImage.style.maxWidth = '100%';
+    questionImage.style.height = 'auto';
+    questionImage.style.display = 'block';
+    questionImage.style.margin = '10px auto 20px auto';
+    questionDiv.appendChild(questionImage);
+  }
+
+  const optionsGrid = document.createElement('div');
+  optionsGrid.className = 'options-grid';
+  questionDiv.appendChild(optionsGrid);
+
+  item.options.forEach((opt, i) => {
+    const optionBtn = document.createElement('div');
+    optionBtn.className = 'option';
+    optionBtn.textContent = opt;
+    optionBtn.onclick = () => {
+      // Список вопросов с "неправильными" ответами и всплывающими окнами
+      const popupQuestions = [8, 11, 38, 39, 44, 53]; // Индексы вопросов: 9, 12, 39, 40, 45, 54
+      
+      if (popupQuestions.includes(idx)) {
+        if (!answeredQuestions.has(idx)) {
+          answeredQuestions.add(idx);
+          
+          optionBtn.classList.add('incorrect');
+          
+          // Задержка перед отображением всплывающего окна
+          setTimeout(() => {
+            showPopup("The image is missing, the answer cannot be accepted");
+          }, 300); // 300 мс задержка
+        }
+      } else {
+        if (!answeredQuestions.has(idx)) {
+          answeredQuestions.add(idx);
+          
+          if (i === item.answer) {
+            optionBtn.classList.add('correct');
+            correctCount++;
+          } else {
+            optionBtn.classList.add('incorrect');
+            incorrectCount++;
+            const allOptions = optionsGrid.querySelectorAll('.option');
+            allOptions[item.answer].classList.add('correct');
+          }
+          
+          if (answeredQuestions.size === quizData.length) {
+            showFinalScorePopup();
+          }
+        }
+      }
+    };
+    optionsGrid.appendChild(optionBtn);
+  });
+
+  quizContainer.appendChild(questionDiv);
+});
+</script>
+
+</body>
+</html>
