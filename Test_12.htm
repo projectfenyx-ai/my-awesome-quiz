@@ -1,0 +1,2197 @@
+<?xml version="1.0"?>
+       <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "xhtml11.dtd">
+       <html xmlns="http://www.w3.org/1999/xhtml"
+             xml:lang="en"><head><meta name="author" content="Created with Hot Potatoes by Half-Baked Software, registered to simon."></meta><meta name="keywords" content="Hot Potatoes, Hot Potatoes, Half-Baked Software, Windows, University of Victoria"></meta>
+
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+<meta name="DC:Creator" content="simon" />
+<meta name="DC:Creator" content="Simon" />
+<meta name="DC:Title" content="Test12" />
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+
+<title>
+Test12
+</title>
+
+<!-- Made with executable version 6.3 Release 0 Build 5 -->
+
+<!-- The following insertion allows you to add your own code directly to this head tag from the configuration screen -->
+
+
+
+<style type="text/css">
+
+
+/* This is the CSS stylesheet used in the exercise. */
+/* Elements in square brackets are replaced by data based on configuration settings when the exercise is built. */
+
+/* BeginCorePageCSS */
+
+/* Made with executable version 6.3 Release 0 Build 5 */
+
+
+/* Hack to hide a nested Quicktime player from IE, which can't handle it. */
+* html object.MediaPlayerNotForIE {
+	display: none;
+}
+
+body{
+	font-family: Arial,Geneva,sans-serif;
+	background-color: #FFFFCC;
+	color: #000000;
+ 
+	margin-right: 5%;
+	margin-left: 5%;
+	font-size: small;
+}
+
+p{
+	text-align: left;
+	margin: 0px;
+	font-size: 100%;
+}
+
+table,div,span,td{
+	font-size: 100%;
+	color: #000000;
+}
+
+div.Titles{
+	padding: 0.5em;;
+	text-align: center;
+	color: #000000;
+}
+
+button{
+	font-family: Arial,Geneva,sans-serif;
+	font-size: 100%;
+	display: inline;
+}
+
+.ExerciseTitle{
+	font-size: 140%;
+	color: #000000;
+}
+
+.ExerciseSubtitle{
+	font-size: 120%;
+	color: #000000;
+}
+
+div.StdDiv{
+	background-color: #FFFFFF;
+	text-align: center;
+	font-size: 100%;
+	color: #000000;
+	padding: 0.5em;
+	border-style: solid;
+	border-width: 1px 1px 1px 1px;
+	border-color: #000000;
+	margin-bottom: 1px;
+}
+
+/* EndCorePageCSS */
+
+.RTLText{
+	text-align: right;
+	font-size: 150%;
+	direction: rtl;
+	font-family: "Simplified Arabic", "Traditional Arabic", "Times New Roman", Arial,Geneva,sans-serif; 
+}
+
+.CentredRTLText{
+	text-align: center;
+	font-size: 150%;
+	direction: rtl;
+	font-family: "Simplified Arabic", "Traditional Arabic", "Times New Roman", Arial,Geneva,sans-serif; 
+}
+
+button p.RTLText{
+	text-align: center;
+}
+
+.RTLGapBox{
+	text-align: right;
+	font-size: 150%;
+	direction: rtl;
+	font-family: "Times New Roman", Arial,Geneva,sans-serif;
+}
+
+.Guess{
+	font-weight: bold;
+}
+
+.CorrectAnswer{
+	font-weight: bold;
+}
+
+div#Timer{
+	padding: 0.25em;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	color: #000000;
+}
+
+span#TimerText{
+	padding: 0.25em;
+	border-width: 1px;
+	border-style: solid;
+	font-weight: bold;
+	display: none;
+	color: #000000;
+}
+
+span.Instructions{
+
+}
+
+div.ExerciseText{
+
+}
+
+.FeedbackText, .FeedbackText span.CorrectAnswer, .FeedbackText span.Guess, .FeedbackText span.Answer{
+	color: #000000;
+}
+
+.LeftItem{
+	font-size: 100%;
+	color: #000000;
+	text-align: left;
+}
+
+.RightItem{
+	font-weight: bold;
+	font-size: 100%;
+	color: #000000;
+}
+
+span.CorrectMark{
+
+}
+
+input, textarea{
+	font-family: Arial,Geneva,sans-serif;
+	font-size: 120%;
+}
+
+select{
+	font-size: 100%;
+}
+
+div.Feedback {
+	background-color: #FFFFCC;
+	left: 33%;
+	width: 34%;
+	top: 33%;
+	z-index: 1;
+	border-style: solid;
+	border-width: 1px;
+	padding: 5px;
+	text-align: center;
+	color: #000000;
+	position: absolute;
+	display: none;
+	font-size: 100%;
+}
+
+
+
+
+div.ExerciseDiv{
+	color: #000000;
+}
+
+/* JMatch flashcard styles */
+table.FlashcardTable{
+	background-color: transparent;
+	color: #000000;
+	border-color: #000000;
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: 2em;
+	margin-bottom: 2em;
+	width: 90%;
+	position: relative;
+	text-align: center;
+	padding: 0px;
+}
+
+table.FlashcardTable tr{
+	border-style: none;
+	margin: 0px;
+	padding: 0px;
+	background-color: #FFFFFF;
+}
+
+table.FlashcardTable td.Showing{
+	font-size: 140%;
+	text-align: center;
+	width: 50%;
+	display: table-cell;
+	padding: 2em;
+	margin: 0px;
+	border-style: solid;
+	border-width: 1px;
+	color: #000000;
+	background-color: #FFFFFF;
+}
+
+table.FlashcardTable td.Hidden{
+	display: none;
+}
+
+/* JMix styles */
+div#SegmentDiv{
+	margin-top: 2em;
+	margin-bottom: 2em;
+	text-align: center;
+}
+
+a.ExSegment{
+	font-size: 120%;
+	font-weight: bold;
+	text-decoration: none;
+	color: #000000;
+}
+
+span.RemainingWordList{
+	font-style: italic;
+}
+
+div.DropLine {
+	position: absolute;
+	text-align: center;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	width: 80%;
+}
+
+/* JCloze styles */
+
+.ClozeWordList{
+	text-align: center;
+	font-weight: bold;
+}
+
+div.ClozeBody{
+	text-align: left;
+	margin-top: 2em;
+	margin-bottom: 2em;
+	line-height: 2.0
+}
+
+span.GapSpan{
+	font-weight: bold;
+}
+
+/* JCross styles */
+
+table.CrosswordGrid{
+	margin: auto auto 1em auto;
+	border-collapse: collapse;
+	padding: 0px;
+	background-color: #000000;
+}
+
+table.CrosswordGrid tbody tr td{
+	width: 1.5em;
+	height: 1.5em;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 140%;
+	padding: 1px;
+	margin: 0px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #000000;
+	color: #000000;
+}
+
+table.CrosswordGrid span{
+	color: #000000;
+}
+
+table.CrosswordGrid td.BlankCell{
+	background-color: #000000;
+	color: #000000;
+}
+
+table.CrosswordGrid td.LetterOnlyCell{
+	text-align: center;
+	vertical-align: middle;
+	background-color: #ffffff;
+	color: #000000;
+	font-weight: bold;
+}
+
+table.CrosswordGrid td.NumLetterCell{
+	text-align: left;
+	vertical-align: top;
+	background-color: #ffffff;
+	color: #000000;
+	padding: 1px;
+	font-weight: bold;
+}
+
+.NumLetterCellText{
+	cursor: pointer;
+	color: #000000;
+}
+
+.GridNum{
+	vertical-align: super;
+	font-size: 66%;
+	font-weight: bold;
+	text-decoration: none;
+	color: #000000;
+}
+
+.GridNum:hover, .GridNum:visited{
+	color: #000000;
+}
+
+table#Clues{
+	margin: auto;
+	vertical-align: top;
+}
+
+table#Clues td{
+	vertical-align: top;
+}
+
+table.ClueList{
+  margin: auto;
+}
+
+td.ClueNum{
+	text-align: right;
+	font-weight: bold;
+	vertical-align: top;
+}
+
+td.Clue{
+	text-align: left;
+}
+
+div#ClueEntry{
+	text-align: left;
+	margin-bottom: 1em;
+}
+
+/* Keypad styles */
+
+div.Keypad{
+	text-align: center;
+	display: none; /* initially hidden, shown if needed */
+	margin-bottom: 0.5em;
+}
+
+div.Keypad button{
+	font-family: Arial,Geneva,sans-serif;
+	font-size: 120%;
+	background-color: #ffffff;
+	color: #000000;
+	width: 2em;
+}
+
+/* JQuiz styles */
+
+div.QuestionNavigation{
+	text-align: center;
+}
+
+.QNum{
+	margin: 0em 1em 0.5em 1em;
+	font-weight: bold;
+	vertical-align: middle;
+}
+
+textarea{
+	font-family: Arial,Geneva,sans-serif;
+}
+
+.QuestionText{
+	text-align: left;
+	margin: 0px;
+	font-size: 100%;
+}
+
+.Answer{
+	font-size: 120%;
+	letter-spacing: 0.1em;
+}
+
+.PartialAnswer{
+	font-size: 120%;
+	letter-spacing: 0.1em;
+	color: #000000;
+}
+
+.Highlight{
+	color: #000000;
+	background-color: #ffff00;
+	font-weight: bold;
+	font-size: 120%;
+}
+
+ol.QuizQuestions{
+	text-align: left;
+	list-style-type: none;
+}
+
+li.QuizQuestion{
+	padding: 1em;
+	border-style: solid;
+	border-width: 0px 0px 1px 0px;
+}
+
+ol.MCAnswers{
+	text-align: left;
+	list-style-type: upper-alpha;
+	padding: 1em;
+}
+
+ol.MCAnswers li{
+	margin-bottom: 1em;
+}
+
+ol.MSelAnswers{
+	text-align: left;
+	list-style-type: lower-alpha;
+	padding: 1em;
+}
+
+div.ShortAnswer{
+	padding: 1em;
+}
+
+.FuncButton {
+	text-align: center;
+	border-style: solid;
+
+	border-left-color: #ffffff;
+	border-top-color: #ffffff;
+	border-right-color: #7f7f7f;
+	border-bottom-color: #7f7f7f;
+	color: #000000;
+	background-color: #FFFFFF;
+
+	border-width: 2px;
+	padding: 3px 6px 3px 6px;
+	cursor: pointer;
+}
+
+.FuncButtonUp {
+	color: #FFFFFF;
+	text-align: center;
+	border-style: solid;
+
+	border-left-color: #ffffff;
+	border-top-color: #ffffff;
+	border-right-color: #7f7f7f;
+	border-bottom-color: #7f7f7f;
+
+	background-color: #000000;
+	color: #FFFFFF;
+	border-width: 2px;
+	padding: 3px 6px 3px 6px;
+	cursor: pointer;
+}
+
+.FuncButtonDown {
+	color: #FFFFFF;
+	text-align: center;
+	border-style: solid;
+
+	border-left-color: #7f7f7f;
+	border-top-color: #7f7f7f;
+	border-right-color: #ffffff;
+	border-bottom-color: #ffffff;
+	background-color: #000000;
+	color: #FFFFFF;
+
+	border-width: 2px;
+	padding: 3px 6px 3px 6px;
+	cursor: pointer;
+}
+
+/*BeginNavBarStyle*/
+
+div.NavButtonBar{
+	background-color: #FFFFFF;
+	text-align: center;
+	margin: 2px 0px 2px 0px;
+	clear: both;
+	font-size: 100%;
+}
+
+.NavButton {
+	border-style: solid;
+	
+	border-left-color: #ffffff;
+	border-top-color: #ffffff;
+	border-right-color: #7f7f7f;
+	border-bottom-color: #7f7f7f;
+	background-color: #FFFFFF;
+	color: #000000;
+
+	border-width: 2px;
+	cursor: pointer;	
+}
+
+.NavButtonUp {
+	border-style: solid;
+
+	border-left-color: #ffffff;
+	border-top-color: #ffffff;
+	border-right-color: #7f7f7f;
+	border-bottom-color: #7f7f7f;
+	color: #FFFFFF;
+	background-color: #000000;
+
+	border-width: 2px;
+	cursor: pointer;	
+}
+
+.NavButtonDown {
+	border-style: solid;
+
+	border-left-color: #7f7f7f;
+	border-top-color: #7f7f7f;
+	border-right-color: #ffffff;
+	border-bottom-color: #ffffff;
+	color: #FFFFFF;
+	background-color: #000000;
+
+	border-width: 2px;
+	cursor: pointer;	
+}
+
+/*EndNavBarStyle*/
+
+a{
+	color: #000000;
+}
+
+a:visited{
+	color: #000000;
+}
+
+a:hover{
+	color: #000000;
+}
+
+div.CardStyle {
+	position: absolute;
+	font-family: Arial,Geneva,sans-serif;
+	font-size: 100%;
+	padding: 5px;
+	border-style: solid;
+	border-width: 1px;
+	color: #000000;
+	background-color: #FFFFFF;
+	left: -50px;
+	top: -50px;
+	overflow: visible;
+}
+
+.rtl{
+	text-align: right;
+	font-size: 140%;
+}
+
+
+</style>
+
+<script type="text/javascript">
+
+//<![CDATA[
+
+<!--
+
+
+
+
+function Client(){
+//if not a DOM browser, hopeless
+	this.min = false; if (document.getElementById){this.min = true;};
+
+	this.ua = navigator.userAgent;
+	this.name = navigator.appName;
+	this.ver = navigator.appVersion;  
+
+//Get data about the browser
+	this.mac = (this.ver.indexOf('Mac') != -1);
+	this.win = (this.ver.indexOf('Windows') != -1);
+
+//Look for Gecko
+	this.gecko = (this.ua.indexOf('Gecko') > 1);
+	if (this.gecko){
+		this.geckoVer = parseInt(this.ua.substring(this.ua.indexOf('Gecko')+6, this.ua.length));
+//		if (this.geckoVer < 20020000){this.min = false;}
+	}
+	
+//Look for Firebird
+	this.firebird = (this.ua.indexOf('Firebird') > 1);
+	
+//Look for Safari
+	this.safari = (this.ua.indexOf('Safari') > 1);
+	if (this.safari){
+		this.gecko = false;
+	}
+	
+//Look for IE
+	this.ie = (this.ua.indexOf('MSIE') > 0);
+	if (this.ie){
+		this.ieVer = parseFloat(this.ua.substring(this.ua.indexOf('MSIE')+5, this.ua.length));
+		if (this.ieVer < 5.5){this.min = false;}
+	}
+	
+//Look for Opera
+	this.opera = (this.ua.indexOf('Opera') > 0);
+	if (this.opera){
+		this.operaVer = parseFloat(this.ua.substring(this.ua.indexOf('Opera')+6, this.ua.length));
+		if (this.operaVer < 7.04){this.min = false;}
+	}
+	if (this.min == false){
+//		alert('Your browser may not be able to handle this page.');
+	}
+	
+//Special case for the horrible ie5mac
+	this.ie5mac = (this.ie&&this.mac&&(this.ieVer<6));
+}
+
+var C = new Client();
+
+//for (prop in C){
+//	alert(prop + ': ' + C[prop]);
+//}
+
+
+
+//CODE FOR HANDLING NAV BUTTONS AND FUNCTION BUTTONS
+
+//[strNavBarJS]
+function NavBtnOver(Btn){
+	if (Btn.className != 'NavButtonDown'){Btn.className = 'NavButtonUp';}
+}
+
+function NavBtnOut(Btn){
+	Btn.className = 'NavButton';
+}
+
+function NavBtnDown(Btn){
+	Btn.className = 'NavButtonDown';
+}
+//[/strNavBarJS]
+
+function FuncBtnOver(Btn){
+	if (Btn.className != 'FuncButtonDown'){Btn.className = 'FuncButtonUp';}
+}
+
+function FuncBtnOut(Btn){
+	Btn.className = 'FuncButton';
+}
+
+function FuncBtnDown(Btn){
+	Btn.className = 'FuncButtonDown';
+}
+
+function FocusAButton(){
+	if (document.getElementById('CheckButton1') != null){
+		document.getElementById('CheckButton1').focus();
+	}
+	else{
+		if (document.getElementById('CheckButton2') != null){
+			document.getElementById('CheckButton2').focus();
+		}
+		else{
+			document.getElementsByTagName('button')[0].focus();
+		}
+	}
+}
+
+
+
+
+//CODE FOR HANDLING DISPLAY OF POPUP FEEDBACK BOX
+
+var topZ = 1000;
+
+function ShowMessage(Feedback){
+	var Output = Feedback + '<br /><br />';
+	document.getElementById('FeedbackContent').innerHTML = Output;
+	var FDiv = document.getElementById('FeedbackDiv');
+	topZ++;
+	FDiv.style.zIndex = topZ;
+	FDiv.style.top = TopSettingWithScrollOffset(30) + 'px';
+
+	FDiv.style.display = 'block';
+
+	ShowElements(false, 'input');
+	ShowElements(false, 'select');
+	ShowElements(false, 'object');
+	ShowElements(true, 'object', 'FeedbackContent');
+
+//Focus the OK button
+	setTimeout("document.getElementById('FeedbackOKButton').focus()", 50);
+	
+//
+//	RefreshImages();
+//
+}
+
+function ShowElements(Show, TagName, ContainerToReverse){
+// added third argument to allow objects in the feedback box to appear
+//IE bug -- hide all the form elements that will show through the popup
+//FF on Mac bug : doesn't redisplay objects whose visibility is set to visible
+//unless the object's display property is changed
+
+	//get container object (by Id passed in, or use document otherwise)
+	TopNode = document.getElementById(ContainerToReverse);
+	var Els;
+	if (TopNode != null) {
+		Els = TopNode.getElementsByTagName(TagName);
+	} else {
+		Els = document.getElementsByTagName(TagName);
+	}
+
+	for (var i=0; i<Els.length; i++){
+		if (TagName == "object") {
+			//manipulate object elements in all browsers
+			if (Show == true){
+				Els[i].style.visibility = 'visible';
+				//get Mac FireFox to manipulate display, to force screen redraw
+				if (C.mac && C.gecko) {Els[i].style.display = '';}
+			}
+			else{
+				Els[i].style.visibility = 'hidden';
+				if (C.mac && C.gecko) {Els[i].style.display = 'none';}
+			}
+		} 
+		else {
+			// tagName is either input or select (that is, Form Elements)
+			// ie6 has a problem with Form elements, so manipulate those
+			if (C.ie) {
+				if (C.ieVer < 7) {
+					if (Show == true){
+						Els[i].style.visibility = 'visible';
+					}
+					else{
+						Els[i].style.visibility = 'hidden';
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+function HideFeedback(){
+	document.getElementById('FeedbackDiv').style.display = 'none';
+	ShowElements(true, 'input');
+	ShowElements(true, 'select');
+	ShowElements(true, 'object');
+	if (Finished == true){
+		Finish();
+	}
+}
+
+
+//GENERAL UTILITY FUNCTIONS AND VARIABLES
+
+//PAGE DIMENSION FUNCTIONS
+function PageDim(){
+//Get the page width and height
+	this.W = 600;
+	this.H = 400;
+	this.W = document.getElementsByTagName('body')[0].clientWidth;
+	this.H = document.getElementsByTagName('body')[0].clientHeight;
+}
+
+var pg = null;
+
+function GetPageXY(El) {
+	var XY = {x: 0, y: 0};
+	while(El){
+		XY.x += El.offsetLeft;
+		XY.y += El.offsetTop;
+		El = El.offsetParent;
+	}
+	return XY;
+}
+
+function GetScrollTop(){
+	if (typeof(window.pageYOffset) == 'number'){
+		return window.pageYOffset;
+	}
+	else{
+		if ((document.body)&&(document.body.scrollTop)){
+			return document.body.scrollTop;
+		}
+		else{
+			if ((document.documentElement)&&(document.documentElement.scrollTop)){
+				return document.documentElement.scrollTop;
+			}
+			else{
+				return 0;
+			}
+		}
+	}
+}
+
+function GetViewportHeight(){
+	if (typeof window.innerHeight != 'undefined'){
+		return window.innerHeight;
+	}
+	else{
+		if (((typeof document.documentElement != 'undefined')&&(typeof document.documentElement.clientHeight !=
+     'undefined'))&&(document.documentElement.clientHeight != 0)){
+			return document.documentElement.clientHeight;
+		}
+		else{
+			return document.getElementsByTagName('body')[0].clientHeight;
+		}
+	}
+}
+
+function TopSettingWithScrollOffset(TopPercent){
+	var T = Math.floor(GetViewportHeight() * (TopPercent/100));
+	return GetScrollTop() + T; 
+}
+
+//CODE FOR AVOIDING LOSS OF DATA WHEN BACKSPACE KEY INVOKES history.back()
+var InTextBox = false;
+
+function SuppressBackspace(e){ 
+	if (InTextBox == true){return;}
+	if (C.ie) {
+		thisKey = window.event.keyCode;
+	}
+	else {
+		thisKey = e.keyCode;
+	}
+
+	var Suppress = false;
+
+	if (thisKey == 8) {
+		Suppress = true;
+	}
+
+	if (Suppress == true){
+		if (C.ie){
+			window.event.returnValue = false;	
+			window.event.cancelBubble = true;
+		}
+		else{
+			e.preventDefault();
+		}
+	}
+}
+
+if (C.ie){
+	document.attachEvent('onkeydown',SuppressBackspace);
+	window.attachEvent('onkeydown',SuppressBackspace);
+}
+else{
+	if (window.addEventListener){
+		window.addEventListener('keypress',SuppressBackspace,false);
+	}
+}
+
+function ReduceItems(InArray, ReduceToSize){
+	var ItemToDump=0;
+	var j=0;
+	while (InArray.length > ReduceToSize){
+		ItemToDump = Math.floor(InArray.length*Math.random());
+		InArray.splice(ItemToDump, 1);
+	}
+}
+
+function Shuffle(InArray){
+	var Num;
+	var Temp = new Array();
+	var Len = InArray.length;
+
+	var j = Len;
+
+	for (var i=0; i<Len; i++){
+		Temp[i] = InArray[i];
+	}
+
+	for (i=0; i<Len; i++){
+		Num = Math.floor(j  *  Math.random());
+		InArray[i] = Temp[Num];
+
+		for (var k=Num; k < (j-1); k++) {
+			Temp[k] = Temp[k+1];
+		}
+		j--;
+	}
+	return InArray;
+}
+
+function WriteToInstructions(Feedback) {
+	document.getElementById('InstructionsDiv').innerHTML = Feedback;
+
+	RefreshImages();
+
+}
+
+
+
+Imgs = new Array();
+
+function PreloadImages(){
+	var a = PreloadImages.arguments;
+	for (var i=0; i<a.length; i++){
+		Imgs[i] = new Image();
+		Imgs[i].src = a[i];
+	}
+}
+
+function RefreshImages(){
+	for (var i=0; i<document.images.length; i++){
+		if (document.images[i].name.substring(0,6) != 'NavBar'){
+			document.images[i].src = document.images[i].src;
+		}
+	}
+}
+
+
+function EscapeDoubleQuotes(InString){
+	return InString.replace(/"/g, '&quot;')
+}
+
+function TrimString(InString){
+        var x = 0;
+
+        if (InString.length != 0) {
+                while ((InString.charAt(InString.length - 1) == '\u0020') || (InString.charAt(InString.length - 1) == '\u000A') || (InString.charAt(InString.length - 1) == '\u000D')){
+                        InString = InString.substring(0, InString.length - 1)
+                }
+
+                while ((InString.charAt(0) == '\u0020') || (InString.charAt(0) == '\u000A') || (InString.charAt(0) == '\u000D')){
+                        InString = InString.substring(1, InString.length)
+                }
+
+                while (InString.indexOf('  ') != -1) {
+                        x = InString.indexOf('  ')
+                        InString = InString.substring(0, x) + InString.substring(x+1, InString.length)
+                 }
+
+                return InString;
+        }
+
+        else {
+                return '';
+        }
+}
+
+function FindLongest(InArray){
+	if (InArray.length < 1){return -1;}
+
+	var Longest = 0;
+	for (var i=1; i<InArray.length; i++){
+		if (InArray[i].length > InArray[Longest].length){
+			Longest = i;
+		}
+	}
+	return Longest;
+}
+
+//UNICODE CHARACTER FUNCTIONS
+function IsCombiningDiacritic(CharNum){
+	var Result = (((CharNum >= 0x0300)&&(CharNum <= 0x370))||((CharNum >= 0x20d0)&&(CharNum <= 0x20ff)));
+	Result = Result || (((CharNum >= 0x3099)&&(CharNum <= 0x309a))||((CharNum >= 0xfe20)&&(CharNum <= 0xfe23)));
+	return Result;
+}
+
+function IsCJK(CharNum){
+	return ((CharNum >= 0x3000)&&(CharNum < 0xd800));
+}
+
+//SETUP FUNCTIONS
+//BROWSER WILL REFILL TEXT BOXES FROM CACHE IF NOT PREVENTED
+function ClearTextBoxes(){
+	var NList = document.getElementsByTagName('input');
+	for (var i=0; i<NList.length; i++){
+		if ((NList[i].id.indexOf('Guess') > -1)||(NList[i].id.indexOf('Gap') > -1)){
+			NList[i].value = '';
+		}
+		if (NList[i].id.indexOf('Chk') > -1){
+			NList[i].checked = '';
+		}
+	}
+}
+
+//EXTENSION TO ARRAY OBJECT
+function Array_IndexOf(Input){
+	var Result = -1;
+	for (var i=0; i<this.length; i++){
+		if (this[i] == Input){
+			Result = i;
+		}
+	}
+	return Result;
+}
+Array.prototype.indexOf = Array_IndexOf;
+
+//IE HAS RENDERING BUG WITH BOTTOM NAVBAR
+function RemoveBottomNavBarForIE(){
+	if ((C.ie)&&(document.getElementById('Reading') != null)){
+		if (document.getElementById('BottomNavBar') != null){
+			document.getElementById('TheBody').removeChild(document.getElementById('BottomNavBar'));
+		}
+	}
+}
+
+
+
+
+//HOTPOTNET-RELATED CODE
+
+var HPNStartTime = (new Date()).getTime();
+var SubmissionTimeout = 30000;
+var Detail = ''; //Global that is used to submit tracking data
+
+function Finish(){
+//If there's a form, fill it out and submit it
+	if (document.store != null){
+		Frm = document.store;
+		Frm.starttime.value = HPNStartTime;
+		Frm.endtime.value = (new Date()).getTime();
+		Frm.mark.value = Score;
+		Frm.detail.value = Detail;
+		Frm.submit();
+	}
+}
+
+
+
+
+
+//JQUIZ CORE JAVASCRIPT CODE
+
+var CurrQNum = 0;
+var CorrectIndicator = ':-)';
+var IncorrectIndicator = 'X';
+var YourScoreIs = 'Your score is ';
+
+//New for 6.2.2.0
+var CompletedSoFar = 'Questions completed so far: ';
+var ExerciseCompleted = 'You have completed the exercise.';
+var ShowCompletedSoFar = true;
+
+var ContinuousScoring = true;
+var CorrectFirstTime = 'Questions answered correctly first time: ';
+var ShowCorrectFirstTime = true;
+var ShuffleQs = false;
+var ShuffleAs = false;
+var DefaultRight = 'Correct!';
+var DefaultWrong = 'Sorry! Try again.';
+var QsToShow = 50;
+var Score = 0;
+var Finished = false;
+var Qs = null;
+var QArray = new Array();
+var ShowingAllQuestions = false;
+var ShowAllQuestionsCaption = 'Show all questions';
+var ShowOneByOneCaption = 'Show questions one by one';
+var State = new Array();
+var Feedback = '';
+var TimeOver = false;
+var strInstructions = '';
+var Locked = false;
+
+//The following variable can be used to add a message explaining that
+//the question is finished, so no further marking will take place.
+var strQuestionFinished = '';
+
+function CompleteEmptyFeedback(){
+	var QNum, ANum;
+	for (QNum=0; QNum<I.length; QNum++){
+//Only do this if not multi-select
+		if (I[QNum][2] != '3'){
+  		for (ANum = 0; ANum<I[QNum][3].length; ANum++){
+  			if (I[QNum][3][ANum][1].length < 1){
+  				if (I[QNum][3][ANum][2] > 0){
+  					I[QNum][3][ANum][1] = DefaultRight;
+  				}
+  				else{
+  					I[QNum][3][ANum][1] = DefaultWrong;
+  				}
+  			}
+  		}
+		}
+	}
+}
+
+function SetUpQuestions(){
+	var AList = new Array(); 
+	var QList = new Array();
+	var i, j;
+	Qs = document.getElementById('Questions');
+	while (Qs.getElementsByTagName('li').length > 0){
+		QList.push(Qs.removeChild(Qs.getElementsByTagName('li')[0]));
+	}
+	var DumpItem = 0;
+	if (QsToShow > QList.length){
+		QsToShow = QList.length;
+	}
+	while (QsToShow < QList.length){
+		DumpItem = Math.floor(QList.length*Math.random());
+		for (j=DumpItem; j<(QList.length-1); j++){
+			QList[j] = QList[j+1];
+		}
+		QList.length = QList.length-1;
+	}
+	if (ShuffleQs == true){
+		QList = Shuffle(QList);
+	}
+	if (ShuffleAs == true){
+		var As;
+		for (var i=0; i<QList.length; i++){
+			As = QList[i].getElementsByTagName('ol')[0];
+			if (As != null){
+  			AList.length = 0;
+				while (As.getElementsByTagName('li').length > 0){
+					AList.push(As.removeChild(As.getElementsByTagName('li')[0]));
+				}
+				AList = Shuffle(AList);
+				for (j=0; j<AList.length; j++){
+					As.appendChild(AList[j]);
+				}
+			}
+		}
+	}
+	
+	for (i=0; i<QList.length; i++){
+		Qs.appendChild(QList[i]);
+		QArray[QArray.length] = QList[i];
+	}
+
+//Show the first item
+	QArray[0].style.display = '';
+	
+//Now hide all except the first item
+	for (i=1; i<QArray.length; i++){
+		QArray[i].style.display = 'none';
+	}		
+	SetQNumReadout();
+	
+	SetFocusToTextbox();
+}
+
+function SetFocusToTextbox(){
+//if there's a textbox, set the focus in it
+	if (QArray[CurrQNum].getElementsByTagName('input')[0] != null){
+		QArray[CurrQNum].getElementsByTagName('input')[0].focus();
+//and show a keypad if there is one
+		if (document.getElementById('CharacterKeypad') != null){
+			document.getElementById('CharacterKeypad').style.display = 'block';
+		}
+	}
+	else{
+  	if (QArray[CurrQNum].getElementsByTagName('textarea')[0] != null){
+  		QArray[CurrQNum].getElementsByTagName('textarea')[0].focus();	
+//and show a keypad if there is one
+			if (document.getElementById('CharacterKeypad') != null){
+				document.getElementById('CharacterKeypad').style.display = 'block';
+			}
+		}
+//This added for 6.0.4.11: hide accented character buttons if no textbox
+		else{
+			if (document.getElementById('CharacterKeypad') != null){
+				document.getElementById('CharacterKeypad').style.display = 'none';
+			}
+		}
+	}
+}
+
+function ChangeQ(ChangeBy){
+//The following line prevents moving to another question until the current
+//question is answered correctly. Uncomment it to enable this behaviour. 
+//	if (State[CurrQNum][0] == -1){return;}
+	if (((CurrQNum + ChangeBy) < 0)||((CurrQNum + ChangeBy) >= QArray.length)){return;}
+	QArray[CurrQNum].style.display = 'none';
+	CurrQNum += ChangeBy;
+	QArray[CurrQNum].style.display = '';
+//Undocumented function added 10/12/2004
+	ShowSpecialReadingForQuestion();
+	SetQNumReadout();
+	SetFocusToTextbox();
+}
+
+var HiddenReadingShown = false;
+function ShowSpecialReadingForQuestion(){
+//Undocumented function for showing specific reading text elements which change with each question
+//Added on 10/12/2004
+	if (document.getElementById('ReadingDiv') != null){
+		if (HiddenReadingShown == true){
+			document.getElementById('ReadingDiv').innerHTML = '';
+		}
+		if (QArray[CurrQNum] != null){
+//Fix for 6.0.4.25
+			var Children = QArray[CurrQNum].getElementsByTagName('div');
+			for (var i=0; i<Children.length; i++){
+			if (Children[i].className=="HiddenReading"){
+					document.getElementById('ReadingDiv').innerHTML = Children[i].innerHTML;
+					HiddenReadingShown = true;
+//Hide the ShowAllQuestions button to avoid confusion
+					if (document.getElementById('ShowMethodButton') != null){
+						document.getElementById('ShowMethodButton').style.display = 'none';
+					}
+				}
+			}	
+		}
+	}
+}
+
+function SetQNumReadout(){
+	document.getElementById('QNumReadout').innerHTML = (CurrQNum+1) + ' / ' + QArray.length;
+	if ((CurrQNum+1) >= QArray.length){
+		if (document.getElementById('NextQButton') != null){
+			document.getElementById('NextQButton').style.visibility = 'hidden';
+		}
+	}
+	else{
+		if (document.getElementById('NextQButton') != null){
+			document.getElementById('NextQButton').style.visibility = 'visible';
+		}
+	}
+	if (CurrQNum <= 0){
+		if (document.getElementById('PrevQButton') != null){
+			document.getElementById('PrevQButton').style.visibility = 'hidden';
+		}
+	}
+	else{
+		if (document.getElementById('PrevQButton') != null){
+			document.getElementById('PrevQButton').style.visibility = 'visible';
+		}
+	}
+}
+
+var I=new Array();
+I[0]=new Array();I[0][0]=100;
+I[0][1]='';
+I[0][2]='0';
+I[0][3]=new Array();
+I[0][3][0]=new Array('2','Correct!',1,100,1);
+I[0][3][1]=new Array('6','Sorry! It is incorrect.................. As you notice on a diagram, current, created by a ohmmeter\'s battery, will split into two parts. One going through 3-ohm and another - through 6-ohm side of a resistor. This means that those 2 parts become connected in parallel and ohmmeter will read a total resistance of 2 ohms.',0,0,1);
+I[0][3][2]=new Array('1','Sorry! It is incorrect.................. As you notice on a diagram, current, created by a ohmmeter\'s battery, will split into two parts. One going through 3-ohm and another - through 6-ohm side of a resistor. This means that those 2 parts become connected in parallel and ohmmeter will read a total resistance of 2 ohms.',0,0,1);
+I[0][3][3]=new Array('3','Sorry! It is incorrect.................. As you notice on a diagram, current, created by a ohmmeter\'s battery, will split into two parts. One going through 3-ohm and another - through 6-ohm side of a resistor. This means that those 2 parts become connected in parallel and ohmmeter will read a total resistance of 2 ohms.',0,0,1);
+I[1]=new Array();I[1][0]=100;
+I[1][1]='';
+I[1][2]='0';
+I[1][3]=new Array();
+I[1][3][0]=new Array('V1 = V2 = 0.','Sorry! It is incorrect.................. Because voltmeter V1 is connected in series and has huge internal resistance, voltage drop on it would be almost equal to the voltage of the power supply E. Current through the load would be so small that voltmeter V2 will not be able to read anything.',0,0,1);
+I[1][3][1]=new Array('V1 \u2013 E; V2 \u2013 0.','Correct!',1,100,1);
+I[1][3][2]=new Array('V1 - 0 ; V2 \u2013 E.','Sorry! It is incorrect.................. Because voltmeter V1 is connected in series and has huge internal resistance, voltage drop on it would be almost equal to the voltage of the power supply E. Current through the load would be so small that voltmeter V2 will not be able to read anything.',0,0,1);
+I[1][3][3]=new Array('V1 = V2 = E.','Sorry! It is incorrect.................. Because voltmeter V1 is connected in series and has huge internal resistance, voltage drop on it would be almost equal to the voltage of the power supply E. Current through the load would be so small that voltmeter V2 will not be able to read anything.',0,0,1);
+I[2]=new Array();I[2][0]=100;
+I[2][1]='';
+I[2][2]='0';
+I[2][3]=new Array();
+I[2][3][0]=new Array('2.7 amps','Sorry! It is incorrect.................. Two, or more, ammeters connected in series in the circuit, will have the same current flowing through them. (Resistance of an ammeter is considered to be zero).',0,0,1);
+I[2][3][1]=new Array('0.9 amps','Sorry! It is incorrect.................. Two, or more, ammeters connected in series in the circuit, will have the same current flowing through them. (Resistance of an ammeter is considered to be zero).',0,0,1);
+I[2][3][2]=new Array('3.6 amps','Sorry! It is incorrect.................. Two, or more, ammeters connected in series in the circuit, will have the same current flowing through them. (Resistance of an ammeter is considered to be zero).',0,0,1);
+I[2][3][3]=new Array('1.8 amps','Correct!',1,100,1);
+I[3]=new Array();I[3][0]=100;
+I[3][1]='';
+I[3][2]='0';
+I[3][3]=new Array();
+I[3][3][0]=new Array('remove the fuse','Correct!',1,100,1);
+I[3][3][1]=new Array('bridge two phases','Sorry! It is incorrect........ Correct answer is "remove the fuse".',0,0,1);
+I[3][3][2]=new Array('remove a commutator','Sorry! It is incorrect........ Correct answer is "remove the fuse".',0,0,1);
+I[3][3][3]=new Array('bridge one phase','Sorry! It is incorrect........ Correct answer is "remove the fuse".',0,0,1);
+I[4]=new Array();I[4][0]=100;
+I[4][1]='';
+I[4][2]='0';
+I[4][3]=new Array();
+I[4][3][0]=new Array('administer a stimulan','Sorry! It is incorrect........ Correct answer is "make him comfortable and call a doctor".',0,0,1);
+I[4][3][1]=new Array('start artificial respiration','Sorry! It is incorrect........ Correct answer is "make him comfortable and call a doctor".',0,0,1);
+I[4][3][2]=new Array('take him at once to a doctor\'s office.','Sorry! It is incorrect........ Correct answer is "make him comfortable and call a doctor".',0,0,1);
+I[4][3][3]=new Array('make him comfortable and call a doctor','Correct!',1,100,1);
+I[5]=new Array();I[5][0]=100;
+I[5][1]='';
+I[5][2]='0';
+I[5][3]=new Array();
+I[5][3][0]=new Array('10','Sorry! It is incorrect........ Correct answer is "50 amperes".  200 ampere-hours divided by 4 hours = 50 amperes.',0,0,1);
+I[5][3][1]=new Array('100','Sorry! It is incorrect........ Correct answer is "50 amperes".  200 ampere-hours divided by 4 hours = 50 amperes.',0,0,1);
+I[5][3][2]=new Array('50','Correct!',1,100,1);
+I[5][3][3]=new Array('25','Sorry! It is incorrect........ Correct answer is "50 amperes".  200 ampere-hours divided by 4 hours = 50 amperes.',0,0,1);
+I[6]=new Array();I[6][0]=100;
+I[6][1]='';
+I[6][2]='0';
+I[6][3]=new Array();
+I[6][3][0]=new Array('311.1','Correct!',1,100,1);
+I[6][3][1]=new Array('208.2','Sorry! It is incorrect........ In most cases, when we are talking about voltage, we mean that this is its so named "RMS or effective value" that produces real work in the circuit. To calculate maximum value of it, we are using formula <img src="Emax.JPG" alt="Emax.JPG" title="Emax" width="95" height="23"></img> According to a formula, maximum value would be 311.1 volts.',0,0,1);
+I[6][3][2]=new Array('240','Sorry! It is incorrect........ In most cases, when we are talking about voltage, we mean that this is its so named "RMS or effective value" that produces real work in the circuit. To calculate maximum value of it, we are using formula <img src="Emax.JPG" alt="Emax.JPG" title="Emax" width="95" height="23"></img> According to a formula, maximum value would be 311.1 volts.',0,0,1);
+I[6][3][3]=new Array('115','Sorry! It is incorrect........ In most cases, when we are talking about voltage, we mean that this is its so named "RMS or effective value" that produces real work in the circuit. To calculate maximum value of it, we are using formula <img src="Emax.JPG" alt="Emax.JPG" title="Emax" width="95" height="23"></img> According to a formula, maximum value would be 311.1 volts.',0,0,1);
+I[7]=new Array();I[7][0]=100;
+I[7][1]='';
+I[7][2]='0';
+I[7][3]=new Array();
+I[7][3][0]=new Array('Brass','Sorry! It is incorrect........ Correct answer "PVC".  PVC is polyvinilchloride plastic that resists corrosive actions.',0,0,1);
+I[7][3][1]=new Array('PVC','Correct!',1,100,1);
+I[7][3][2]=new Array('Copper','Sorry! It is incorrect........ Correct answer "PVC".  PVC is polyvinilchloride plastic that resists corrosive actions.',0,0,1);
+I[7][3][3]=new Array('Cast iron','Sorry! It is incorrect........ Correct answer "PVC".  PVC is polyvinilchloride plastic that resists corrosive actions.',0,0,1);
+I[8]=new Array();I[8][0]=100;
+I[8][1]='';
+I[8][2]='0';
+I[8][3]=new Array();
+I[8][3][0]=new Array('TRUE','No, it is incorrect.',0,0,1);
+I[8][3][1]=new Array('FALSE','Yes, false is correct!',1,100,1);
+I[9]=new Array();I[9][0]=100;
+I[9][1]='';
+I[9][2]='0';
+I[9][3]=new Array();
+I[9][3][0]=new Array('50','Sorry! It is incorrect........ Correct answer is 100 volts. Formula to use is <img src="Power parallel.JPG" alt="Power parallel.JPG" title="Power parallel" width="43" height="32"></img>',0,0,1);
+I[9][3][1]=new Array('10','Sorry! It is incorrect........ Correct answer is 100 volts. Formula to use is <img src="Power parallel.JPG" alt="Power parallel.JPG" title="Power parallel" width="43" height="32"></img>',0,0,1);
+I[9][3][2]=new Array('100','Correct!',1,100,1);
+I[9][3][3]=new Array('1,000','Sorry! It is incorrect........ Correct answer is 100 volts. Formula to use is <img src="Power parallel.JPG" alt="Power parallel.JPG" title="Power parallel" width="43" height="32"></img>',0,0,1);
+I[10]=new Array();I[10][0]=100;
+I[10][1]='';
+I[10][2]='0';
+I[10][3]=new Array();
+I[10][3][0]=new Array('432 volts','Correct!',1,100,1);
+I[10][3][1]=new Array('292.6 volts','Sorry! It is incorrect.................. With all switches open, voltmeter connected across power source and, because internal resistance of a voltmeter is very big, all voltage drop will be on a voltmeter.',0,0,1);
+I[10][3][2]=new Array('136 volts','Sorry! It is incorrect.................. With all switches open, voltmeter connected across power source and, because internal resistance of a voltmeter is very big, all voltage drop will be on a voltmeter.',0,0,1);
+I[10][3][3]=new Array('zero','Sorry! It is incorrect.................. With all switches open, voltmeter connected across power source and, because internal resistance of a voltmeter is very big, all voltage drop will be on a voltmeter.',0,0,1);
+I[11]=new Array();I[11][0]=100;
+I[11][1]='';
+I[11][2]='0';
+I[11][3]=new Array();
+I[11][3][0]=new Array('6 amps','Sorry! It is incorrect.................. With both switches open, there is no current in the circuit.',0,0,1);
+I[11][3][1]=new Array('4 amps','Sorry! It is incorrect.................. With both switches open, there is no current in the circuit.',0,0,1);
+I[11][3][2]=new Array('5.14 amps','Sorry! It is incorrect.................. With both switches open, there is no current in the circuit.',0,0,1);
+I[11][3][3]=new Array('zero','Correct!',1,100,1);
+I[12]=new Array();I[12][0]=100;
+I[12][1]='';
+I[12][2]='0';
+I[12][3]=new Array();
+I[12][3][0]=new Array('216 volts','Sorry! It is incorrect.................. In this combination, voltmeter is connected in series with resistors R4 and R6, and across R3. Because resistance of a voltmeter is very big (could be up to 1,000,000 ohms), resistances of resistors R4 and R6 should be neglected. And because we are finding voltage across one of the three equal resistances connected in series, voltage drop on it woud be 1/3 of that of power supply, or 144 volts.  To calculate it another way is to find current in a series circuit of R1, R2 and R3 (432 volts / 54 ohms = 8 amps) and multiply it by the value of resistor R3 - 8 amps x 18 ohms = 144 volts.',0,0,1);
+I[12][3][1]=new Array('24 volts','Sorry! It is incorrect.................. In this combination, voltmeter is connected in series with resistors R4 and R6, and across R3. Because resistance of a voltmeter is very big (could be up to 1,000,000 ohms), resistances of resistors R4 and R6 should be neglected. And because we are finding voltage across one of the three equal resistances connected in series, voltage drop on it woud be 1/3 of that of power supply, or 144 volts.  To calculate it another way is to find current in a series circuit of R1, R2 and R3 (432 volts / 54 ohms = 8 amps) and multiply it by the value of resistor R3 - 8 amps x 18 ohms = 144 volts.',0,0,1);
+I[12][3][2]=new Array('144 volts','Correct!',1,100,1);
+I[12][3][3]=new Array('80 volts','Sorry! It is incorrect.................. In this combination, voltmeter is connected in series with resistors R4 and R6, and across R3. Because resistance of a voltmeter is very big (could be up to 1,000,000 ohms), resistances of resistors R4 and R6 should be neglected. And because we are finding voltage across one of the three equal resistances connected in series, voltage drop on it woud be 1/3 of that of power supply, or 144 volts.  To calculate it another way is to find current in a series circuit of R1, R2 and R3 (432 volts / 54 ohms = 8 amps) and multiply it by the value of resistor R3 - 8 amps x 18 ohms = 144 volts.',0,0,1);
+I[13]=new Array();I[13][0]=100;
+I[13][1]='';
+I[13][2]='0';
+I[13][3]=new Array();
+I[13][3][0]=new Array('4.8 amps','Correct!',1,100,1);
+I[13][3][1]=new Array('3.6 amps','Sorry! It is incorrect.................. With this switching arrangement, we have series circuit with all resistors, except resistor R3, and total resistance of 90 ohms. Current in a circuit is calculated by Ohm\'s Law formula <img src="Ohm\'s Law_Current.JPG" alt="Ohm\'s Law_Current.JPG" title="Ohm\'s Law_Current" width="36" height="25"></img> and equal 4.8 amperes.',0,0,1);
+I[13][3][2]=new Array('5.14 amps','Sorry! It is incorrect.................. With this switching arrangement, we have series circuit with all resistors, except resistor R3, and total resistance of 90 ohms. Current in a circuit is calculated by Ohm\'s Law formula <img src="Ohm\'s Law_Current.JPG" alt="Ohm\'s Law_Current.JPG" title="Ohm\'s Law_Current" width="36" height="25"></img> and equal 4.8 amperes.',0,0,1);
+I[13][3][3]=new Array('zero','Sorry! It is incorrect.................. With this switching arrangement, we have series circuit with all resistors, except resistor R3, and total resistance of 90 ohms. Current in a circuit is calculated by Ohm\'s Law formula <img src="Ohm\'s Law_Current.JPG" alt="Ohm\'s Law_Current.JPG" title="Ohm\'s Law_Current" width="36" height="25"></img> and equal 4.8 amperes.',0,0,1);
+I[14]=new Array();I[14][0]=100;
+I[14][1]='';
+I[14][2]='0';
+I[14][3]=new Array();
+I[14][3][0]=new Array('26.1 volts','Sorry! It is incorrect.................. To calculate voltmeter reading, we have to find current through R5, across which voltmeter is connected. When both switches closed, total resistance is equal 49.5 ohms.  Dividing circuit voltage of 432 volts by 49.5 ohms, we\'ll find a total current of 8.72 amps. As you can see, current splits in two parts - one flowing through R3 (18 ohms) and another - through series resistances R4, R5 and R6 (total = 54 ohms). Because resistance of R3 3 (three) times smaller than the total resistance of R4,R5,R6, 3 times less current will flow through the series combination. We can say that total current is divided on 4 parts - one part or 2.18 amperes, flowing through R4,R5,R6 and three parts, or 2.18 x 3 = 6.54 amperes, going through R3. Voltmeter reading is calculated by the formula <img src="Ohm\'s Law.JPG" alt="Ohm\'s Law.JPG" title="Ohm\'s Law" width="59" height="15"></img> or 2.18  amperes x 18 ohms = 39.3 volts.',0,0,1);
+I[14][3][1]=new Array('19.7 volts','Sorry! It is incorrect.................. To calculate voltmeter reading, we have to find current through R5, across which voltmeter is connected. When both switches closed, total resistance is equal 49.5 ohms.  Dividing circuit voltage of 432 volts by 49.5 ohms, we\'ll find a total current of 8.72 amps. As you can see, current splits in two parts - one flowing through R3 (18 ohms) and another - through series resistances R4, R5 and R6 (total = 54 ohms). Because resistance of R3 3 (three) times smaller than the total resistance of R4,R5,R6, 3 times less current will flow through the series combination. We can say that total current is divided on 4 parts - one part or 2.18 amperes, flowing through R4,R5,R6 and three parts, or 2.18 x 3 = 6.54 amperes, going through R3. Voltmeter reading is calculated by the formula <img src="Ohm\'s Law.JPG" alt="Ohm\'s Law.JPG" title="Ohm\'s Law" width="59" height="15"></img> or 2.18  amperes x 18 ohms = 39.3 volts.',0,0,1);
+I[14][3][2]=new Array('39.3 volts','Correct!',1,100,1);
+I[14][3][3]=new Array('12.36 volts','Sorry! It is incorrect.................. To calculate voltmeter reading, we have to find current through R5, across which voltmeter is connected. When both switches closed, total resistance is equal 49.5 ohms.  Dividing circuit voltage of 432 volts by 49.5 ohms, we\'ll find a total current of 8.72 amps. As you can see, current splits in two parts - one flowing through R3 (18 ohms) and another - through series resistances R4, R5 and R6 (total = 54 ohms). Because resistance of R3 3 (three) times smaller than the total resistance of R4,R5,R6, 3 times less current will flow through the series combination. We can say that total current is divided on 4 parts - one part or 2.18 amperes, flowing through R4,R5,R6 and three parts, or 2.18 x 3 = 6.54 amperes, going through R3. Voltmeter reading is calculated by the formula <img src="Ohm\'s Law.JPG" alt="Ohm\'s Law.JPG" title="Ohm\'s Law" width="59" height="15"></img> or 2.18  amperes x 18 ohms = 39.3 volts.',0,0,1);
+I[15]=new Array();I[15][0]=100;
+I[15][1]='';
+I[15][2]='0';
+I[15][3]=new Array();
+I[15][3][0]=new Array('24 amps','Sorry! It is incorrect.................. This value was calculated in previous question and equal to 8.72 amps.',0,0,1);
+I[15][3][1]=new Array('8.72 amps','Correct!',1,100,1);
+I[15][3][2]=new Array('6.54 amps','Sorry! It is incorrect.................. This value was calculated in previous question and equal to 8.72 amps.',0,0,1);
+I[15][3][3]=new Array('7.82 amps','Sorry! It is incorrect.................. This value was calculated in previous question and equal to 8.72 amps.',0,0,1);
+I[16]=new Array();I[16][0]=100;
+I[16][1]='';
+I[16][2]='0';
+I[16][3]=new Array();
+I[16][3][0]=new Array('True','Sorry! It is incorrect........ Tools can be powered by different type of energy sources, such as gasoline engine.',0,0,1);
+I[16][3][1]=new Array('False','It is false!',1,100,1);
+I[17]=new Array();I[17][0]=100;
+I[17][1]='';
+I[17][2]='0';
+I[17][3]=new Array();
+I[17][3][0]=new Array('178 litres','Sorry! It is incorrect........ Correct answer is 288. For 5/8 of its capacity tank holds 180 litres.To find amount of litres in one part, we have to divide 180 by 5; to find full capacity, we multiply result by 8.',0,0,1);
+I[17][3][1]=new Array('100 litres','Sorry! It is incorrect........ Correct answer is 288. For 5/8 of its capacity tank holds 180 litres.To find amount of litres in one part, we have to divide 180 by 5; to find full capacity, we multiply result by 8.',0,0,1);
+I[17][3][2]=new Array('288 litres','Correct!',1,100,1);
+I[17][3][3]=new Array('450 litres','Sorry! It is incorrect........ Correct answer is 288. For 5/8 of its capacity tank holds 180 litres.To find amount of litres in one part, we have to divide 180 by 5; to find full capacity, we multiply result by 8.',0,0,1);
+I[18]=new Array();I[18][0]=100;
+I[18][1]='';
+I[18][2]='0';
+I[18][3]=new Array();
+I[18][3][0]=new Array('Primary winding','Sorry! It is incorrect........ Correct answer is "high voltage winding".',0,0,1);
+I[18][3][1]=new Array('High voltage winding','Correct!',1,100,1);
+I[18][3][2]=new Array('Low voltage winding','Sorry! It is incorrect........ Correct answer is "high voltage winding".',0,0,1);
+I[18][3][3]=new Array('Secondary winding','Sorry! It is incorrect........ Correct answer is "high voltage winding".',0,0,1);
+I[19]=new Array();I[19][0]=100;
+I[19][1]='';
+I[19][2]='0';
+I[19][3]=new Array();
+I[19][3][0]=new Array('punch','Correct!',1,100,1);
+I[19][3][1]=new Array('auger bit','Sorry! It is incorrect........ Correct answer is "punch".',0,0,1);
+I[19][3][2]=new Array('mallet','Sorry! It is incorrect........ Correct answer is "punch".',0,0,1);
+I[19][3][3]=new Array('sledge hammer','Sorry! It is incorrect........ Correct answer is "punch".',0,0,1);
+I[20]=new Array();I[20][0]=100;
+I[20][1]='';
+I[20][2]='0';
+I[20][3]=new Array();
+I[20][3][0]=new Array('describes relationship between frequency, current and voltage in the circuit','Sorry! It is incorrect........ Correct answer is "describes relationship between voltage, current and resistance in the circuit".',0,0,1);
+I[20][3][1]=new Array('describes relationship between voltage, current and resistance in the circuit','Correct!',1,100,1);
+I[20][3][2]=new Array('describes relationship between wattage, current and resistance in the circuit','Sorry! It is incorrect........ Correct answer is "describes relationship between voltage, current and resistance in the circuit".',0,0,1);
+I[20][3][3]=new Array('describes relationship between wattage, current and resistance in the circuit','Sorry! It is incorrect........ Correct answer is "describes relationship between voltage, current and resistance in the circuit".',0,0,1);
+I[21]=new Array();I[21][0]=100;
+I[21][1]='';
+I[21][2]='0';
+I[21][3]=new Array();
+I[21][3][0]=new Array('Four 6"  pipes','Correct!',1,100,1);
+I[21][3][1]=new Array('Two 8"  pipes','Sorry! It is incorrect .......... Correct answer is - four 6" pipes.',0,0,1);
+I[21][3][2]=new Array('Two 6"  pipes','Sorry! It is incorrect .......... Correct answer is - four 6" pipes.',0,0,1);
+I[21][3][3]=new Array('One 8"  pipe and two 6"  pipe','Sorry! It is incorrect .......... Correct answer is - four 6" pipes.',0,0,1);
+I[22]=new Array();I[22][0]=100;
+I[22][1]='';
+I[22][2]='0';
+I[22][3]=new Array();
+I[22][3][0]=new Array('masonry','Sorry! It is incorrect .......... Correct answer is "drywall" or sheet rock.',0,0,1);
+I[22][3][1]=new Array('wood','Sorry! It is incorrect .......... Correct answer is "drywall" or sheet rock.',0,0,1);
+I[22][3][2]=new Array('steel paneling','Sorry! It is incorrect .......... Correct answer is "drywall" or sheet rock.',0,0,1);
+I[22][3][3]=new Array('drywall','Correct!',1,100,1);
+I[23]=new Array();I[23][0]=100;
+I[23][1]='';
+I[23][2]='0';
+I[23][3]=new Array();
+I[23][3][0]=new Array('Apparent power and VARS','Sorry! It is incorrect................. Correct answer is"True power and Power Factor". Formula <img src="Power_Factor.JPG" alt="Power_Factor.JPG" title="Power_Factor" width="239" height="31"></img> Power Factor (PF) is a unit in electrical theory that represents efficiency of transferring electrical energy from point "A" to point "B". TRUE POWER is a power that consumer actually receives, total power or APPARENT POWER is a power we calculate without any loss.',0,0,1);
+I[23][3][1]=new Array('True power and VAWS','Sorry! It is incorrect................. Correct answer is"True power and Power Factor". Formula <img src="Power_Factor.JPG" alt="Power_Factor.JPG" title="Power_Factor" width="239" height="31"></img> Power Factor (PF) is a unit in electrical theory that represents efficiency of transferring electrical energy from point "A" to point "B". TRUE POWER is a power that consumer actually receives, total power or APPARENT POWER is a power we calculate without any loss.',0,0,1);
+I[23][3][2]=new Array('True power and Power Factor','Correct!',1,100,1);
+I[23][3][3]=new Array('True power and VARS','Sorry! It is incorrect................. Correct answer is"True power and Power Factor". Formula <img src="Power_Factor.JPG" alt="Power_Factor.JPG" title="Power_Factor" width="239" height="31"></img> Power Factor (PF) is a unit in electrical theory that represents efficiency of transferring electrical energy from point "A" to point "B". TRUE POWER is a power that consumer actually receives, total power or APPARENT POWER is a power we calculate without any loss.',0,0,1);
+I[24]=new Array();I[24][0]=100;
+I[24][1]='';
+I[24][2]='0';
+I[24][3]=new Array();
+I[24][3][0]=new Array('change the current from A.C. to D.C.','Sorry! It is incorrect................. Correct answer is "lower the voltage from a 110 volt a.c. power line".',0,0,1);
+I[24][3][1]=new Array('lower the voltage from a 110 volt a.c. power line','Correct!',1,100,1);
+I[24][3][2]=new Array('raise battery output voltage','Sorry! It is incorrect................. Correct answer is "lower the voltage from a 110 volt a.c. power line".',0,0,1);
+I[24][3][3]=new Array('maintain constant battery output voltage','Sorry! It is incorrect................. Correct answer is "lower the voltage from a 110 volt a.c. power line".',0,0,1);
+I[25]=new Array();I[25][0]=100;
+I[25][1]='';
+I[25][2]='0';
+I[25][3]=new Array();
+I[25][3][0]=new Array('polarized','Correct!',1,100,1);
+I[25][3][1]=new Array('energized','Sorry! It is incorrect................. Correct answer is"polarized". One of the prong on a plug is wider than another, so the corresponding slot in the receptacle.',0,0,1);
+I[25][3][2]=new Array('balanced','Sorry! It is incorrect................. Correct answer is"polarized". One of the prong on a plug is wider than another, so the corresponding slot in the receptacle.',0,0,1);
+I[25][3][3]=new Array('adjusted','Sorry! It is incorrect................. Correct answer is"polarized". One of the prong on a plug is wider than another, so the corresponding slot in the receptacle.',0,0,1);
+I[26]=new Array();I[26][0]=100;
+I[26][1]='';
+I[26][2]='0';
+I[26][3]=new Array();
+I[26][3][0]=new Array('apologetic and condescending','Sorry! It is incorrect........ Correct answer is "fair in his dealings with him".',0,0,1);
+I[26][3][1]=new Array('stem and to the point at all times','Sorry! It is incorrect........ Correct answer is "fair in his dealings with him".',0,0,1);
+I[26][3][2]=new Array('sarcastic and wise','Sorry! It is incorrect........ Correct answer is "fair in his dealings with him".',0,0,1);
+I[26][3][3]=new Array('fair in his dealings with him','Correct!',1,100,1);
+I[27]=new Array();I[27][0]=100;
+I[27][1]='';
+I[27][2]='0';
+I[27][3]=new Array();
+I[27][3][0]=new Array('the cold water line entering the building','Correct!',1,100,1);
+I[27][3][1]=new Array('any steel beam, because it grounded','Sorry! It is incorrect........ Correct answer is "the cold water line entering the building".',0,0,1);
+I[27][3][2]=new Array('the exterior vent line','Sorry! It is incorrect........ Correct answer is "the cold water line entering the building".',0,0,1);
+I[27][3][3]=new Array('the waste or soil line leaving the building','Sorry! It is incorrect........ Correct answer is "the cold water line entering the building".',0,0,1);
+I[28]=new Array();I[28][0]=100;
+I[28][1]='';
+I[28][2]='0';
+I[28][3]=new Array();
+I[28][3][0]=new Array('resistance of heater coil is more than resistance of the supply wire','Correct!',1,100,1);
+I[28][3][1]=new Array('supply wiring has insulation','Sorry! It is incorrect........ Correct answer is "resistance of heater coil is more than resistance of the supply wire". Most of the voltage drop will be on a heater coil.',0,0,1);
+I[28][3][2]=new Array('current through supply line flows at slower speed','Sorry! It is incorrect........ Correct answer is "resistance of heater coil is more than resistance of the supply wire". Most of the voltage drop will be on a heater coil.',0,0,1);
+I[28][3][3]=new Array('supply wire made of superior material','Sorry! It is incorrect........ Correct answer is "resistance of heater coil is more than resistance of the supply wire". Most of the voltage drop will be on a heater coil.',0,0,1);
+I[29]=new Array();I[29][0]=100;
+I[29][1]='';
+I[29][2]='0';
+I[29][3]=new Array();
+I[29][3][0]=new Array('separate two wires on the same terminal','Sorry! It is incorrect............... <img src="Wire nut.JPG" alt="Wire nut.JPG" title="Wire nut" width="113" height="89"></img> Correct answer is "join wires and insulate the joints".',0,0,1);
+I[29][3][1]=new Array('join wires and insulate the joints','Correct!',1,100,1);
+I[29][3][2]=new Array('fasten wires to stud terminals','Sorry! It is incorrect............... <img src="Wire nut.JPG" alt="Wire nut.JPG" title="Wire nut" width="113" height="89"></img> Correct answer is "join wires and insulate the joints".',0,0,1);
+I[29][3][3]=new Array('lock regular nuts in place','Sorry! It is incorrect............... <img src="Wire nut.JPG" alt="Wire nut.JPG" title="Wire nut" width="113" height="89"></img> Correct answer is "join wires and insulate the joints".',0,0,1);
+I[30]=new Array();I[30][0]=100;
+I[30][1]='';
+I[30][2]='0';
+I[30][3]=new Array();
+I[30][3][0]=new Array('one single pole switch and one 3- way  switch','Sorry! It is incorrect...............  To control a lamp or any other electrical load from 2 locations we can use two 3-way switches.<img src="Two 3-way.JPG" alt="Two 3-way.JPG" title="Two 3-way" width="172" height="77"></img>. But, to increase the number of controlling locations, we can install 4-way switches. We can have only two 3-way switches in the circuit, but unlimited number of 4-way switches. One 3-way switch always installed after power supply and another one - before the load, in our case - a lamp. All 4-way switches must be installed between 3-way switches.<img src="3-way.JPG" alt="3-way.JPG" title="3-way" width="204" height="81"></img>',0,0,1);
+I[30][3][1]=new Array('two single pole switches','Sorry! It is incorrect...............  To control a lamp or any other electrical load from 2 locations we can use two 3-way switches.<img src="Two 3-way.JPG" alt="Two 3-way.JPG" title="Two 3-way" width="172" height="77"></img>. But, to increase the number of controlling locations, we can install 4-way switches. We can have only two 3-way switches in the circuit, but unlimited number of 4-way switches. One 3-way switch always installed after power supply and another one - before the load, in our case - a lamp. All 4-way switches must be installed between 3-way switches.<img src="3-way.JPG" alt="3-way.JPG" title="3-way" width="204" height="81"></img>',0,0,1);
+I[30][3][2]=new Array('two 3-way switches and two 4-way switches','Correct!',1,100,1);
+I[30][3][3]=new Array('one single pole switch and one 4-way  switch','Sorry! It is incorrect...............  To control a lamp or any other electrical load from 2 locations we can use two 3-way switches.<img src="Two 3-way.JPG" alt="Two 3-way.JPG" title="Two 3-way" width="172" height="77"></img>. But, to increase the number of controlling locations, we can install 4-way switches. We can have only two 3-way switches in the circuit, but unlimited number of 4-way switches. One 3-way switch always installed after power supply and another one - before the load, in our case - a lamp. All 4-way switches must be installed between 3-way switches.<img src="3-way.JPG" alt="3-way.JPG" title="3-way" width="204" height="81"></img>',0,0,1);
+I[31]=new Array();I[31][0]=100;
+I[31][1]='';
+I[31][2]='0';
+I[31][3]=new Array();
+I[31][3][0]=new Array('Carbon','Correct!',1,100,1);
+I[31][3][1]=new Array('Brass','Sorry! It is incorrect............... Correct answer is "carbon".',0,0,1);
+I[31][3][2]=new Array('Mercury','Sorry! It is incorrect............... Correct answer is "carbon".',0,0,1);
+I[31][3][3]=new Array('Cast iron','Sorry! It is incorrect............... Correct answer is "carbon".',0,0,1);
+I[32]=new Array();I[32][0]=100;
+I[32][1]='';
+I[32][2]='0';
+I[32][3]=new Array();
+I[32][3][0]=new Array('reducing fitting','Sorry! It is incorrect............... The right answer is - "junction box", which is, in many cases, a box that has terminal stripes with terminals and few entrances for cables. Cables wires terminated and got connected together in required order on terminals.',0,0,1);
+I[32][3][1]=new Array('connector','Sorry! It is incorrect............... The right answer is - "junction box", which is, in many cases, a box that has terminal stripes with terminals and few entrances for cables. Cables wires terminated and got connected together in required order on terminals.',0,0,1);
+I[32][3][2]=new Array('junction box','Correct!',1,100,1);
+I[32][3][3]=new Array('splitter','Sorry! It is incorrect............... The right answer is - "junction box", which is, in many cases, a box that has terminal stripes with terminals and few entrances for cables. Cables wires terminated and got connected together in required order on terminals.',0,0,1);
+I[33]=new Array();I[33][0]=100;
+I[33][1]='';
+I[33][2]='0';
+I[33][3]=new Array();
+I[33][3][0]=new Array('of low resistance','Sorry! It is incorrect........ Correct answer is "fused".',0,0,1);
+I[33][3][1]=new Array('fused','Correct!',1,100,1);
+I[33][3][2]=new Array('solid wire','Sorry! It is incorrect........ Correct answer is "fused".',0,0,1);
+I[33][3][3]=new Array('bare','Sorry! It is incorrect........ Correct answer is "fused".',0,0,1);
+I[34]=new Array();I[34][0]=100;
+I[34][1]='';
+I[34][2]='0';
+I[34][3]=new Array();
+I[34][3][0]=new Array('Ladle','Sorry! It is incorrect........ Correct answer is "chisel".',0,0,1);
+I[34][3][1]=new Array('Reamer','Sorry! It is incorrect........ Correct answer is "chisel".',0,0,1);
+I[34][3][2]=new Array('File card','Sorry! It is incorrect........ Correct answer is "chisel".',0,0,1);
+I[34][3][3]=new Array('Chisel','Correct!',1,100,1);
+I[35]=new Array();I[35][0]=100;
+I[35][1]='';
+I[35][2]='0';
+I[35][3]=new Array();
+I[35][3][0]=new Array('100 volts','Correct!',1,100,1);
+I[35][3][1]=new Array('250 volts','Sorry! It is incorrect........ Correct answer is "100 volts". As close as possible to a measured value.',0,0,1);
+I[35][3][2]=new Array('200 volts','Sorry! It is incorrect........ Correct answer is "100 volts". As close as possible to a measured value.',0,0,1);
+I[35][3][3]=new Array('75 volts','Sorry! It is incorrect........ Correct answer is "100 volts". As close as possible to a measured value.',0,0,1);
+I[36]=new Array();I[36][0]=100;
+I[36][1]='';
+I[36][2]='0';
+I[36][3]=new Array();
+I[36][3][0]=new Array('Moist sponge','Correct!',1,100,1);
+I[36][3][1]=new Array('File','Sorry! It is incorrect........ Correct answer is "moist sponge".',0,0,1);
+I[36][3][2]=new Array('Sand paper','Sorry! It is incorrect........ Correct answer is "moist sponge".',0,0,1);
+I[36][3][3]=new Array('Clean rag','Sorry! It is incorrect........ Correct answer is "moist sponge".',0,0,1);
+I[37]=new Array();I[37][0]=100;
+I[37][1]='';
+I[37][2]='0';
+I[37][3]=new Array();
+I[37][3][0]=new Array('0.78','Sorry! It is incorrect........ 0.001 of an inch is 1 mil. So, 0.078 of an inch would be 78 mils.',0,0,1);
+I[37][3][1]=new Array('78','Correct!',1,100,1);
+I[37][3][2]=new Array('7.8','Sorry! It is incorrect........ 0.001 of an inch is 1 mil. So, 0.078 of an inch would be 78 mils.',0,0,1);
+I[37][3][3]=new Array('0.780','Sorry! It is incorrect........ 0.001 of an inch is 1 mil. So, 0.078 of an inch would be 78 mils.',0,0,1);
+I[38]=new Array();I[38][0]=100;
+I[38][1]='';
+I[38][2]='0';
+I[38][3]=new Array();
+I[38][3][0]=new Array('608.400','Sorry! It is incorrect........ To find a CMA or circular mils area of a wire we have to multiply diameter of this wire on itself. 78 mils time 78 mils would be equal 6084.000 circular mils.',0,0,1);
+I[38][3][1]=new Array('608,400','Sorry! It is incorrect........ To find a CMA or circular mils area of a wire we have to multiply diameter of this wire on itself. 78 mils time 78 mils would be equal 6084.000 circular mils.',0,0,1);
+I[38][3][2]=new Array('60,84','Sorry! It is incorrect........ To find a CMA or circular mils area of a wire we have to multiply diameter of this wire on itself. 78 mils time 78 mils would be equal 6084.000 circular mils.',0,0,1);
+I[38][3][3]=new Array('6084.000','Correct!',1,100,1);
+I[39]=new Array();I[39][0]=100;
+I[39][1]='';
+I[39][2]='0';
+I[39][3]=new Array();
+I[39][3][0]=new Array('the flow of atoms from one molecule to another through the conductor','Sorry! It is incorrect........ It is the flow of electrons from one atom to another through the conductor.',0,0,1);
+I[39][3][1]=new Array('the flow of electrons from one atom to another through the conductor','Correct!',1,100,1);
+I[39][3][2]=new Array('caused by attraction of electrons to a negatively charged conductor','Sorry! It is incorrect........ It is the flow of electrons from one atom to another through the conductor.',0,0,1);
+I[39][3][3]=new Array('the flow of electrons from a positively charged body to a negatively charged body','Sorry! It is incorrect........ It is the flow of electrons from one atom to another through the conductor.',0,0,1);
+I[40]=new Array();I[40][0]=100;
+I[40][1]='';
+I[40][2]='0';
+I[40][3]=new Array();
+I[40][3][0]=new Array('treat with neutralizing agent and no bandaging','Sorry! It is incorrect........ Run large quantity of water on burn and cool until pain reduced.',0,0,1);
+I[40][3][1]=new Array('run large quantity of water on burn and cool until pain reduced','Correct!',1,100,1);
+I[40][3][2]=new Array('apply a sodium carbonate and than bandaging','Sorry! It is incorrect........ Run large quantity of water on burn and cool until pain reduced.',0,0,1);
+I[40][3][3]=new Array('use ice to cool burn and apply gauze','Sorry! It is incorrect........ Run large quantity of water on burn and cool until pain reduced.',0,0,1);
+I[41]=new Array();I[41][0]=100;
+I[41][1]='';
+I[41][2]='0';
+I[41][3]=new Array();
+I[41][3][0]=new Array('power on primary winding more than on secondary','Sorry! It is incorrect........ Correct answer is "secondary winding has thicker wire". In a step-down transformer, secondary winding has lower voltage than primary winding but higher current flow, which required thicker wire.',0,0,1);
+I[41][3][1]=new Array('primary winding has thicker wire','Sorry! It is incorrect........ Correct answer is "secondary winding has thicker wire". In a step-down transformer, secondary winding has lower voltage than primary winding but higher current flow, which required thicker wire.',0,0,1);
+I[41][3][2]=new Array('secondary winding has thicker wire','Correct!',1,100,1);
+I[41][3][3]=new Array('secondary winding has more turns of wir','Sorry! It is incorrect........ Correct answer is "secondary winding has thicker wire". In a step-down transformer, secondary winding has lower voltage than primary winding but higher current flow, which required thicker wire.',0,0,1);
+I[42]=new Array();I[42][0]=100;
+I[42][1]='';
+I[42][2]='0';
+I[42][3]=new Array();
+I[42][3][0]=new Array('15\' x 20\'','Sorry! It is incorrect........ Correct answer is "25\' x 10\'".',0,0,1);
+I[42][3][1]=new Array('35\' x 20','Sorry! It is incorrect........ Correct answer is "25\' x 10\'".',0,0,1);
+I[42][3][2]=new Array('25\' x 10\'','Correct!',1,100,1);
+I[42][3][3]=new Array('50\' x 20\'','Sorry! It is incorrect........ Correct answer is "25\' x 10\'".',0,0,1);
+I[43]=new Array();I[43][0]=100;
+I[43][1]='';
+I[43][2]='0';
+I[43][3]=new Array();
+I[43][3][0]=new Array('one sided coupling','Sorry! It is incorrect........ Correct answer is \u201CErickson\u201D (conduit union)", which could look like this one <img src="Ericson connector.JPG" alt="Ericson connector.JPG" title="Ericson connector" width="136" height="87"></img>',0,0,1);
+I[43][3][1]=new Array('split adapter','Sorry! It is incorrect........ Correct answer is \u201CErickson\u201D (conduit union)", which could look like this one <img src="Ericson connector.JPG" alt="Ericson connector.JPG" title="Ericson connector" width="136" height="87"></img>',0,0,1);
+I[43][3][2]=new Array('a nipple','Sorry! It is incorrect........ Correct answer is \u201CErickson\u201D (conduit union)", which could look like this one <img src="Ericson connector.JPG" alt="Ericson connector.JPG" title="Ericson connector" width="136" height="87"></img>',0,0,1);
+I[43][3][3]=new Array('a \u201CErickson\u201D (conduit union)','Correct!',1,100,1);
+I[44]=new Array();I[44][0]=100;
+I[44][1]='';
+I[44][2]='0';
+I[44][3]=new Array();
+I[44][3][0]=new Array('have specific gravity of electrolyte be 1.2','Sorry! It is incorrect........ Correct answer is "have its internal resistance be equal to the resistance of the load".',0,0,1);
+I[44][3][1]=new Array('have its internal resistance be equal to the resistance of the load','Correct!',1,100,1);
+I[44][3][2]=new Array('be properly connected to the circuit','Sorry! It is incorrect........ Correct answer is "have its internal resistance be equal to the resistance of the load".',0,0,1);
+I[44][3][3]=new Array('have its internal resistance be equal to one-half the resistance of the load','Sorry! It is incorrect........ Correct answer is "have its internal resistance be equal to the resistance of the load".',0,0,1);
+I[45]=new Array();I[45][0]=100;
+I[45][1]='';
+I[45][2]='0';
+I[45][3]=new Array();
+I[45][3][0]=new Array('3.6','Correct!',1,100,1);
+I[45][3][1]=new Array('6.4','Sorry! It is incorrect........................ According to a formula <img src="Power Common.JPG" alt="Power Common.JPG" title="Power Common" width="69" height="16"></img> total power consumed by a hot plate in 1 hour is 240 volts x 12 amps = 2,880 watt. In 1 hour and 15 minutes it will consume 25% more or 2,880 x 1.25 = 3,600 watt = 3.6 KW.',0,0,1);
+I[45][3][2]=new Array('1.2','Sorry! It is incorrect........................ According to a formula <img src="Power Common.JPG" alt="Power Common.JPG" title="Power Common" width="69" height="16"></img> total power consumed by a hot plate in 1 hour is 240 volts x 12 amps = 2,880 watt. In 1 hour and 15 minutes it will consume 25% more or 2,880 x 1.25 = 3,600 watt = 3.6 KW.',0,0,1);
+I[45][3][3]=new Array('7.2','Sorry! It is incorrect........................ According to a formula <img src="Power Common.JPG" alt="Power Common.JPG" title="Power Common" width="69" height="16"></img> total power consumed by a hot plate in 1 hour is 240 volts x 12 amps = 2,880 watt. In 1 hour and 15 minutes it will consume 25% more or 2,880 x 1.25 = 3,600 watt = 3.6 KW.',0,0,1);
+I[46]=new Array();I[46][0]=100;
+I[46][1]='';
+I[46][2]='0';
+I[46][3]=new Array();
+I[46][3][0]=new Array('2','Correct!',1,100,1);
+I[46][3][1]=new Array('4','Sorry! It is incorrect........................ <img src="3-3_ohms_plus_minus.JPG" alt="3-3_ohms_plus_minus.JPG" title="3-3_ohms_plus_minus" width="282" height="97"></img> If you mark the circuit like this, you can notice that every resistor has "plus" and "minus" signs, which means that all of them connected in parallel. Total circuit resistance would be 1 ohm and  current flowing through the circuit is equal 2 volts divided by 1 ohm = 2 amperes.',0,0,1);
+I[46][3][2]=new Array('0.5','Sorry! It is incorrect........................ <img src="3-3_ohms_plus_minus.JPG" alt="3-3_ohms_plus_minus.JPG" title="3-3_ohms_plus_minus" width="282" height="97"></img> If you mark the circuit like this, you can notice that every resistor has "plus" and "minus" signs, which means that all of them connected in parallel. Total circuit resistance would be 1 ohm and  current flowing through the circuit is equal 2 volts divided by 1 ohm = 2 amperes.',0,0,1);
+I[46][3][3]=new Array('1','Sorry! It is incorrect........................ <img src="3-3_ohms_plus_minus.JPG" alt="3-3_ohms_plus_minus.JPG" title="3-3_ohms_plus_minus" width="282" height="97"></img> If you mark the circuit like this, you can notice that every resistor has "plus" and "minus" signs, which means that all of them connected in parallel. Total circuit resistance would be 1 ohm and  current flowing through the circuit is equal 2 volts divided by 1 ohm = 2 amperes.',0,0,1);
+I[47]=new Array();I[47][0]=100;
+I[47][1]='';
+I[47][2]='0';
+I[47][3]=new Array();
+I[47][3][0]=new Array('5 \u03A9','Sorry! It is incorrect........................ When length of wire becomes double by being drawn, resistance becomes double. Cross sectional area of same wire decreases proportionally in half, so its resistance increases another 2 times again. Resistance of 5-ohm wire becomes 20 ohms.',0,0,1);
+I[47][3][1]=new Array('10 \u03A9','Sorry! It is incorrect........................ When length of wire becomes double by being drawn, resistance becomes double. Cross sectional area of same wire decreases proportionally in half, so its resistance increases another 2 times again. Resistance of 5-ohm wire becomes 20 ohms.',0,0,1);
+I[47][3][2]=new Array('15 \u03A9','Sorry! It is incorrect........................ When length of wire becomes double by being drawn, resistance becomes double. Cross sectional area of same wire decreases proportionally in half, so its resistance increases another 2 times again. Resistance of 5-ohm wire becomes 20 ohms.',0,0,1);
+I[47][3][3]=new Array('20 \u03A9','Correct!',1,100,1);
+I[48]=new Array();I[48][0]=100;
+I[48][1]='';
+I[48][2]='0';
+I[48][3]=new Array();
+I[48][3][0]=new Array('secondary of a transformer is partially shorte','Correct!',1,100,1);
+I[48][3][1]=new Array('primary of a transformer is partially open','Sorry! It is incorrect........................ Partually shorting secondary of a transformer will create smaller voltage output but increase current which can blow a fuse.',0,0,1);
+I[48][3][2]=new Array('primary of a transformer is partially shorted','Sorry! It is incorrect........................ Partually shorting secondary of a transformer will create smaller voltage output but increase current which can blow a fuse.',0,0,1);
+I[48][3][3]=new Array('secondary of a transformer is partially open','Sorry! It is incorrect........................ Partually shorting secondary of a transformer will create smaller voltage output but increase current which can blow a fuse.',0,0,1);
+I[49]=new Array();I[49][0]=100;
+I[49][1]='';
+I[49][2]='0';
+I[49][3]=new Array();
+I[49][3][0]=new Array('1','Correct!',1,100,1);
+I[49][3][1]=new Array('2','Sorry! It is incorrect........................ Formula used is <img src="Power parallel.JPG" alt="Power parallel.JPG" title="Power parallel" width="43" height="32"></img>. It would be equal 1 watt.',0,0,1);
+I[49][3][2]=new Array('3','Sorry! It is incorrect........................ Formula used is <img src="Power parallel.JPG" alt="Power parallel.JPG" title="Power parallel" width="43" height="32"></img>. It would be equal 1 watt.',0,0,1);
+I[49][3][3]=new Array('4','Sorry! It is incorrect........................ Formula used is <img src="Power parallel.JPG" alt="Power parallel.JPG" title="Power parallel" width="43" height="32"></img>. It would be equal 1 watt.',0,0,1);
+
+
+function StartUp(){
+	RemoveBottomNavBarForIE();
+
+//If there's only one question, no need for question navigation controls
+	if (QsToShow < 2){
+		document.getElementById('QNav').style.display = 'none';
+	}
+	
+//Stash the instructions so they can be redisplayed
+	strInstructions = document.getElementById('InstructionsDiv').innerHTML;
+	
+
+	
+
+	
+
+	PreloadImages('Emax.JPG','Power parallel.JPG','Ohm','Power_Factor.JPG','Wire nut.JPG','Two 3-way.JPG','3-way.JPG','Ericson connector.JPG','Power Common.JPG','3-3_ohms_plus_minus.JPG','Resistor 3 and 6.JPG','V1 _ V2.JPG','Complicated_2.JPG','3-3_ohms.JPG');
+
+	
+	CompleteEmptyFeedback();
+
+	SetUpQuestions();
+	ClearTextBoxes();
+	CreateStatusArray();
+	
+
+	
+//Check search string for q parameter
+	if (document.location.search.length > 0){
+		if (ShuffleQs == false){
+			var JumpTo = parseInt(document.location.search.substring(1,document.location.search.length))-1;
+			if (JumpTo <= QsToShow){
+				ChangeQ(JumpTo);
+			}
+		}
+	}
+//Undocumented function added 10/12/2004
+	ShowSpecialReadingForQuestion();
+}
+
+function ShowHideQuestions(){
+	FuncBtnOut(document.getElementById('ShowMethodButton'));
+	document.getElementById('ShowMethodButton').style.display = 'none';
+	if (ShowingAllQuestions == false){
+		for (var i=0; i<QArray.length; i++){
+				QArray[i].style.display = '';
+			}
+		document.getElementById('Questions').style.listStyleType = 'decimal';
+		document.getElementById('OneByOneReadout').style.display = 'none';
+		document.getElementById('ShowMethodButton').innerHTML = ShowOneByOneCaption;
+		ShowingAllQuestions = true;
+	}
+	else{
+		for (var i=0; i<QArray.length; i++){
+				if (i != CurrQNum){
+					QArray[i].style.display = 'none';
+				}
+			}
+		document.getElementById('Questions').style.listStyleType = 'none';
+		document.getElementById('OneByOneReadout').style.display = '';
+		document.getElementById('ShowMethodButton').innerHTML = ShowAllQuestionsCaption;
+		ShowingAllQuestions = false;	
+	}
+	document.getElementById('ShowMethodButton').style.display = 'inline';
+}
+
+function CreateStatusArray(){
+	var QNum, ANum;
+//For each item in the item array
+	for (QNum=0; QNum<I.length; QNum++){
+//Check if the question still exists (hasn't been nuked by showing a random selection)
+		if (document.getElementById('Q_' + QNum) != null){
+			State[QNum] = new Array();
+			State[QNum][0] = -1; //Score for this q; -1 shows question not done yet
+			State[QNum][1] = new Array(); //answers
+			for (ANum = 0; ANum<I[QNum][3].length; ANum++){
+				State[QNum][1][ANum] = 0; //answer not chosen yet; when chosen, will store its position in the series of choices
+			}
+			State[QNum][2] = 0; //tries at this q so far
+			State[QNum][3] = 0; //incrementing percent-correct values of selected answers
+			State[QNum][4] = 0; //penalties incurred for hints
+			State[QNum][5] = ''; //Sequence of answers chosen by number
+		}
+		else{
+			State[QNum] = null;
+		}
+	}
+}
+
+
+
+function CheckMCAnswer(QNum, ANum, Btn){
+//if question doesn't exist, bail
+	if (State[QNum].length < 1){return;}
+	
+//Get the feedback
+	Feedback = I[QNum][3][ANum][1];
+	
+//Now show feedback and bail if question already complete
+	if (State[QNum][0] > -1){
+//Add an extra message explaining that the question
+// is finished if defined by the user
+		if (strQuestionFinished.length > 0){Feedback += '<br />' + strQuestionFinished;}
+//Show the feedback
+		ShowMessage(Feedback);
+//New for 6.2.2.1: If you want to mark an answer as correct even when it's the final choice, uncomment this line.
+//		if (I[QNum][3][ANum][2] >= 1){Btn.innerHTML = CorrectIndicator;}else{Btn.innerHTML = IncorrectIndicator;}	
+		return;
+	}
+	
+//Hide the button while processing
+	Btn.style.display = 'none';
+
+//Increment the number of tries
+	State[QNum][2]++;
+	
+//Add the percent-correct value of this answer
+	State[QNum][3] += I[QNum][3][ANum][3];
+	
+//Store the try number in the answer part of the State array, for tracking purposes
+	State[QNum][1][ANum] = State[QNum][2];
+	if (State[QNum][5].length > 0){State[QNum][5] += ' | ';}
+	State[QNum][5] += String.fromCharCode(65+ANum);
+	
+//Should this answer be accepted as correct?
+	if (I[QNum][3][ANum][2] < 1){
+//It's wrong
+
+//Mark the answer
+		Btn.innerHTML = IncorrectIndicator;
+		
+//Remove any previous score unless exercise is finished (6.0.3.8+)
+		if (Finished == false){
+			WriteToInstructions(strInstructions);
+		}	
+		
+//Check whether this leaves just one MC answer unselected, in which case the Q is terminated
+		var RemainingAnswer = FinalAnswer(QNum);
+		if (RemainingAnswer > -1){
+//Behave as if the last answer had been selected, but give no credit for it
+//Increment the number of tries
+			State[QNum][2]++;		
+		
+//Calculate the score for this question
+			CalculateMCQuestionScore(QNum);
+			
+//Get the overall score and add it to the feedback
+			CalculateOverallScore();
+//New for 6.2.2.1
+			var QsDone = CheckQuestionsCompleted();
+			if ((ContinuousScoring == true)||(Finished == true)){
+				Feedback += '<br />' + YourScoreIs + ' ' + Score + '%.' + '<br />' + QsDone;
+				WriteToInstructions(YourScoreIs + ' ' + Score + '%.' + '<br />' + QsDone);
+			}
+			else{
+				WriteToInstructions(QsDone);
+			}
+		}
+	}
+	else{
+//It's right
+//Mark the answer
+		Btn.innerHTML = CorrectIndicator;
+				
+//Calculate the score for this question
+		CalculateMCQuestionScore(QNum);
+		
+//New for 6.2.2.0
+		var QsDone = CheckQuestionsCompleted();
+
+//Get the overall score and add it to the feedback
+		if (ContinuousScoring == true){
+			CalculateOverallScore();
+			if ((ContinuousScoring == true)||(Finished == true)){
+				Feedback += '<br />' + YourScoreIs + ' ' + Score + '%.' + '<br />' + QsDone;
+				WriteToInstructions(YourScoreIs + ' ' + Score + '%.' + '<br />' + QsDone);
+			}
+		}
+		else{
+			WriteToInstructions(QsDone);
+		}
+	}
+	
+//Show the button again
+	Btn.style.display = 'inline';
+	
+//Finally, show the feedback	
+	ShowMessage(Feedback);
+	
+//Check whether all questions are now done
+	CheckFinished();
+}
+
+function CalculateMCQuestionScore(QNum){
+	var Tries = State[QNum][2] + State[QNum][4]; //include tries and hint penalties
+	var PercentCorrect = State[QNum][3];
+	var TotAns = GetTotalMCAnswers(QNum);
+	var HintPenalties = State[QNum][4];
+	
+//Make sure it's not already complete
+
+	if (State[QNum][0] < 0){
+//Allow for Hybrids
+		if (HintPenalties >= 1){
+			State[QNum][0] = 0;
+		}
+		else{
+//This line calculates the score for this question
+			if (TotAns == 1){
+				State[QNum][0] = 1;
+			}
+			else{
+				State[QNum][0] = ((TotAns-((Tries*100)/State[QNum][3]))/(TotAns-1));
+			}
+		}
+//Fix for Safari bug added for version 6.0.3.42 (negative infinity problem)
+		if ((State[QNum][0] < 0)||(State[QNum][0] == Number.NEGATIVE_INFINITY)){
+			State[QNum][0] = 0;
+		}
+	}
+}
+
+function GetTotalMCAnswers(QNum){
+	var Result = 0;
+	for (var ANum=0; ANum<I[QNum][3].length; ANum++){
+		if (I[QNum][3][ANum][4] == 1){ //This is an MC answer
+			Result++;
+		}
+	}
+	return Result;
+}
+
+function FinalAnswer(QNum){
+	var UnchosenAnswers = 0;
+	var FinalAnswer = -1;
+	for (var ANum=0; ANum<I[QNum][3].length; ANum++){
+		if (I[QNum][3][ANum][4] == 1){ //This is an MC answer
+			if (State[QNum][1][ANum] < 1){ //This answer hasn't been chosen yet
+				UnchosenAnswers++;
+				FinalAnswer = ANum;
+			}
+		}
+	}
+	if (UnchosenAnswers == 1){
+		return FinalAnswer;
+	}
+	else{
+		return -1;
+	}
+}
+
+
+
+
+
+function CalculateOverallScore(){
+	var TotalWeighting = 0;
+	var TotalScore = 0;
+	
+	for (var QNum=0; QNum<State.length; QNum++){
+		if (State[QNum] != null){
+			if (State[QNum][0] > -1){
+				TotalWeighting += I[QNum][0];
+				TotalScore += (I[QNum][0] * State[QNum][0]);
+			}
+		}
+	}
+	if (TotalWeighting > 0){
+		Score = Math.floor((TotalScore/TotalWeighting)*100);
+	}
+	else{
+//if TotalWeighting is 0, no questions so far have any value, so 
+//no penalty should be shown.
+		Score = 100; 
+	}
+}
+
+//New for 6.2.2.0
+function CheckQuestionsCompleted(){
+	if (ShowCompletedSoFar == false){return '';}
+	var QsCompleted = 0;
+	for (var QNum=0; QNum<State.length; QNum++){
+		if (State[QNum] != null){
+			if (State[QNum][0] >= 0){
+				QsCompleted++;
+			}
+		}
+	}
+//Fixes for 6.2.2.2
+	if (QsCompleted >= QArray.length){
+		return ExerciseCompleted;
+	}
+	else{
+		return CompletedSoFar + ' ' + QsCompleted + '/' + QArray.length + '.';
+	}
+}
+
+function CheckFinished(){
+	var FB = '';
+	var AllDone = true;
+	for (var QNum=0; QNum<State.length; QNum++){
+		if (State[QNum] != null){
+			if (State[QNum][0] < 0){
+				AllDone = false;
+			}
+		}
+	}
+	if (AllDone == true){
+	
+//Report final score and submit if necessary
+		CalculateOverallScore();
+		FB = YourScoreIs + ' ' + Score + '%.';
+		if (ShowCorrectFirstTime == true){
+			var CFT = 0;
+			for (QNum=0; QNum<State.length; QNum++){
+				if (State[QNum] != null){
+					if (State[QNum][0] >= 1){
+						CFT++;
+					}
+				}
+			}
+			FB += '<br />' + CorrectFirstTime + ' ' + CFT + '/' + QsToShow;
+		}
+		
+//New for 6.2.2.0
+		FB += '<br />' + ExerciseCompleted;
+		
+		WriteToInstructions(FB);
+		
+		Finished == true;
+
+
+
+
+		TimeOver = true;
+		Locked = true;
+		
+
+
+		Finished = true;
+		Detail = '<?xml version="1.0"?><hpnetresult><fields>';
+		for (QNum=0; QNum<State.length; QNum++){
+			if (State[QNum] != null){
+				if (State[QNum][5].length > 0){
+					Detail += '<field><fieldname>Question #' + (QNum+1) + '</fieldname><fieldtype>question-tracking</fieldtype><fieldlabel>Q ' + (QNum+1) + '</fieldlabel><fieldlabelid>QuestionTrackingField</fieldlabelid><fielddata>' + State[QNum][5] + '</fielddata></field>';
+				}
+			}
+		}
+		Detail += '</fields></hpnetresult>';
+		setTimeout('Finish()', SubmissionTimeout);
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+//-->
+
+//]]>
+
+</script>
+
+
+</head>
+
+<body onload="StartUp()" id="TheBody" >
+
+<!-- BeginTopNavButtons -->
+
+
+<div class="NavButtonBar" id="TopNavBar">
+
+
+<button class="NavButton" onfocus="NavBtnOver(this)" onblur="NavBtnOut(this)" onmouseover="NavBtnOver(this)" onmouseout="NavBtnOut(this)" onmousedown="NavBtnDown(this)" onmouseup="NavBtnOut(this)" onclick="history.back(); return false;">&lt;=</button>
+
+
+
+
+
+<button class="NavButton" onfocus="NavBtnOver(this)" onblur="NavBtnOut(this)" onmouseover="NavBtnOver(this)" onmouseout="NavBtnOut(this)" onmousedown="NavBtnDown(this)" onmouseup="NavBtnOut(this)" onclick="location='nextpage.htm'; return false;">=&gt;</button>
+
+
+</div>
+
+
+
+<!-- EndTopNavButtons -->
+
+<div class="Titles">
+	<h2 class="ExerciseTitle">Test12</h2>
+
+
+
+</div>
+
+<div id="InstructionsDiv" class="StdDiv">
+	<div id="Instructions"></div>
+</div>
+
+
+
+
+<div id="MainDiv" class="StdDiv">
+ 
+<div id="QNav" class="QuestionNavigation">
+
+<p style="text-align: right;">
+<button id="ShowMethodButton" class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)" onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOver(this)" onclick="ShowHideQuestions(); return false;">Show all questions</button>
+</p>
+
+<div id="OneByOneReadout">
+<button id="PrevQButton" class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)" onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOver(this)" onclick="ChangeQ(-1); return false;">&lt;=</button>
+
+<span id="QNumReadout" class="QNum">&nbsp;</span>
+
+<button id="NextQButton" class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)" onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOver(this)" onclick="ChangeQ(1); return false;">=&gt;</button>
+<br />
+</div>
+
+</div>
+ 
+<ol class="QuizQuestions" id="Questions">
+<li class="QuizQuestion" id="Q_0" style="display: none;"><div class="QuestionText"><img src="Resistor 3 and 6.JPG" alt="Resistor 3 and 6.JPG" title="Resistor 3 and 6" width="100" height="78"></img><br />Total resistance of a wire resistor is 9 ohms. Ohmmeter is attached to the side of a resistor equal to 3 ohms. Ohmmeter indicates value of ____ ohms.<br /></div><ol class="MCAnswers"><li id="Q_0_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_0_0_Btn" onclick="CheckMCAnswer(0,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;2</li><li id="Q_0_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_0_1_Btn" onclick="CheckMCAnswer(0,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;6</li><li id="Q_0_2"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_0_2_Btn" onclick="CheckMCAnswer(0,2,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;1</li><li id="Q_0_3"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_0_3_Btn" onclick="CheckMCAnswer(0,3,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;3</li></ol></li>
+<li class="QuizQuestion" id="Q_1" style="display: none;"><div class="QuestionText"><img src="V1 _ V2.JPG" alt="V1 _ V2.JPG" title="V1 _ V2" width="253" height="99"></img><br />Voltmeters on a picture will indicate:</div><ol class="MCAnswers"><li id="Q_1_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_1_0_Btn" onclick="CheckMCAnswer(1,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;V1 = V2 = 0.</li><li id="Q_1_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_1_1_Btn" onclick="CheckMCAnswer(1,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;V1 &#x2013; E; V2 &#x2013; 0.</li><li id="Q_1_2"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_1_2_Btn" onclick="CheckMCAnswer(1,2,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;V1 - 0 ; V2 &#x2013; E.</li><li id="Q_1_3"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_1_3_Btn" onclick="CheckMCAnswer(1,3,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;V1 = V2 = E.</li></ol></li>
+<li class="QuizQuestion" id="Q_2" style="display: none;"><div class="QuestionText">Two ammeters with the maximum ranges of 2 amps and 10 amps connected in series in a circuit.<br />If a meter with a 2 amps range shows 1.8 amps on a scale, what is indication on a bigger scale?<br /></div><ol class="MCAnswers"><li id="Q_2_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_2_0_Btn" onclick="CheckMCAnswer(2,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;2.7 amps</li><li id="Q_2_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_2_1_Btn" onclick="CheckMCAnswer(2,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;0.9 amps</li><li id="Q_2_2"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_2_2_Btn" onclick="CheckMCAnswer(2,2,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;3.6 amps</li><li id="Q_2_3"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_2_3_Btn" onclick="CheckMCAnswer(2,3,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;1.8 amps</li></ol></li>
+<li class="QuizQuestion" id="Q_3" style="display: none;"><div class="QuestionText">When somebody working on electrical motor, to prevent motor from sudden start he (she) should:</div><ol class="MCAnswers"><li id="Q_3_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_3_0_Btn" onclick="CheckMCAnswer(3,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;remove the fuse</li><li id="Q_3_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_3_1_Btn" onclick="CheckMCAnswer(3,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;bridge two phases</li><li id="Q_3_2"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_3_2_Btn" onclick="CheckMCAnswer(3,2,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;remove a commutator</li><li id="Q_3_3"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_3_3_Btn" onclick="CheckMCAnswer(3,3,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;bridge one phase</li></ol></li>
+<li class="QuizQuestion" id="Q_4" style="display: none;"><div class="QuestionText">The best first aid for a man who has no external injuries but apparently suffering from internal injury due to an accident is to:<br /></div><ol class="MCAnswers"><li id="Q_4_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_4_0_Btn" onclick="CheckMCAnswer(4,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;administer a stimulan</li><li id="Q_4_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_4_1_Btn" onclick="CheckMCAnswer(4,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;start artificial respiration</li><li id="Q_4_2"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_4_2_Btn" onclick="CheckMCAnswer(4,2,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;take him at once to a doctor's office.</li><li id="Q_4_3"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_4_3_Btn" onclick="CheckMCAnswer(4,3,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;make him comfortable and call a doctor</li></ol></li>
+<li class="QuizQuestion" id="Q_5" style="display: none;"><div class="QuestionText">If battery has 200 ampere-hours, how much current it can supply in 4 hours ?</div><ol class="MCAnswers"><li id="Q_5_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_5_0_Btn" onclick="CheckMCAnswer(5,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;10</li><li id="Q_5_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_5_1_Btn" onclick="CheckMCAnswer(5,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;100</li><li id="Q_5_2"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_5_2_Btn" onclick="CheckMCAnswer(5,2,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;50</li><li id="Q_5_3"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_5_3_Btn" onclick="CheckMCAnswer(5,3,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;25</li></ol></li>
+<li class="QuizQuestion" id="Q_6" style="display: none;"><div class="QuestionText">In alternating current, when voltage is given as 220 volt, the maximum value of the voltage in a cycle is _____ volts.</div><ol class="MCAnswers"><li id="Q_6_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_6_0_Btn" onclick="CheckMCAnswer(6,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;311.1</li><li id="Q_6_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_6_1_Btn" onclick="CheckMCAnswer(6,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;208.2</li><li id="Q_6_2"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_6_2_Btn" onclick="CheckMCAnswer(6,2,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;240</li><li id="Q_6_3"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_6_3_Btn" onclick="CheckMCAnswer(6,3,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;115</li></ol></li>
+<li class="QuizQuestion" id="Q_7" style="display: none;"><div class="QuestionText">What type of pipe is used to carry corrosive material?</div><ol class="MCAnswers"><li id="Q_7_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_7_0_Btn" onclick="CheckMCAnswer(7,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;Brass</li><li id="Q_7_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_7_1_Btn" onclick="CheckMCAnswer(7,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;PVC</li><li id="Q_7_2"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_7_2_Btn" onclick="CheckMCAnswer(7,2,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;Copper</li><li id="Q_7_3"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_7_3_Btn" onclick="CheckMCAnswer(7,3,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;Cast iron</li></ol></li>
+<li class="QuizQuestion" id="Q_8" style="display: none;"><div class="QuestionText">If a circuit is open, it will allow the flow of electricity.</div><ol class="MCAnswers"><li id="Q_8_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_8_0_Btn" onclick="CheckMCAnswer(8,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;TRUE</li><li id="Q_8_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_8_1_Btn" onclick="CheckMCAnswer(8,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;FALSE</li></ol></li>
+<li class="QuizQuestion" id="Q_9" style="display: none;"><div class="QuestionText">The maximum voltage applied to 1 watt, 10-K&#x038F; resistor is, most nearly, __ volt. </div><ol class="MCAnswers"><li id="Q_9_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_9_0_Btn" onclick="CheckMCAnswer(9,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;50</li><li id="Q_9_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_9_1_Btn" onclick="CheckMCAnswer(9,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;10</li><li id="Q_9_2"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_9_2_Btn" onclick="CheckMCAnswer(9,2,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;100</li><li id="Q_9_3"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_9_3_Btn" onclick="CheckMCAnswer(9,3,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;1,000</li></ol></li>
+<li class="QuizQuestion" id="Q_10" style="display: none;"><div class="QuestionText">Questions 11 to 16 refer to the diagram below<br /><img src="Complicated_2.JPG" alt="Complicated_2.JPG" title="Complicated_2" width="239" height="192"></img> <br />When switches S1 and S2 are open, the voltmeter reading is, most nearly,</div><ol class="MCAnswers"><li id="Q_10_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_10_0_Btn" onclick="CheckMCAnswer(10,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;432 volts</li><li id="Q_10_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_10_1_Btn" onclick="CheckMCAnswer(10,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;292.6 volts</li><li id="Q_10_2"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_10_2_Btn" onclick="CheckMCAnswer(10,2,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;136 volts</li><li id="Q_10_3"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_10_3_Btn" onclick="CheckMCAnswer(10,3,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;zero</li></ol></li>
+<li class="QuizQuestion" id="Q_11" style="display: none;"><div class="QuestionText">Questions 11 to 16 refer to the diagram below<br /><img src="Complicated_2.JPG" alt="Complicated_2.JPG" title="Complicated_2" width="239" height="192"></img> <br />When switches S1 and S2 are open, the ammeter reading is, most nearly,</div><ol class="MCAnswers"><li id="Q_11_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_11_0_Btn" onclick="CheckMCAnswer(11,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;6 amps</li><li id="Q_11_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_11_1_Btn" onclick="CheckMCAnswer(11,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;4 amps</li><li id="Q_11_2"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_11_2_Btn" onclick="CheckMCAnswer(11,2,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;5.14 amps</li><li id="Q_11_3"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_11_3_Btn" onclick="CheckMCAnswer(11,3,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;zero</li></ol></li>
+<li class="QuizQuestion" id="Q_12" style="display: none;"><div class="QuestionText">Questions 11 to 16 refer to the diagram below<br /><img src="Complicated_2.JPG" alt="Complicated_2.JPG" title="Complicated_2" width="239" height="192"></img> <br />What is the reading of a voltmeter when sw.1 is closed and sw.2 is open?</div><ol class="MCAnswers"><li id="Q_12_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_12_0_Btn" onclick="CheckMCAnswer(12,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;216 volts</li><li id="Q_12_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_12_1_Btn" onclick="CheckMCAnswer(12,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;24 volts</li><li id="Q_12_2"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_12_2_Btn" onclick="CheckMCAnswer(12,2,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;144 volts</li><li id="Q_12_3"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_12_3_Btn" onclick="CheckMCAnswer(12,3,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;80 volts</li></ol></li>
+<li class="QuizQuestion" id="Q_13" style="display: none;"><div class="QuestionText">Questions 11 to 16 refer to the diagram below<br /><img src="Complicated_2.JPG" alt="Complicated_2.JPG" title="Complicated_2" width="239" height="192"></img> <br />When switch S1 is open and switch S2 is closed, the ammeter reading is, most nearly, <br /></div><ol class="MCAnswers"><li id="Q_13_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_13_0_Btn" onclick="CheckMCAnswer(13,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;4.8 amps</li><li id="Q_13_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_13_1_Btn" onclick="CheckMCAnswer(13,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;3.6 amps</li><li id="Q_13_2"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_13_2_Btn" onclick="CheckMCAnswer(13,2,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;5.14 amps</li><li id="Q_13_3"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_13_3_Btn" onclick="CheckMCAnswer(13,3,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;zero</li></ol></li>
+<li class="QuizQuestion" id="Q_14" style="display: none;"><div class="QuestionText">Questions 11 to 16 refer to the diagram below<br /><img src="Complicated_2.JPG" alt="Complicated_2.JPG" title="Complicated_2" width="239" height="192"></img> <br />When switches S1 and S2 are closed, the voltmeter reading is, most nearly,</div><ol class="MCAnswers"><li id="Q_14_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_14_0_Btn" onclick="CheckMCAnswer(14,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;26.1 volts</li><li id="Q_14_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_14_1_Btn" onclick="CheckMCAnswer(14,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;19.7 volts</li><li id="Q_14_2"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_14_2_Btn" onclick="CheckMCAnswer(14,2,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;39.3 volts</li><li id="Q_14_3"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_14_3_Btn" onclick="CheckMCAnswer(14,3,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;12.36 volts</li></ol></li>
+<li class="QuizQuestion" id="Q_15" style="display: none;"><div class="QuestionText">Questions 11 to 16 refer to the diagram below<br /><img src="Complicated_2.JPG" alt="Complicated_2.JPG" title="Complicated_2" width="239" height="192"></img> <br />When switches S1 and S2 are closed, the ammeter reading is, most nearly,</div><ol class="MCAnswers"><li id="Q_15_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_15_0_Btn" onclick="CheckMCAnswer(15,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;24 amps</li><li id="Q_15_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_15_1_Btn" onclick="CheckMCAnswer(15,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;8.72 amps</li><li id="Q_15_2"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_15_2_Btn" onclick="CheckMCAnswer(15,2,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;6.54 amps</li><li id="Q_15_3"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_15_3_Btn" onclick="CheckMCAnswer(15,3,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;7.82 amps</li></ol></li>
+<li class="QuizQuestion" id="Q_16" style="display: none;"><div class="QuestionText">Every power tool have an electric motor.</div><ol class="MCAnswers"><li id="Q_16_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_16_0_Btn" onclick="CheckMCAnswer(16,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;True</li><li id="Q_16_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_16_1_Btn" onclick="CheckMCAnswer(16,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;False</li></ol></li>
+<li class="QuizQuestion" id="Q_17" style="display: none;"><div class="QuestionText">An oil tank is 3/8 full. It takes 180 more litres to fill the tank. The number of litres the tank holds is?</div><ol class="MCAnswers"><li id="Q_17_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_17_0_Btn" onclick="CheckMCAnswer(17,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;178 litres</li><li id="Q_17_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_17_1_Btn" onclick="CheckMCAnswer(17,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;100 litres</li><li id="Q_17_2"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_17_2_Btn" onclick="CheckMCAnswer(17,2,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;288 litres</li><li id="Q_17_3"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_17_3_Btn" onclick="CheckMCAnswer(17,3,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;450 litres</li></ol></li>
+<li class="QuizQuestion" id="Q_18" style="display: none;"><div class="QuestionText">Which winding of a transformer has more number of turns? </div><ol class="MCAnswers"><li id="Q_18_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_18_0_Btn" onclick="CheckMCAnswer(18,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;Primary winding</li><li id="Q_18_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_18_1_Btn" onclick="CheckMCAnswer(18,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;High voltage winding</li><li id="Q_18_2"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_18_2_Btn" onclick="CheckMCAnswer(18,2,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;Low voltage winding</li><li id="Q_18_3"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_18_3_Btn" onclick="CheckMCAnswer(18,3,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;Secondary winding</li></ol></li>
+<li class="QuizQuestion" id="Q_19" style="display: none;"><div class="QuestionText">If you need to drive something small into the surface, you should use a:</div><ol class="MCAnswers"><li id="Q_19_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_19_0_Btn" onclick="CheckMCAnswer(19,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;punch</li><li id="Q_19_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_19_1_Btn" onclick="CheckMCAnswer(19,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;auger bit</li><li id="Q_19_2"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_19_2_Btn" onclick="CheckMCAnswer(19,2,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;mallet</li><li id="Q_19_3"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_19_3_Btn" onclick="CheckMCAnswer(19,3,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;sledge hammer</li></ol></li>
+<li class="QuizQuestion" id="Q_20" style="display: none;"><div class="QuestionText">Ohm&#x2019;s Law: </div><ol class="MCAnswers"><li id="Q_20_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_20_0_Btn" onclick="CheckMCAnswer(20,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;describes relationship between frequency, current and voltage in the circuit</li><li id="Q_20_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_20_1_Btn" onclick="CheckMCAnswer(20,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;describes relationship between voltage, current and resistance in the circuit</li><li id="Q_20_2"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_20_2_Btn" onclick="CheckMCAnswer(20,2,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;describes relationship between wattage, current and resistance in the circuit</li><li id="Q_20_3"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_20_3_Btn" onclick="CheckMCAnswer(20,3,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;describes relationship between wattage, current and resistance in the circuit</li></ol></li>
+<li class="QuizQuestion" id="Q_21" style="display: none;"><div class="QuestionText">Which of the following set of pipes have a total combined area exactly equal to the area of 12" diameter pipe?</div><ol class="MCAnswers"><li id="Q_21_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_21_0_Btn" onclick="CheckMCAnswer(21,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;Four 6" pipes</li><li id="Q_21_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_21_1_Btn" onclick="CheckMCAnswer(21,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;Two 8" pipes</li><li id="Q_21_2"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_21_2_Btn" onclick="CheckMCAnswer(21,2,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;Two 6" pipes</li><li id="Q_21_3"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_21_3_Btn" onclick="CheckMCAnswer(21,3,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;One 8" pipe and two 6" pipe</li></ol></li>
+<li class="QuizQuestion" id="Q_22" style="display: none;"><div class="QuestionText">Plastic anchors are usually mounted in:</div><ol class="MCAnswers"><li id="Q_22_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_22_0_Btn" onclick="CheckMCAnswer(22,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;masonry</li><li id="Q_22_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_22_1_Btn" onclick="CheckMCAnswer(22,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;wood</li><li id="Q_22_2"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_22_2_Btn" onclick="CheckMCAnswer(22,2,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;steel paneling</li><li id="Q_22_3"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_22_3_Btn" onclick="CheckMCAnswer(22,3,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;drywall</li></ol></li>
+<li class="QuizQuestion" id="Q_23" style="display: none;"><div class="QuestionText">What two quantities comprise the total power of an AC circuit ?</div><ol class="MCAnswers"><li id="Q_23_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_23_0_Btn" onclick="CheckMCAnswer(23,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;Apparent power and VARS</li><li id="Q_23_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_23_1_Btn" onclick="CheckMCAnswer(23,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;True power and VAWS</li><li id="Q_23_2"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_23_2_Btn" onclick="CheckMCAnswer(23,2,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;True power and Power Factor</li><li id="Q_23_3"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_23_3_Btn" onclick="CheckMCAnswer(23,3,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;True power and VARS</li></ol></li>
+<li class="QuizQuestion" id="Q_24" style="display: none;"><div class="QuestionText">An electrical transformer can be used to:</div><ol class="MCAnswers"><li id="Q_24_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_24_0_Btn" onclick="CheckMCAnswer(24,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;change the current from A.C. to D.C.</li><li id="Q_24_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_24_1_Btn" onclick="CheckMCAnswer(24,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;lower the voltage from a 110 volt a.c. power line</li><li id="Q_24_2"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_24_2_Btn" onclick="CheckMCAnswer(24,2,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;raise battery output voltage</li><li id="Q_24_3"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_24_3_Btn" onclick="CheckMCAnswer(24,3,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;maintain constant battery output voltage</li></ol></li>
+<li class="QuizQuestion" id="Q_25" style="display: none;"><div class="QuestionText">Plugs and receptacles are:</div><ol class="MCAnswers"><li id="Q_25_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_25_0_Btn" onclick="CheckMCAnswer(25,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;polarized</li><li id="Q_25_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_25_1_Btn" onclick="CheckMCAnswer(25,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;energized</li><li id="Q_25_2"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_25_2_Btn" onclick="CheckMCAnswer(25,2,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;balanced</li><li id="Q_25_3"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_25_3_Btn" onclick="CheckMCAnswer(25,3,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;adjusted</li></ol></li>
+<li class="QuizQuestion" id="Q_26" style="display: none;"><div class="QuestionText">Of the following, an electrician's helper should expect an electrician, he is working with, to be: </div><ol class="MCAnswers"><li id="Q_26_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_26_0_Btn" onclick="CheckMCAnswer(26,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;apologetic and condescending</li><li id="Q_26_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_26_1_Btn" onclick="CheckMCAnswer(26,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;stem and to the point at all times</li><li id="Q_26_2"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_26_2_Btn" onclick="CheckMCAnswer(26,2,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;sarcastic and wise</li><li id="Q_26_3"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_26_3_Btn" onclick="CheckMCAnswer(26,3,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;fair in his dealings with him</li></ol></li>
+<li class="QuizQuestion" id="Q_27" style="display: none;"><div class="QuestionText">To properly ground electrical service equipment in a building, a ground connection should be made to:</div><ol class="MCAnswers"><li id="Q_27_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_27_0_Btn" onclick="CheckMCAnswer(27,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;the cold water line entering the building</li><li id="Q_27_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_27_1_Btn" onclick="CheckMCAnswer(27,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;any steel beam, because it grounded</li><li id="Q_27_2"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_27_2_Btn" onclick="CheckMCAnswer(27,2,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;the exterior vent line</li><li id="Q_27_3"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_27_3_Btn" onclick="CheckMCAnswer(27,3,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;the waste or soil line leaving the building</li></ol></li>
+<li class="QuizQuestion" id="Q_28" style="display: none;"><div class="QuestionText">When current flows through a heater coil, it glows but supply wire does not glow. That is because:</div><ol class="MCAnswers"><li id="Q_28_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_28_0_Btn" onclick="CheckMCAnswer(28,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;resistance of heater coil is more than resistance of the supply wire</li><li id="Q_28_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_28_1_Btn" onclick="CheckMCAnswer(28,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;supply wiring has insulation</li><li id="Q_28_2"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_28_2_Btn" onclick="CheckMCAnswer(28,2,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;current through supply line flows at slower speed</li><li id="Q_28_3"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_28_3_Btn" onclick="CheckMCAnswer(28,3,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;supply wire made of superior material</li></ol></li>
+<li class="QuizQuestion" id="Q_29" style="display: none;"><div class="QuestionText">Wire nuts are used to:</div><ol class="MCAnswers"><li id="Q_29_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_29_0_Btn" onclick="CheckMCAnswer(29,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;separate two wires on the same terminal</li><li id="Q_29_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_29_1_Btn" onclick="CheckMCAnswer(29,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;join wires and insulate the joints</li><li id="Q_29_2"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_29_2_Btn" onclick="CheckMCAnswer(29,2,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;fasten wires to stud terminals</li><li id="Q_29_3"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_29_3_Btn" onclick="CheckMCAnswer(29,3,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;lock regular nuts in place</li></ol></li>
+<li class="QuizQuestion" id="Q_30" style="display: none;"><div class="QuestionText">In order to control a lamp from four different positions it is necessary to use:</div><ol class="MCAnswers"><li id="Q_30_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_30_0_Btn" onclick="CheckMCAnswer(30,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;one single pole switch and one 3- way switch</li><li id="Q_30_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_30_1_Btn" onclick="CheckMCAnswer(30,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;two single pole switches</li><li id="Q_30_2"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_30_2_Btn" onclick="CheckMCAnswer(30,2,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;two 3-way switches and two 4-way switches</li><li id="Q_30_3"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_30_3_Btn" onclick="CheckMCAnswer(30,3,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;one single pole switch and one 4-way switch</li></ol></li>
+<li class="QuizQuestion" id="Q_31" style="display: none;"><div class="QuestionText">Which of the following has negative temperature coefficient? </div><ol class="MCAnswers"><li id="Q_31_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_31_0_Btn" onclick="CheckMCAnswer(31,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;Carbon</li><li id="Q_31_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_31_1_Btn" onclick="CheckMCAnswer(31,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;Brass</li><li id="Q_31_2"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_31_2_Btn" onclick="CheckMCAnswer(31,2,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;Mercury</li><li id="Q_31_3"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_31_3_Btn" onclick="CheckMCAnswer(31,3,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;Cast iron</li></ol></li>
+<li class="QuizQuestion" id="Q_32" style="display: none;"><div class="QuestionText">If a large cable must be split into few smaller cables, the reduction in size is made at a:</div><ol class="MCAnswers"><li id="Q_32_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_32_0_Btn" onclick="CheckMCAnswer(32,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;reducing fitting</li><li id="Q_32_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_32_1_Btn" onclick="CheckMCAnswer(32,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;connector</li><li id="Q_32_2"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_32_2_Btn" onclick="CheckMCAnswer(32,2,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;junction box</li><li id="Q_32_3"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_32_3_Btn" onclick="CheckMCAnswer(32,3,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;splitter</li></ol></li>
+<li class="QuizQuestion" id="Q_33" style="display: none;"><div class="QuestionText">In general, the grounding conductor must not be ______.</div><ol class="MCAnswers"><li id="Q_33_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_33_0_Btn" onclick="CheckMCAnswer(33,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;of low resistance</li><li id="Q_33_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_33_1_Btn" onclick="CheckMCAnswer(33,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;fused</li><li id="Q_33_2"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_33_2_Btn" onclick="CheckMCAnswer(33,2,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;solid wire</li><li id="Q_33_3"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_33_3_Btn" onclick="CheckMCAnswer(33,3,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;bare</li></ol></li>
+<li class="QuizQuestion" id="Q_34" style="display: none;"><div class="QuestionText">What steel tool has a cutting edge and should be used in dressing, cutting or shaping?</div><ol class="MCAnswers"><li id="Q_34_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_34_0_Btn" onclick="CheckMCAnswer(34,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;Ladle</li><li id="Q_34_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_34_1_Btn" onclick="CheckMCAnswer(34,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;Reamer</li><li id="Q_34_2"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_34_2_Btn" onclick="CheckMCAnswer(34,2,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;File card</li><li id="Q_34_3"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_34_3_Btn" onclick="CheckMCAnswer(34,3,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;Chisel</li></ol></li>
+<li class="QuizQuestion" id="Q_35" style="display: none;"><div class="QuestionText">To measure a voltage of about 80 volts, you use a voltmeter having several different ranges. To obtain maximum accuracy, you should choose the range of:<br /></div><ol class="MCAnswers"><li id="Q_35_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_35_0_Btn" onclick="CheckMCAnswer(35,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;100 volts</li><li id="Q_35_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_35_1_Btn" onclick="CheckMCAnswer(35,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;250 volts</li><li id="Q_35_2"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_35_2_Btn" onclick="CheckMCAnswer(35,2,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;200 volts</li><li id="Q_35_3"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_35_3_Btn" onclick="CheckMCAnswer(35,3,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;75 volts</li></ol></li>
+<li class="QuizQuestion" id="Q_36" style="display: none;"><div class="QuestionText">Which of the following is better to use for cleaning a tip of a soldering iron?</div><ol class="MCAnswers"><li id="Q_36_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_36_0_Btn" onclick="CheckMCAnswer(36,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;Moist sponge</li><li id="Q_36_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_36_1_Btn" onclick="CheckMCAnswer(36,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;File</li><li id="Q_36_2"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_36_2_Btn" onclick="CheckMCAnswer(36,2,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;Sand paper</li><li id="Q_36_3"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_36_3_Btn" onclick="CheckMCAnswer(36,3,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;Clean rag</li></ol></li>
+<li class="QuizQuestion" id="Q_37" style="display: none;"><div class="QuestionText">If diameter of a wire is 0.078 inches, how many mils does it represent?</div><ol class="MCAnswers"><li id="Q_37_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_37_0_Btn" onclick="CheckMCAnswer(37,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;0.78</li><li id="Q_37_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_37_1_Btn" onclick="CheckMCAnswer(37,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;78</li><li id="Q_37_2"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_37_2_Btn" onclick="CheckMCAnswer(37,2,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;7.8</li><li id="Q_37_3"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_37_3_Btn" onclick="CheckMCAnswer(37,3,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;0.780</li></ol></li>
+<li class="QuizQuestion" id="Q_38" style="display: none;"><div class="QuestionText">The CMA of the wire from previous question is:</div><ol class="MCAnswers"><li id="Q_38_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_38_0_Btn" onclick="CheckMCAnswer(38,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;608.400</li><li id="Q_38_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_38_1_Btn" onclick="CheckMCAnswer(38,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;608,400</li><li id="Q_38_2"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_38_2_Btn" onclick="CheckMCAnswer(38,2,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;60,84</li><li id="Q_38_3"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_38_3_Btn" onclick="CheckMCAnswer(38,3,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;6084.000</li></ol></li>
+<li class="QuizQuestion" id="Q_39" style="display: none;"><div class="QuestionText">The flow of an electric current is:</div><ol class="MCAnswers"><li id="Q_39_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_39_0_Btn" onclick="CheckMCAnswer(39,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;the flow of atoms from one molecule to another through the conductor</li><li id="Q_39_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_39_1_Btn" onclick="CheckMCAnswer(39,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;the flow of electrons from one atom to another through the conductor</li><li id="Q_39_2"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_39_2_Btn" onclick="CheckMCAnswer(39,2,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;caused by attraction of electrons to a negatively charged conductor</li><li id="Q_39_3"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_39_3_Btn" onclick="CheckMCAnswer(39,3,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;the flow of electrons from a positively charged body to a negatively charged body</li></ol></li>
+<li class="QuizQuestion" id="Q_40" style="display: none;"><div class="QuestionText">The first treatment for burns is:</div><ol class="MCAnswers"><li id="Q_40_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_40_0_Btn" onclick="CheckMCAnswer(40,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;treat with neutralizing agent and no bandaging</li><li id="Q_40_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_40_1_Btn" onclick="CheckMCAnswer(40,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;run large quantity of water on burn and cool until pain reduced</li><li id="Q_40_2"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_40_2_Btn" onclick="CheckMCAnswer(40,2,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;apply a sodium carbonate and than bandaging</li><li id="Q_40_3"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_40_3_Btn" onclick="CheckMCAnswer(40,3,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;use ice to cool burn and apply gauze</li></ol></li>
+<li class="QuizQuestion" id="Q_41" style="display: none;"><div class="QuestionText">In a step-down transformer:</div><ol class="MCAnswers"><li id="Q_41_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_41_0_Btn" onclick="CheckMCAnswer(41,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;power on primary winding more than on secondary</li><li id="Q_41_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_41_1_Btn" onclick="CheckMCAnswer(41,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;primary winding has thicker wire</li><li id="Q_41_2"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_41_2_Btn" onclick="CheckMCAnswer(41,2,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;secondary winding has thicker wire</li><li id="Q_41_3"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_41_3_Btn" onclick="CheckMCAnswer(41,3,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;secondary winding has more turns of wir</li></ol></li>
+<li class="QuizQuestion" id="Q_42" style="display: none;"><div class="QuestionText">A contractor wants to increase the size of a working room by 25%. If the room now is 20' x 10', how big will it be?</div><ol class="MCAnswers"><li id="Q_42_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_42_0_Btn" onclick="CheckMCAnswer(42,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;15' x 20'</li><li id="Q_42_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_42_1_Btn" onclick="CheckMCAnswer(42,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;35' x 20</li><li id="Q_42_2"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_42_2_Btn" onclick="CheckMCAnswer(42,2,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;25' x 10'</li><li id="Q_42_3"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_42_3_Btn" onclick="CheckMCAnswer(42,3,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;50' x 20'</li></ol></li>
+<li class="QuizQuestion" id="Q_43" style="display: none;"><div class="QuestionText">Two length of a conduit, which can not be turned, could be joined together by using:</div><ol class="MCAnswers"><li id="Q_43_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_43_0_Btn" onclick="CheckMCAnswer(43,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;one sided coupling</li><li id="Q_43_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_43_1_Btn" onclick="CheckMCAnswer(43,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;split adapter</li><li id="Q_43_2"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_43_2_Btn" onclick="CheckMCAnswer(43,2,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;a nipple</li><li id="Q_43_3"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_43_3_Btn" onclick="CheckMCAnswer(43,3,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;a &#x201C;Erickson&#x201D; (conduit union)</li></ol></li>
+<li class="QuizQuestion" id="Q_44" style="display: none;"><div class="QuestionText">To deliver maximum power, storage battery must:</div><ol class="MCAnswers"><li id="Q_44_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_44_0_Btn" onclick="CheckMCAnswer(44,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;have specific gravity of electrolyte be 1.2</li><li id="Q_44_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_44_1_Btn" onclick="CheckMCAnswer(44,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;have its internal resistance be equal to the resistance of the load</li><li id="Q_44_2"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_44_2_Btn" onclick="CheckMCAnswer(44,2,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;be properly connected to the circuit</li><li id="Q_44_3"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_44_3_Btn" onclick="CheckMCAnswer(44,3,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;have its internal resistance be equal to one-half the resistance of the load</li></ol></li>
+<li class="QuizQuestion" id="Q_45" style="display: none;"><div class="QuestionText">A heating element of a hot plate of an electric cooking range draws 12 amperes from 240 V mains. How many kWh of energy will be consumed in one hour and 15 min?<br /></div><ol class="MCAnswers"><li id="Q_45_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_45_0_Btn" onclick="CheckMCAnswer(45,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;3.6</li><li id="Q_45_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_45_1_Btn" onclick="CheckMCAnswer(45,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;6.4</li><li id="Q_45_2"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_45_2_Btn" onclick="CheckMCAnswer(45,2,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;1.2</li><li id="Q_45_3"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_45_3_Btn" onclick="CheckMCAnswer(45,3,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;7.2</li></ol></li>
+<li class="QuizQuestion" id="Q_46" style="display: none;"><div class="QuestionText"><img src="3-3_ohms.JPG" alt="3-3_ohms.JPG" title="3-3_ohms" width="323" height="120"></img><br />The current flowing through the circuit is ___ amp.</div><ol class="MCAnswers"><li id="Q_46_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_46_0_Btn" onclick="CheckMCAnswer(46,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;2</li><li id="Q_46_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_46_1_Btn" onclick="CheckMCAnswer(46,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;4</li><li id="Q_46_2"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_46_2_Btn" onclick="CheckMCAnswer(46,2,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;0.5</li><li id="Q_46_3"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_46_3_Btn" onclick="CheckMCAnswer(46,3,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;1</li></ol></li>
+<li class="QuizQuestion" id="Q_47" style="display: none;"><div class="QuestionText">A resistance of 5 ohms is further drawn so that its length becomes double. Its resistance will now be: <br /> </div><ol class="MCAnswers"><li id="Q_47_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_47_0_Btn" onclick="CheckMCAnswer(47,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;5 &#x03A9;</li><li id="Q_47_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_47_1_Btn" onclick="CheckMCAnswer(47,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;10 &#x03A9;</li><li id="Q_47_2"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_47_2_Btn" onclick="CheckMCAnswer(47,2,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;15 &#x03A9;</li><li id="Q_47_3"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_47_3_Btn" onclick="CheckMCAnswer(47,3,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;20 &#x03A9;</li></ol></li>
+<li class="QuizQuestion" id="Q_48" style="display: none;"><div class="QuestionText">When fuse is blown out on a rectifier connected to a secondary of a transformer, the reasons could be that:</div><ol class="MCAnswers"><li id="Q_48_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_48_0_Btn" onclick="CheckMCAnswer(48,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;secondary of a transformer is partially shorte</li><li id="Q_48_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_48_1_Btn" onclick="CheckMCAnswer(48,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;primary of a transformer is partially open</li><li id="Q_48_2"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_48_2_Btn" onclick="CheckMCAnswer(48,2,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;primary of a transformer is partially shorted</li><li id="Q_48_3"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_48_3_Btn" onclick="CheckMCAnswer(48,3,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;secondary of a transformer is partially open</li></ol></li>
+<li class="QuizQuestion" id="Q_49" style="display: none;"><div class="QuestionText">The voltage drop across a resistor of 100 ohm is 10 volts. The wattage of the resistor must be _ watts.</div><ol class="MCAnswers"><li id="Q_49_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_49_0_Btn" onclick="CheckMCAnswer(49,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;1</li><li id="Q_49_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_49_1_Btn" onclick="CheckMCAnswer(49,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;2</li><li id="Q_49_2"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_49_2_Btn" onclick="CheckMCAnswer(49,2,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;3</li><li id="Q_49_3"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_49_3_Btn" onclick="CheckMCAnswer(49,3,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;4</li></ol></li></ol>
+
+
+
+</div>
+
+
+
+<div class="Feedback" id="FeedbackDiv">
+<div class="FeedbackText" id="FeedbackContent"></div>
+<button id="FeedbackOKButton" class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)" onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" onclick="HideFeedback(); return false;">&nbsp;OK&nbsp;</button>
+</div>
+
+<!-- BeginBottomNavButtons -->
+
+
+<div class="NavButtonBar" id="BottomNavBar">
+
+
+<button class="NavButton" onfocus="NavBtnOver(this)" onblur="NavBtnOut(this)" onmouseover="NavBtnOver(this)" onmouseout="NavBtnOut(this)" onmousedown="NavBtnDown(this)" onmouseup="NavBtnOut(this)" onclick="history.back(); return false;">&lt;=</button>
+
+
+
+
+
+<button class="NavButton" onfocus="NavBtnOver(this)" onblur="NavBtnOut(this)" onmouseover="NavBtnOver(this)" onmouseout="NavBtnOut(this)" onmousedown="NavBtnDown(this)" onmouseup="NavBtnOut(this)" onclick="location='nextpage.htm'; return false;">=&gt;</button>
+
+
+</div>
+
+
+
+<!-- EndBottomNavButtons -->
+
+<!-- BeginSubmissionForm -->
+
+<!-- EndSubmissionForm -->
+
+</body>
+
+</html>
