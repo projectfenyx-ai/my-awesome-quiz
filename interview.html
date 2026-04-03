@@ -1,0 +1,596 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>MTA Interview Prep</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
+    background: #f2f2f7;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    color: #1c1c1e;
+  }
+
+  .app {
+    width: 100%;
+    max-width: 430px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #f2f2f7;
+  }
+
+  .header {
+    background: #fff;
+    padding: 56px 20px 16px;
+    border-bottom: 0.5px solid #c6c6c8;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  .header-title {
+    font-size: 17px;
+    font-weight: 600;
+    color: #1c1c1e;
+    text-align: center;
+  }
+
+  .header-sub {
+    font-size: 13px;
+    color: #8e8e93;
+    text-align: center;
+    margin-top: 4px;
+  }
+
+  .progress-bar {
+    width: 100%;
+    height: 4px;
+    background: #e5e5ea;
+    border-radius: 2px;
+    margin-top: 12px;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: #007aff;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+  }
+
+  .content {
+    flex: 1;
+    padding: 20px 16px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  }
+
+  .card-type {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    display: inline-block;
+  }
+
+  .type-intro { background: #e8f4fd; color: #0071e3; }
+  .type-question { background: #fff3cd; color: #9a6700; }
+  .type-answer { background: #d1f2eb; color: #0f6e56; }
+
+  .card-title {
+    font-size: 17px;
+    font-weight: 600;
+    color: #1c1c1e;
+    line-height: 1.4;
+    margin-bottom: 12px;
+  }
+
+  .card-body {
+    font-size: 15px;
+    color: #3a3a3c;
+    line-height: 1.6;
+  }
+
+  .step {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+    align-items: flex-start;
+  }
+
+  .step-num {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #007aff;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .step-text {
+    font-size: 15px;
+    color: #3a3a3c;
+    line-height: 1.5;
+    flex: 1;
+  }
+
+  .step-label {
+    font-weight: 600;
+    color: #1c1c1e;
+  }
+
+  .highlight-box {
+    background: #f2f2f7;
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin-top: 12px;
+    border-left: 3px solid #007aff;
+  }
+
+  .highlight-box p {
+    font-size: 14px;
+    color: #3a3a3c;
+    line-height: 1.5;
+    font-style: italic;
+  }
+
+  .tip-box {
+    background: #fff9e6;
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin-top: 12px;
+    border-left: 3px solid #ffcc00;
+  }
+
+  .tip-box p {
+    font-size: 13px;
+    color: #5c4800;
+    line-height: 1.5;
+  }
+
+  .tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 10px;
+  }
+
+  .tag {
+    background: #f2f2f7;
+    border: 0.5px solid #c6c6c8;
+    border-radius: 20px;
+    padding: 4px 10px;
+    font-size: 12px;
+    color: #3a3a3c;
+  }
+
+  .nav {
+    background: #fff;
+    border-top: 0.5px solid #c6c6c8;
+    padding: 12px 20px 34px;
+    display: flex;
+    gap: 12px;
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+  }
+
+  .btn {
+    flex: 1;
+    height: 50px;
+    border-radius: 14px;
+    font-size: 17px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.1s, opacity 0.1s;
+  }
+
+  .btn:active { transform: scale(0.97); opacity: 0.85; }
+
+  .btn-back {
+    background: #f2f2f7;
+    color: #007aff;
+  }
+
+  .btn-next {
+    background: #007aff;
+    color: #fff;
+  }
+
+  .btn:disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+
+  .page-counter {
+    font-size: 13px;
+    color: #8e8e93;
+    text-align: center;
+    margin-top: 8px;
+  }
+
+  .divider {
+    height: 0.5px;
+    background: #e5e5ea;
+    margin: 14px 0;
+  }
+
+  .done-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    text-align: center;
+  }
+
+  .done-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #d1f2eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 36px;
+  }
+
+  .done-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1c1c1e;
+    margin-bottom: 10px;
+  }
+
+  .done-sub {
+    font-size: 15px;
+    color: #8e8e93;
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+
+  .btn-restart {
+    background: #007aff;
+    color: #fff;
+    border: none;
+    border-radius: 14px;
+    padding: 16px 40px;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+<div class="app">
+
+  <div class="header">
+    <div class="header-title">MTA Interview Prep</div>
+    <div class="header-sub" id="headerSub">V&D Maintainer</div>
+    <div class="progress-bar">
+      <div class="progress-fill" id="progressFill" style="width:0%"></div>
+    </div>
+  </div>
+
+  <div class="content" id="mainContent"></div>
+
+  <div class="nav" id="navBar">
+    <button class="btn btn-back" id="btnBack" onclick="goBack()">← Back</button>
+    <button class="btn btn-next" id="btnNext" onclick="goNext()">Next →</button>
+  </div>
+
+</div>
+
+<script>
+const screens = [
+
+  {
+    type: 'intro',
+    label: 'My Experience',
+    title: 'Work Experience Overview',
+    content: `
+      <div class="card-body">
+        <p>10 years of full-time experience in heating system engineering and service.</p>
+        <div class="divider"></div>
+      </div>
+      <div class="card" style="background:#f8f9ff;margin-top:0;">
+        <div class="card-type type-intro">OMG Home Design</div>
+        <div class="card-title">Technician — 5+ years</div>
+        <div class="tag-row">
+          <span class="tag">Boilers</span><span class="tag">Heaters</span><span class="tag">Pumps</span><span class="tag">Valves</span><span class="tag">Wiring</span>
+        </div>
+        <p style="font-size:14px;color:#3a3a3c;margin-top:10px;line-height:1.5;">Installation, maintenance and repair of boilers and heating systems. Testing equipment after installation. Using diagnostic instruments. 40 hrs/week.</p>
+      </div>
+      <div class="card" style="background:#f8fff9;margin-top:0;">
+        <div class="card-type type-answer">Acme Star Auto Corp.</div>
+        <div class="card-title">Electrical & Climate Control Systems Mechanic — 5+ years</div>
+        <div class="tag-row">
+          <span class="tag">Pumps</span><span class="tag">Fans</span><span class="tag">Compressors</span><span class="tag">Motors</span><span class="tag">Multimeter</span>
+        </div>
+        <p style="font-size:14px;color:#3a3a3c;margin-top:10px;line-height:1.5;">Repair and maintenance of pumps, fans, compressors, and motors. Diagnosing electrical and mechanical faults. Performing preventive maintenance. 40 hrs/week.</p>
+      </div>
+    `
+  },
+
+  {
+    type: 'question',
+    label: 'Question 1',
+    title: 'What equipment did you maintain at Acme Star?',
+    content: `
+      <div class="card-type type-question">Interviewer</div>
+      <p class="card-body" style="margin-bottom:16px;">In your experience at Acme Star Auto Corp., what types of equipment did you regularly maintain and repair?</p>
+      <div class="divider"></div>
+      <div class="card-type type-answer" style="margin-top:4px;">Your Answer</div>
+      <div class="step"><div class="step-num">1</div><div class="step-text">Repaired and maintained <span class="step-label">pumps, fans, compressors, motors</span>, and related systems.</div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-text">Diagnosed mechanical and electrical issues using <span class="step-label">specialized tools</span>.</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-text">Performed <span class="step-label">preventive maintenance</span> to optimize equipment performance.</div></div>
+      <div class="tip-box"><p>Always name specific components — pumps, fans, compressors, motors. This matches MTA requirement #1 word for word.</p></div>
+    `
+  },
+
+  {
+    type: 'question',
+    label: 'Question 2',
+    title: 'How did you diagnose an electrical issue?',
+    content: `
+      <div class="card-type type-question">Interviewer</div>
+      <p class="card-body" style="margin-bottom:16px;">Can you give me a specific example of how you diagnosed an electrical issue? What tools did you use?</p>
+      <div class="divider"></div>
+      <div class="card-type type-answer" style="margin-top:4px;">Your Answer</div>
+      <div class="step"><div class="step-num">1</div><div class="step-text"><span class="step-label">Safety first:</span> Turned off power and disconnected the battery before touching anything.</div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-text">Used a <span class="step-label">multimeter</span> to check voltage at the motor connector — no voltage found.</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-text">Checked the <span class="step-label">fuse</span> — it was blown. Replaced it, but the fan still did not work.</div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-text">De-energized again, tested the <span class="step-label">relay</span> — found it faulty. Replaced it.</div></div>
+      <div class="step"><div class="step-num">5</div><div class="step-text">Ran a <span class="step-label">full system test</span> — climate control operating according to specifications.</div></div>
+      <div class="highlight-box"><p>"I always de-energize the equipment before starting any work."</p></div>
+    `
+  },
+
+  {
+    type: 'question',
+    label: 'Question 3',
+    title: 'Preventive maintenance on pumps and compressors',
+    content: `
+      <div class="card-type type-question">Interviewer</div>
+      <p class="card-body" style="margin-bottom:16px;">What exactly did you do during preventive maintenance on pumps and compressors?</p>
+      <div class="divider"></div>
+      <div class="card-type type-answer" style="margin-top:4px;">Your Answer</div>
+      <div class="step"><div class="step-num">1</div><div class="step-text"><span class="step-label">Visual inspection</span> — checked for leaks, cracks, and visible damage.</div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-text"><span class="step-label">Lubrication</span> — checked and changed oil on all moving parts to prevent wear.</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-text"><span class="step-label">Pressure test</span> — tested pressure levels using gauges to confirm within specifications.</div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-text"><span class="step-label">Cleaning</span> — cleaned filters and components, checked all valves and connections for tightness.</div></div>
+      <div class="step"><div class="step-num">5</div><div class="step-text"><span class="step-label">Run and test</span> — started equipment, listened for unusual noise or vibration, recorded results.</div></div>
+      <div class="tip-box"><p>This directly covers MTA requirement #4: "Cleans and lubricates all components of ventilation and drainage equipment."</p></div>
+    `
+  },
+
+  {
+    type: 'question',
+    label: 'Question 4',
+    title: 'Steps for installing a new boiler',
+    content: `
+      <div class="card-type type-question">Interviewer</div>
+      <p class="card-body" style="margin-bottom:16px;">Can you describe what steps you followed when installing a new boiler?</p>
+      <div class="divider"></div>
+      <div class="card-type type-answer" style="margin-top:4px;">Your Answer</div>
+      <div class="step"><div class="step-num">1</div><div class="step-text"><span class="step-label">Safety:</span> De-energized all existing connections before starting work.</div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-text"><span class="step-label">Preparation:</span> Inspected the site, confirmed pipes, valves, and connections were correctly positioned.</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-text"><span class="step-label">Installation:</span> Mounted the boiler, connected all pipes, valves, and wiring per technical specifications.</div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-text"><span class="step-label">Testing:</span> Checked for leaks, powered up the system, verified pressure and temperature within specs.</div></div>
+      <div class="step"><div class="step-num">5</div><div class="step-text"><span class="step-label">Final check:</span> Ran a full cycle, confirmed correct operation, and recorded the results.</div></div>
+      <div class="highlight-box"><p>"I always make sure the equipment meets specifications before I consider the job complete."</p></div>
+    `
+  },
+
+  {
+    type: 'question',
+    label: 'Question 5',
+    title: 'Damaged sparking wire — what do you do?',
+    content: `
+      <div class="card-type type-question">Interviewer</div>
+      <p class="card-body" style="margin-bottom:16px;">You notice a wire is damaged and sparking while working on a ventilation unit. What would you do?</p>
+      <div class="divider"></div>
+      <div class="card-type type-answer" style="margin-top:4px;">Your Answer</div>
+      <div class="step"><div class="step-num">1</div><div class="step-text"><span class="step-label">Stop immediately</span> — cease all work and step away from the equipment.</div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-text"><span class="step-label">De-energize</span> — turn off power at the switch.</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-text"><span class="step-label">Lockout/Tagout (LOTO)</span> — if switch is not in my line of sight, lock it out and place a tag so no one can restore power.</div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-text"><span class="step-label">Inspect</span> — identify the cause: wear, overload, or mechanical damage.</div></div>
+      <div class="step"><div class="step-num">5</div><div class="step-text"><span class="step-label">Replace</span> — install correct gauge wire according to specifications.</div></div>
+      <div class="step"><div class="step-num">6</div><div class="step-text"><span class="step-label">Test</span> — remove tag, restore power, verify the unit operates safely.</div></div>
+      <div class="tip-box"><p>Key term: Lockout/Tagout (LOTO) — this is the official MTA/OSHA safety procedure. Say this word at the interview!</p></div>
+    `
+  },
+
+  {
+    type: 'question',
+    label: 'Question 6',
+    title: 'Fan making loud noise and vibrating heavily',
+    content: `
+      <div class="card-type type-question">Interviewer</div>
+      <p class="card-body" style="margin-bottom:16px;">A subway ventilation fan starts but makes loud unusual noise and vibrates heavily. What would you do step by step?</p>
+      <div class="divider"></div>
+      <div class="card-type type-answer" style="margin-top:4px;">Your Answer</div>
+      <p style="font-size:14px;color:#007aff;font-weight:600;margin-bottom:12px;">"Unusual noise and heavy vibration are the first signs of malfunction."</p>
+      <div class="step"><div class="step-num">1</div><div class="step-text"><span class="step-label">Safety:</span> Shut down the fan, de-energize, apply LOTO if switch is not in sight.</div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-text"><span class="step-label">Visual inspection:</span> Check fan blades for damage or debris, check all bolts and mounting for looseness.</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-text"><span class="step-label">Diagnose:</span> Open motor housing, inspect brushes for wear and bearings for damage.</div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-text"><span class="step-label">Repair:</span> Replace worn brushes or damaged bearings as needed.</div></div>
+      <div class="step"><div class="step-num">5</div><div class="step-text"><span class="step-label">Test:</span> Reassemble, restore power, run the fan — no noise, no vibration means the job is complete.</div></div>
+    `
+  },
+
+  {
+    type: 'question',
+    label: 'Question 7',
+    title: 'How do you know a bearing needs replacing?',
+    content: `
+      <div class="card-type type-question">Interviewer</div>
+      <p class="card-body" style="margin-bottom:16px;">How do you know when a bearing needs to be replaced? What signs do you look for?</p>
+      <div class="divider"></div>
+      <div class="card-type type-answer" style="margin-top:4px;">Your Answer — 3 signs</div>
+      <div class="step"><div class="step-num">1</div><div class="step-text"><span class="step-label">Grinding noise like sand</span> — the motor makes a rumbling sound as if sand is inside the housing. Metal grinding against metal.</div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-text"><span class="step-label">Heavy vibration</span> — a worn bearing causes the shaft to wobble, creating vibration throughout the entire unit.</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-text"><span class="step-label">Excessive heat</span> — the motor housing becomes too hot to hold my hand on. Wear creates friction — friction creates heat.</div></div>
+      <div class="divider"></div>
+      <p style="font-size:14px;color:#3a3a3c;margin-bottom:10px;">When I see these signs:</p>
+      <div class="step"><div class="step-num">→</div><div class="step-text">De-energize → LOTO → disassemble → inspect for wear, cracks, or heat discoloration → replace bearing.</div></div>
+      <div class="highlight-box"><p>"Grinding noise like sand, heavy vibration, and excessive heat — these three signs tell me the bearing must be replaced."</p></div>
+    `
+  },
+
+  {
+    type: 'question',
+    label: 'Question 8',
+    title: 'Pump motor won\'t start — how do you diagnose it?',
+    content: `
+      <div class="card-type type-question">Interviewer</div>
+      <p class="card-body" style="margin-bottom:16px;">There is power at the panel but the pump motor does not run. What steps would you take to find the problem?</p>
+      <div class="divider"></div>
+      <div class="card-type type-answer" style="margin-top:4px;">Your Answer</div>
+      <div class="step"><div class="step-num">1</div><div class="step-text"><span class="step-label">Safety:</span> De-energize the unit and apply LOTO before touching anything.</div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-text"><span class="step-label">Visual inspection:</span> Check for burn marks, damaged wires, corrosion, or loose connections.</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-text"><span class="step-label">Check fuses and breakers:</span> A blown fuse stops the motor even if the panel shows power.</div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-text"><span class="step-label">Multimeter at terminals:</span> Confirm power is actually reaching the motor, not just the panel.</div></div>
+      <div class="step"><div class="step-num">5</div><div class="step-text"><span class="step-label">Inspect brushes:</span> Worn brushes lose contact with the commutator — the motor will not run.</div></div>
+      <div class="step"><div class="step-num">6</div><div class="step-text"><span class="step-label">Test after repair:</span> Reassemble, restore power, run motor, confirm it operates within specifications.</div></div>
+      <div class="tip-box"><p>Logic: Panel → Fuses → Contacts → Motor terminals → Brushes → Repair → Test</p></div>
+    `
+  },
+
+  {
+    type: 'question',
+    label: 'Question 9',
+    title: 'Multimeter vs Oscilloscope — what is the difference?',
+    content: `
+      <div class="card-type type-question">Interviewer</div>
+      <p class="card-body" style="margin-bottom:16px;">What is the difference between a multimeter and an oscilloscope? When would you use one versus the other?</p>
+      <div class="divider"></div>
+      <div class="card-type type-answer" style="margin-top:4px;">Your Answer</div>
+      <div class="card" style="background:#f0f7ff;margin:0 0 12px;">
+        <div style="font-size:13px;font-weight:600;color:#0071e3;margin-bottom:6px;">MULTIMETER</div>
+        <p style="font-size:14px;color:#3a3a3c;line-height:1.5;">Gives exact numbers — voltage, current, resistance. I use it to check: is there power at the terminals, is the fuse blown, is the wire continuous. Simple yes/no with exact values.</p>
+      </div>
+      <div class="card" style="background:#f0fff7;margin:0 0 12px;">
+        <div style="font-size:13px;font-weight:600;color:#0f6e56;margin-bottom:6px;">OSCILLOSCOPE</div>
+        <p style="font-size:14px;color:#3a3a3c;line-height:1.5;">Shows the signal waveform over time on a screen. I use it when a motor runs but behaves abnormally — the oscilloscope shows if the electrical signal has interference, drops, or irregular patterns.</p>
+      </div>
+      <div class="highlight-box"><p>"Multimeter tells me the number — oscilloscope tells me the story."</p></div>
+    `
+  },
+
+  {
+    type: 'intro',
+    label: 'Key Tips',
+    title: 'Important tips for your interview day',
+    content: `
+      <div class="step"><div class="step-num">✓</div><div class="step-text"><span class="step-label">Name equipment specifically</span> — boilers, pumps, compressors, motors, valves, fans. Never say just "equipment."</div></div>
+      <div class="step"><div class="step-num">✓</div><div class="step-text"><span class="step-label">Use terms from the EETP form</span> — they match exactly what the interviewer is checking against.</div></div>
+      <div class="step"><div class="step-num">✓</div><div class="step-text"><span class="step-label">Always start with Safety</span> — say "de-energize" and "Lockout/Tagout (LOTO)." This impresses interviewers immediately.</div></div>
+      <div class="step"><div class="step-num">✓</div><div class="step-text"><span class="step-label">Always end with Test after repair</span> — shows professional, complete thinking.</div></div>
+      <div class="step"><div class="step-num">✓</div><div class="step-text"><span class="step-label">If you don't know the answer</span> — do not stay silent. Say: "I would follow the safety procedure and consult the technical manual."</div></div>
+      <div class="tip-box" style="margin-top:16px;"><p>Key words to remember: <strong>Lockout/Tagout (LOTO) · multimeter · de-energize · specifications · preventive maintenance · visual inspection</strong></p></div>
+      <div class="highlight-box" style="margin-top:12px;"><p>"I always make sure the equipment meets specifications before I consider the job complete."</p></div>
+    `
+  }
+
+];
+
+let current = 0;
+
+function render() {
+  const s = screens[current];
+  const pct = Math.round(((current + 1) / screens.length) * 100);
+
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('headerSub').textContent = s.label + ' of ' + screens.length;
+
+  const labelClass = s.type === 'intro' ? 'type-intro' : s.type === 'question' ? 'type-question' : 'type-answer';
+
+  document.getElementById('mainContent').innerHTML = `
+    <div class="card">
+      <div class="card-type ${labelClass}">${s.label}</div>
+      <div class="card-title">${s.title}</div>
+      ${s.content}
+    </div>
+    <div class="page-counter">${current + 1} / ${screens.length}</div>
+  `;
+
+  document.getElementById('mainContent').scrollTop = 0;
+  document.getElementById('btnBack').disabled = current === 0;
+
+  if (current === screens.length - 1) {
+    document.getElementById('btnNext').textContent = 'Done ✓';
+    document.getElementById('btnNext').style.background = '#34c759';
+  } else {
+    document.getElementById('btnNext').textContent = 'Next →';
+    document.getElementById('btnNext').style.background = '#007aff';
+  }
+}
+
+function goNext() {
+  if (current < screens.length - 1) {
+    current++;
+    render();
+  } else {
+    showDone();
+  }
+}
+
+function goBack() {
+  if (current > 0) {
+    current--;
+    render();
+  }
+}
+
+function showDone() {
+  document.getElementById('mainContent').innerHTML = `
+    <div class="done-screen">
+      <div class="done-icon">🎯</div>
+      <div class="done-title">Great work!</div>
+      <div class="done-sub">You reviewed all questions and answers.<br><br>You are ready for your MTA interview.<br><br>Good luck — you've got this!</div>
+      <button class="btn-restart" onclick="restart()">Start over</button>
+    </div>
+  `;
+  document.getElementById('navBar').style.display = 'none';
+  document.getElementById('progressFill').style.width = '100%';
+  document.getElementById('headerSub').textContent = 'Complete!';
+}
+
+function restart() {
+  current = 0;
+  document.getElementById('navBar').style.display = 'flex';
+  render();
+}
+
+render();
+</script>
+</body>
+</html>
