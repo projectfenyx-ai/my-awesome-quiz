@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Квиз: Правило 3.80(j)–(o)</title>
+<style>
+  :root {
+    --bg: #0f1720;
+    --card: #1a2432;
+    --accent: #f5c518;
+    --accent2: #3fa9f5;
+    --text: #e8edf2;
+    --muted: #93a1b0;
+    --correct: #3fbf6e;
+    --wrong: #e5534b;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding: 24px 12px 60px;
+  }
+  .wrap { max-width: 680px; margin: 0 auto; }
+  h1 { font-size: 1.4rem; margin-bottom: 4px; }
+  .sub { color: var(--muted); font-size: 0.9rem; margin-bottom: 20px; }
+  #progress-bar-outer {
+    height: 6px; background: #263142; border-radius: 3px; overflow: hidden; margin-bottom: 24px;
+  }
+  #progress-bar-inner {
+    height: 100%; background: var(--accent); width: 0%; transition: width .3s;
+  }
+  .card {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 20px 20px 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+  }
+  .qnum { color: var(--accent); font-weight: 700; font-size: 0.85rem; margin-bottom: 6px; }
+  .qtext { font-size: 1.05rem; line-height: 1.4; margin-bottom: 14px; }
+  .opt {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: #202b3a;
+    border: 1px solid #2c3a4d;
+    color: var(--text);
+    padding: 11px 14px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background .15s, border-color .15s;
+  }
+  .opt:hover:not(.disabled) { border-color: var(--accent2); }
+  .opt.correct { background: rgba(63,191,110,0.18); border-color: var(--correct); }
+  .opt.wrong { background: rgba(229,83,75,0.18); border-color: var(--wrong); }
+  .opt.disabled { cursor: default; opacity: 0.85; }
+  .explain {
+    margin-top: 10px;
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.4;
+    border-left: 3px solid var(--accent2);
+    padding-left: 10px;
+    display: none;
+  }
+  .explain.show { display: block; }
+  #result {
+    display: none;
+    text-align: center;
+    padding: 26px 20px;
+    background: var(--card);
+    border-radius: 14px;
+    margin-top: 10px;
+  }
+  #result h2 { color: var(--accent); margin-top: 0; }
+  #retry {
+    margin-top: 14px;
+    background: var(--accent2);
+    border: none;
+    color: #0f1720;
+    font-weight: 700;
+    padding: 10px 22px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 0.95rem;
+  }
+  .score-row { color: var(--muted); font-size: 0.9rem; margin-top: 4px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Квиз: Правило 3.80(j)–(o)</h1>
+  <div class="sub">Схемы ограждения путей — тупиковые терминалы, вывод пути из эксплуатации, работы в депо, работники подрядчика, работы у края платформы</div>
+  <div id="progress-bar-outer"><div id="progress-bar-inner"></div></div>
+  <div id="quiz"></div>
+  <div id="result">
+    <h2 id="result-title"></h2>
+    <div class="score-row" id="result-score"></div>
+    <button id="retry">Пройти заново</button>
+  </div>
+</div>
+
+<script>
+const questions = [
+  {
+    q: "Что такое «тупиковый терминал» (stub end terminal) согласно Правилу 3.80(j)?",
+    opts: [
+      "Место, где поезда регулярно меняют направление движения, находясь в границах платформы станции",
+      "Место, где поезда регулярно меняют направление за пределами границ платформы станции",
+      "Любая конечная станция линии, независимо от смены направления",
+      "Депо, где выполняется техническое обслуживание поездов"
+    ],
+    correct: 0,
+    explain: "3.80(j): тупиковый терминал — место, где поезда меняют направление в границах платформы станции. Смена направления за пределами платформы называется «релейной» (relaying)."
+  },
+  {
+    q: "В пределах какого расстояния от выходного конца тупикового терминала должен действовать порядок по 3.80(j), если там ведутся работы?",
+    opts: ["300 футов", "500 футов", "650 футов", "700 футов"],
+    correct: 2,
+    explain: "3.80(j): если работы проводятся в пределах 650 футов от выходного конца тупикового терминала, EIC обязан согласовать порядок действий с дежурным диспетчером поездов."
+  },
+  {
+    q: "Что обязан сделать Терминальный сигналист (Terminal Flagger) сразу после открытия боковых дверей поезда?",
+    opts: [
+      "Разместить красный флаг перед поездом",
+      "Активировать клапан экстренного торможения («шнур») у выходного конца поезда",
+      "Сообщить машинисту по рации о наличии людей на путях",
+      "Снять переносной поездной стоп"
+    ],
+    correct: 1,
+    explain: "3.80(j)(2): Терминальный сигналист активирует клапан экстренного торможения у выходного конца поезда, чтобы предотвратить его движение."
+  },
+  {
+    q: "Кто и когда даёт машинисту разрешение восстановить клапан экстренного торможения и отправляться?",
+    opts: [
+      "Основной сигналист — сразу после прибытия поезда",
+      "Терминальный сигналист — только после того, как основной сигналист снял красный огонь/флаг и переносной поездной стоп",
+      "Дежурный диспетчер поездов — по расписанию",
+      "Сам машинист — по своему усмотрению"
+    ],
+    correct: 1,
+    explain: "3.80(j)(4): Терминальный сигналист даёт разрешение только ПОСЛЕ ТОГО, как основной сигналист на путях снял красный фонарь/флаг и переносной поездной стоп."
+  },
+  {
+    q: "С какой скоростью отправляющийся с терминала поезд должен следовать до сигнала «возобновления движения»?",
+    opts: [
+      "С максимально разрешённой скоростью",
+      "С ОГРАНИЧЕННОЙ СКОРОСТЬЮ С КРАЙНЕЙ ОСТОРОЖНОСТЬЮ",
+      "Со скоростью не более 10 миль в час",
+      "Скорость не регламентируется"
+    ],
+    correct: 1,
+    explain: "3.80(j)(5): машинист подаёт серию коротких сигналов и следует с ОГРАНИЧЕННОЙ СКОРОСТЬЮ С КРАЙНЕЙ ОСТОРОЖНОСТЬЮ до проезда зелёного сигнала «возобновления движения»."
+  },
+  {
+    q: "Правило 3.80(k) применяется, когда путь не может быть возвращён в эксплуатацию менее чем за 30 минут И работы выполняются:",
+    opts: [
+      "Сотрудниками стороннего работодателя (не Authority)",
+      "Сотрудниками Управления (Authority)",
+      "Подрядчиками без доступа к путям",
+      "Только в депо"
+    ],
+    correct: 1,
+    explain: "3.80(k) относится к случаям, когда все лица, выполняющие работы, являются сотрудниками Управления (Authority). Аналогичная ситуация со сторонним работодателем описана в 3.80(l)."
+  },
+  {
+    q: "На каком минимальном расстоянии от каждого конца рабочей группы (при разделении групп более чем на 700 футов) размещаются красный огонь/флаг и переносной поездной стоп по 3.80(k)?",
+    opts: ["100 футов", "200 футов", "300 футов", "500 футов"],
+    correct: 1,
+    explain: "3.80(k): один красный огонь/флаг и переносной поездной стоп устанавливаются не менее чем в 200 футах от каждого конца рабочей группы (стоп — обязательно в 10 футах от стрелки)."
+  },
+  {
+    q: "Сколько минут ждёт машинист рабочего поезда у необслуживаемого переносного стопа, прежде чем закрепить поезд и идти пешком к месту работ (по 3.80(k) и 3.80(l))?",
+    opts: ["1 минуту", "2 минуты", "3 минуты", "5 минут"],
+    correct: 2,
+    explain: "Если по истечении 3 минут ответа от рабочей бригады нет, машинист закрепляет поезд и идёт пешком к месту работ, чтобы связаться с ответственным."
+  },
+  {
+    q: "В чём ключевое отличие 3.80(l) от 3.80(k) в вопросе присмотра за огнями/флагами/стопами?",
+    opts: [
+      "В 3.80(l) присмотр не требуется никогда",
+      "В 3.80(l) огни/флаги/стопы могут оставаться без присмотра, только если руководитель ответственного за ограждение сотрудника признал это безопасным; в 3.80(k) — могут оставаться без присмотра без такой оговорки",
+      "Разницы нет, правила идентичны",
+      "В 3.80(l) обязательно нужен дополнительный сигналист у каждого стопа"
+    ],
+    correct: 1,
+    explain: "3.80(k) (сотрудники Authority): огни/флаги/стопы могут оставаться без присмотра. 3.80(l) (сторонний работодатель): без присмотра — только если это признано безопасным руководителем ответственного за ограждение сотрудника."
+  },
+  {
+    q: "Сколько жёлтых огней/флагов выставляется во всех местах въезда поездов на территорию депо по 3.80(m), если 2 огня нельзя разместить в 200 футах от сигналиста?",
+    opts: ["Два (2)", "Три (3)", "Четыре (4)", "Шесть (6)"],
+    correct: 2,
+    explain: "3.80(m): если 2 жёлтых огня/флага нельзя разместить на расстоянии 200 футов от сигналиста, выставляются четыре (4) жёлтых огня/флага во всех местах въезда поездов на территорию депо."
+  },
+  {
+    q: "Когда назначение сигналистов НЕ требуется для работников подрядчика согласно 3.80(n)?",
+    opts: [
+      "Никогда — сигналист требуется всегда",
+      "Когда работники могут попасть на объект, не выходя на пути и не пересекая их, а утверждённое ограждение надёжно отделяет их от путей",
+      "Только в ночное время",
+      "Когда работы длятся менее 30 минут"
+    ],
+    correct: 1,
+    explain: "3.80(n): сигналисты не требуются, если работники подрядчика не выходят на пути и не пересекают их, и утверждённое ограждение за габаритом приближения строений надёжно их защищает — за исключением случаев, когда Flagging Manager определит обратное."
+  },
+  {
+    q: "На каком расстоянии от края платформы работа считается подпадающей под действие 3.80(o)?",
+    opts: [
+      "1 фут",
+      "2 фута 6 дюймов",
+      "5 футов",
+      "10 футов"
+    ],
+    correct: 1,
+    explain: "3.80(o): правило применяется, если работы выполняются на платформе в пределах 2 футов 6 дюймов от края платформы (либо на лестницах на расстоянии, равном или меньшем высоты лестницы)."
+  },
+  {
+    q: "По 3.80(o), когда требуется полное ограждение сигналистами при работах у края платформы?",
+    opts: [
+      "Всегда, без исключений",
+      "Если обзор сигналиста на приближающиеся поезда составляет менее 650 футов",
+      "Только на подземных участках",
+      "Только в дневное время"
+    ],
+    correct: 1,
+    explain: "3.80(o)(1): полное ограждение сигналистами применяется, если обзор сигналиста на приближающиеся поезда составляет менее 650 футов."
+  },
+  {
+    q: "Если полное ограждение по 3.80(o) не требуется, что используется на ОТКРЫТЫХ участках в ДНЕВНОЕ время?",
+    opts: [
+      "Мигающий жёлтый фонарь",
+      "Флуоресцентный оранжевый флаг",
+      "Красный флаг",
+      "Переносной поездной стоп"
+    ],
+    correct: 1,
+    explain: "3.80(o)(2): на открытых участках днём используется флуоресцентный оранжевый флаг, ночью — мигающий жёлтый фонарь; в тоннелях — мигающий жёлтый фонарь в любое время. Всё выставляется не менее чем в 650 футах от рабочей зоны."
+  }
+];
+
+let current = 0;
+let score = 0;
+const quizEl = document.getElementById('quiz');
+const resultEl = document.getElementById('result');
+const progressInner = document.getElementById('progress-bar-inner');
+
+function renderQuestion() {
+  const item = questions[current];
+  progressInner.style.width = (current / questions.length * 100) + '%';
+
+  const card = document.createElement('div');
+  card.className = 'card';
+
+  const qnum = document.createElement('div');
+  qnum.className = 'qnum';
+  qnum.textContent = `Вопрос ${current + 1} из ${questions.length}`;
+  card.appendChild(qnum);
+
+  const qtext = document.createElement('div');
+  qtext.className = 'qtext';
+  qtext.textContent = item.q;
+  card.appendChild(qtext);
+
+  const explain = document.createElement('div');
+  explain.className = 'explain';
+  explain.textContent = item.explain;
+
+  item.opts.forEach((optText, idx) => {
+    const btn = document.createElement('button');
+    btn.className = 'opt';
+    btn.textContent = optText;
+    btn.onclick = () => {
+      if (btn.classList.contains('locked')) return;
+      const allBtns = card.querySelectorAll('.opt');
+      allBtns.forEach(b => { b.classList.add('disabled', 'locked'); });
+      if (idx === item.correct) {
+        btn.classList.add('correct');
+        score++;
+      } else {
+        btn.classList.add('wrong');
+        allBtns[item.correct].classList.add('correct');
+      }
+      explain.classList.add('show');
+      setTimeout(() => {
+        current++;
+        quizEl.innerHTML = '';
+        if (current < questions.length) {
+          renderQuestion();
+        } else {
+          showResult();
+        }
+      }, 1600);
+    };
+    card.appendChild(btn);
+  });
+
+  card.appendChild(explain);
+  quizEl.appendChild(card);
+}
+
+function showResult() {
+  progressInner.style.width = '100%';
+  resultEl.style.display = 'block';
+  const pct = Math.round(score / questions.length * 100);
+  let title;
+  if (pct >= 90) title = "Отлично! Правила 3.80(j)–(o) усвоены твёрдо";
+  else if (pct >= 70) title = "Хороший результат";
+  else if (pct >= 50) title = "Неплохо, но стоит повторить";
+  else title = "Стоит перечитать раздел ещё раз";
+  document.getElementById('result-title').textContent = title;
+  document.getElementById('result-score').textContent = `Правильных ответов: ${score} из ${questions.length} (${pct}%)`;
+}
+
+document.getElementById('retry').onclick = () => {
+  current = 0; score = 0;
+  resultEl.style.display = 'none';
+  quizEl.innerHTML = '';
+  renderQuestion();
+};
+
+renderQuestion();
+</script>
+</body>
+</html>
