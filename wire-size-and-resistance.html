@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wire Size and Resistance</title>
+<style>
+:root{--bg:#f7f7f4;--fg:#1d2226;--mut:#5b646b;--line:#d9dcdd;--card:#ffffff;--acc:#b4401f;--tint:#f6e4dc;--code:#eef1f2;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15181a;--fg:#e8ebec;--mut:#9aa4aa;--line:#2f373b;--card:#1d2225;--acc:#ff9a73;--tint:#3a2a24;--code:#23292c;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#15181a;--fg:#e8ebec;--mut:#9aa4aa;--line:#2f373b;--card:#1d2225;--acc:#ff9a73;--tint:#3a2a24;--code:#23292c;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:18px/1.6 Charter,"Iowan Old Style",Georgia,serif}
+main{max-width:34rem;margin:0 auto;padding:20px 18px 56px}
+h1,h2,h3,.sans{font-family:-apple-system,"SF Pro Text",system-ui,sans-serif}
+h1{font-size:1.9rem;line-height:1.15;margin:12px 0 14px}
+h2{font-size:1.3rem;line-height:1.25;margin:2.2rem 0 .6rem;padding-top:1.2rem;border-top:2px solid var(--fg)}
+h3{font-size:1.05rem;margin:1.4rem 0 .3rem}
+p{margin:.6rem 0}
+ul{padding-left:1.2rem;margin:.6rem 0}
+li{margin:.3rem 0}
+.lead{color:var(--mut)}
+.key{background:var(--card);border-left:4px solid var(--acc);padding:10px 14px;margin:1rem 0;border-radius:0 8px 8px 0}
+.ex{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:.9rem 0}
+.ex b.sans{display:block;margin-bottom:.2rem}
+.formula{font:600 1.7rem/1.2 ui-monospace,"SF Mono",Menlo,monospace;text-align:center;background:var(--code);border-radius:10px;padding:16px 8px;margin:1rem 0;color:var(--acc)}
+dl{margin:.6rem 0}
+dt{font:600 1rem/1.4 ui-monospace,"SF Mono",Menlo,monospace;margin-top:.6rem}
+dd{margin:0 0 0 0;color:var(--mut)}
+.calc{font:1rem/1.7 ui-monospace,"SF Mono",Menlo,monospace;background:var(--code);border-radius:8px;padding:10px 12px;margin:.6rem 0;overflow-wrap:anywhere}
+.ans{font-weight:700;color:var(--acc)}
+.tw{overflow-x:auto;margin:.8rem 0;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+table{border-collapse:collapse;width:100%;font:1rem/1.35 -apple-system,system-ui,sans-serif;font-variant-numeric:tabular-nums}
+caption{font-weight:700;text-align:left;padding:10px 12px 4px}
+th,td{padding:9px 10px;text-align:right;border-bottom:1px solid var(--line)}
+th:first-child,td:first-child{text-align:left}
+th{font-size:.82rem;line-height:1.25;color:var(--mut);font-weight:600;vertical-align:bottom}
+tr:last-child td{border-bottom:0}
+tr.hl td{background:var(--tint);font-weight:600}
+.note{font:.9rem/1.45 -apple-system,system-ui,sans-serif;color:var(--mut);margin:.4rem 0}
+</style>
+</head>
+<body>
+<main>
+<h1>Wire Size and Resistance</h1>
+<p class="lead">Most people think of a wire as having zero resistance, but in actual practice all wires have resistance. In industrial installations, where total length of wiring can reach hundreds of miles, resistance of wires must be properly calculated.</p>
+
+<h3>Four factors set a wire’s resistance</h3>
+<ul>
+<li>The <b>DIAMETER</b> of the wire</li>
+<li>The <b>MATERIAL</b> the wire is made of</li>
+<li>The <b>LENGTH</b> of the wire</li>
+<li>The <b>TEMPERATURE</b> of the wire</li>
+</ul>
+
+<h2>Area</h2>
+<p>Diameter of wires is measured in <b>mils</b>, where <b>1 mil = 1/1000 inch</b>. Cross-sectional area of wire is measured in <b>circular mils</b>.</p>
+<div class="key sans"><b>Circular mil area = diameter in mils, squared.</b><br>Squaring a number means taking that number and multiplying by itself.</div>
+<div class="ex"><b class="sans">Example 1</b>Diameter 12 thousandths of an inch (0.012) = 12 mils.<div class="calc">12 × 12 = 144 CM</div></div>
+<div class="ex"><b class="sans">Example 2</b>Diameter 0.045 inch.<div class="calc">45 × 45 = 2025 CM</div></div>
+
+<h3>Stranded wire</h3>
+<div class="key sans"><b>Area of one strand × number of strands.</b></div>
+<div class="ex"><b class="sans">Example</b>18 strands, each 0.015 inch in diameter.
+<div class="calc">One strand = 225 CM<br>225 × 18 = 4,050 CM</div></div>
+<p>Large wires are usually stranded to make them easier to bend.</p>
+<div class="key sans"><b>The larger the diameter of a wire, the less resistance it has and the more current it can carry.</b></div>
+<p>Current flowing through a wire is very similar to water flowing through a pipe. A large pipe can carry more water at a specific pressure than a small pipe. A large wire can carry more current at a specific voltage than a small wire.</p>
+
+<h2>Material</h2>
+<p>A standard measurement used for finding the resistance of wire is the <b>mil-foot</b>: a piece of wire one circular mil in diameter and one foot long.</p>
+<p>If the resistance of a mil-foot of different types of wire is known, a formula can find the resistance of any type, size, and length of wire:</p>
+<div class="formula">R = K × L / CM</div>
+<dl>
+<dt>K</dt><dd>ohms per mil-foot of the wire</dd>
+<dt>L</dt><dd>length of the wire, in feet</dd>
+<dt>CM</dt><dd>circular mil area of the wire</dd>
+</dl>
+
+<div class="tw"><table>
+<caption>Table 1 · Resistivity</caption>
+<thead><tr><th>Material</th><th>Ohms per mil-foot</th></tr></thead>
+<tbody>
+<tr><td>Aluminium</td><td>17</td></tr>
+<tr class="hl"><td>Copper</td><td>10.4</td></tr>
+<tr><td>Brass</td><td>42</td></tr>
+<tr><td>Silver</td><td>9.6</td></tr>
+<tr><td>Gold</td><td>13.4</td></tr>
+<tr><td>Iron</td><td>60</td></tr>
+<tr><td>Nichrome</td><td>600</td></tr>
+</tbody></table></div>
+<p>Resistivity of gold is higher than that of silver or copper, but where a very reliable conductor is needed (like in circuits controlling movement of a space ship), gold is used because it never corrodes or forms surface oxidation.</p>
+
+<h2>American Wire Gauge (AWG)</h2>
+<p>Another very important table. Part of it is shown below.</p>
+<div class="tw"><table>
+<caption>Table 2 · AWG</caption>
+<thead><tr><th>Gauge</th><th>Diameter<br>(mils)</th><th>Area<br>(CM)</th><th>Ohms per 1000 ft at 68°F</th></tr></thead>
+<tbody>
+<tr><td>0000</td><td>460</td><td>211,600</td><td>0.049</td></tr>
+<tr><td>000</td><td>410</td><td>167,800</td><td>0.0618</td></tr>
+<tr><td>00</td><td>365</td><td>133,100</td><td>0.0780</td></tr>
+<tr><td>0</td><td>325</td><td>105,500</td><td>0.0983</td></tr>
+<tr class="hl"><td>1</td><td>289</td><td>83,690</td><td>0.1239</td></tr>
+<tr><td>2</td><td>258</td><td>66,370</td><td>0.1563</td></tr>
+<tr><td>3</td><td>229</td><td>52,640</td><td>0.1970</td></tr>
+<tr class="hl"><td>4</td><td>204</td><td>41,740</td><td>0.2485</td></tr>
+<tr><td>5</td><td>182</td><td>33,100</td><td>0.3133</td></tr>
+<tr><td>6</td><td>162</td><td>26,250</td><td>0.395</td></tr>
+<tr class="hl"><td>7</td><td>144</td><td>20,820</td><td>0.498</td></tr>
+<tr><td>8</td><td>128</td><td>16,510</td><td>0.628</td></tr>
+<tr><td>9</td><td>114</td><td>13,090</td><td>0.792</td></tr>
+<tr class="hl"><td>10</td><td>102</td><td>10,380</td><td>0.999</td></tr>
+<tr><td>11</td><td>91</td><td>8,234</td><td>1.260</td></tr>
+<tr><td>12</td><td>81</td><td>6,530</td><td>1.588</td></tr>
+</tbody></table></div>
+<p class="note">Highlighted rows are 3 gauges apart: each step roughly doubles or halves the area.</p>
+<div class="key sans"><b>As the gauge number increases, the wire’s area gets smaller and its resistance gets bigger.</b></div>
+<div class="key sans"><b>With every 3 gauge numbers decrease, wire cross-sectional area doubles and the resistance of the same wire is cut in half.</b></div>
+
+<h2>Practical problems</h2>
+<div class="ex">
+<b class="sans">Problem 1</b>
+What is the resistance of a piece of #18 AWG copper wire 400 feet long?
+<p><b>Solution</b></p>
+<p>Formula: <b>R = K × L / CM</b></p>
+<p>K for copper (Table 1) = 10.4.<br>Area of #18 wire (Table 2) = 1624 CM.</p>
+<div class="calc">R = 10.4 × 400 / 1624<br>R = 4160 / 1624<br><span class="ans">R = 2.56 ohms</span></div>
+</div>
+<div class="ex">
+<b class="sans">Problem 2</b>
+What is the resistance of a piece of #12 AWG aluminium wire 250 feet long?
+<p><b>Solution</b></p>
+<div class="calc">R = K × L / CM<br>R = 17 × 250 / 6530<br>R = 4250 / 6530<br><span class="ans">R = 0.6508 ohms</span></div>
+</div>
+</main>
+</body>
+</html>
