@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ohm's Law — 12 Formulas</title>
+<style>
+:root{
+  --bg:#f3f1ea; --card:#ffffff; --ink:#1b2430; --muted:#5b6675;
+  --line:#d5d9df; --amps:#0b6bcb; --watts:#c2410c; --volts:#15803d; --ohms:#7c3aed;
+}
+@media (prefers-color-scheme: dark){
+  :root{--bg:#14181f; --card:#1d232d; --ink:#e8ecf1; --muted:#9aa5b4; --line:#323b49;
+        --amps:#5aa9f5; --watts:#fb9a5c; --volts:#4ade80; --ohms:#b794f6;}
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Segoe UI",Roboto,Arial,sans-serif;line-height:1.4;padding:24px 16px 48px}
+main{max-width:860px;margin:0 auto}
+h1{font-size:1.7rem;margin:0 0 6px}
+.known{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:14px 18px;margin:16px 0 24px}
+.known p{margin:0 0 8px;color:var(--muted)}
+.known ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:6px 18px;font-weight:600}
+section{background:var(--card);border:1px solid var(--line);border-left:6px solid var(--c);border-radius:6px;padding:12px 18px;margin-bottom:16px}
+section h2{margin:0 0 8px;font-size:1.15rem;color:var(--c)}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;align-items:center;padding:10px 0;border-top:1px dashed var(--line)}
+.row:first-of-type{border-top:0}
+.name{color:var(--muted);font-weight:600}
+.eq{font-family:"Cambria Math","STIX Two Math",Cambria,"Times New Roman",serif;font-size:1.2rem;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.f{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle}
+.f>span:first-child{border-bottom:1.5px solid currentColor;padding:0 4px}
+.f>span:last-child{padding:0 4px}
+.sq{display:inline-flex;align-items:center}
+.sq .rad{font-size:1.4em;line-height:1}
+.sq .in{border-top:1.5px solid currentColor;padding:0 3px}
+.res{font-weight:700;color:var(--c)}
+@media (max-width:560px){.row{grid-template-columns:1fr;gap:4px}}
+</style>
+</head>
+<body>
+<main>
+<h1>Ohm's Law — 12 Formulas</h1>
+
+<div class="known">
+  <p>Example values:</p>
+  <ul>
+    <li>I = amps = 10 Amps</li>
+    <li>E = volts = 120 Volts</li>
+    <li>R = ohms = 12 Ohms</li>
+    <li>P = watts = 1200 Watts</li>
+  </ul>
+</div>
+
+<section style="--c:var(--amps)">
+  <h2>Amps (I)</h2>
+  <div class="row"><div class="name">Amps = √(Watts / Ohms)</div>
+    <div class="eq">I = <span class="sq"><span class="rad">√</span><span class="in"><span class="f"><span>P</span><span>R</span></span></span></span> = <span class="sq"><span class="rad">√</span><span class="in"><span class="f"><span>1200</span><span>12</span></span></span></span> = √100 = <span class="res">10 Amps</span></div></div>
+  <div class="row"><div class="name">Amps = Watts / Volts</div>
+    <div class="eq">I = <span class="f"><span>P</span><span>E</span></span> = <span class="f"><span>1200</span><span>120</span></span> = <span class="res">10 Amps</span></div></div>
+  <div class="row"><div class="name">Amps = Volts / Ohms</div>
+    <div class="eq">I = <span class="f"><span>E</span><span>R</span></span> = <span class="f"><span>120</span><span>12</span></span> = <span class="res">10 Amps</span></div></div>
+</section>
+
+<section style="--c:var(--watts)">
+  <h2>Watts (P)</h2>
+  <div class="row"><div class="name">Watts = Volts² / Ohms</div>
+    <div class="eq">P = <span class="f"><span>E²</span><span>R</span></span> = <span class="f"><span>120²</span><span>12</span></span> = <span class="f"><span>14400</span><span>12</span></span> = <span class="res">1200 Watts</span></div></div>
+  <div class="row"><div class="name">Watts = Volts × Amps</div>
+    <div class="eq">P = E × I = 120 × 10 = <span class="res">1200 Watts</span></div></div>
+  <div class="row"><div class="name">Watts = Amps² × Ohms</div>
+    <div class="eq">P = I² × R = 10² × 12 = <span class="res">1200 Watts</span></div></div>
+</section>
+
+<section style="--c:var(--volts)">
+  <h2>Volts (E)</h2>
+  <div class="row"><div class="name">Volts = √(Watts × Ohms)</div>
+    <div class="eq">E = <span class="sq"><span class="rad">√</span><span class="in">P × R</span></span> = <span class="sq"><span class="rad">√</span><span class="in">1200 × 12</span></span> = <span class="sq"><span class="rad">√</span><span class="in">14400</span></span> = <span class="res">120 Volts</span></div></div>
+  <div class="row"><div class="name">Volts = Amps × Ohms</div>
+    <div class="eq">E = I × R = 10 × 12 = <span class="res">120 Volts</span></div></div>
+  <div class="row"><div class="name">Volts = Watts / Amps</div>
+    <div class="eq">E = <span class="f"><span>P</span><span>I</span></span> = <span class="f"><span>1200</span><span>10</span></span> = <span class="res">120 Volts</span></div></div>
+</section>
+
+<section style="--c:var(--ohms)">
+  <h2>Ohms (R)</h2>
+  <div class="row"><div class="name">Ohms = Volts² / Watts</div>
+    <div class="eq">R = <span class="f"><span>E²</span><span>P</span></span> = <span class="f"><span>120²</span><span>1200</span></span> = <span class="f"><span>14400</span><span>1200</span></span> = <span class="res">12 Ohms</span></div></div>
+  <div class="row"><div class="name">Ohms = Watts / Amps²</div>
+    <div class="eq">R = <span class="f"><span>P</span><span>I²</span></span> = <span class="f"><span>1200</span><span>10²</span></span> = <span class="res">12 Ohms</span></div></div>
+  <div class="row"><div class="name">Ohms = Volts / Amps</div>
+    <div class="eq">R = <span class="f"><span>E</span><span>I</span></span> = <span class="f"><span>120</span><span>10</span></span> = <span class="res">12 Ohms</span></div></div>
+</section>
+</main>
+</body>
+</html>
